@@ -34,3 +34,33 @@
   margin-right: 10px;
 }
 
+.ButtonSection {
+  display: flex;
+}
+
+.ButtonSection * {
+  margin-right: 20px;
+  height: fit-content;
+}
+
+.CreateBtn {
+  width: 70px;
+  color: #fff;
+}
+
+.SettingsBtn button, .SettingsBtn button:hover{
+  background-color: #fff;
+  color: #7C8DB5;
+  border-color: #DADADA;
+}
+
+.LangChanger button{
+  border: none;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.LangChanger .ActiveLanguageBtn, .LangChanger .ActiveLanguageBtn:hover {
+  background: #0A58CA;
+  color: white;
+}

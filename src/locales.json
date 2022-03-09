@@ -1,0 +1,14 @@
+{
+    "en": {
+    "translation": {
+      "Menu top": "Top",
+      "Menu search": "Search"
+    }
+  },
+  "ua": {
+    "translation": {
+    "Menu top": "Топ",
+    "Menu search": "Пошук"
+    } 
+  }
+}
