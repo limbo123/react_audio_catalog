@@ -1,11 +1,16 @@
-import { Route, Switch } from "react-router-dom";
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Navbar from "./components/Navbar/Navbar";
 
 const App = () => (
   <>
     <Navbar />
-    <Switch>{/* ...Routes */}</Switch>
+    <Switch>
+      {/* <Route path="/" exact component={Home} /> */}
+      {/* <Route path="/search" component={Search} /> */}
+      {/* <Route path="/add-song" component={AddSong} /> */}
+      {/* <Redirect to="/" /> */}
+    </Switch>
   </>
 );
 
