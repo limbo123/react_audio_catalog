@@ -4,7 +4,7 @@
   height: 45px;
 }
 
-.container {
+.Container {
   width: 900px;
   height: auto;
   margin: auto;
@@ -36,22 +36,29 @@
 
 .ButtonSection {
   display: flex;
-}
-
-.ButtonSection * {
-  margin-right: 20px;
-  height: fit-content;
+  justify-content: space-between;
 }
 
 .CreateBtn {
   width: 70px;
   color: #fff;
+  margin-right: 10px;
 }
 
 .SettingsBtn button, .SettingsBtn button:hover{
   background-color: #fff;
   color: #7C8DB5;
   border-color: #DADADA;
+  text-align: center;
+}
+
+.SettingsBtn button:hover svg {
+  transform: rotate(180deg);
+  transition: 500ms;
+}
+
+.SettingsBtn button::after {
+  display: none;
 }
 
 .LangChanger button{

@@ -2,6 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Button, DropdownButton, Dropdown } from "react-bootstrap";
+import { IoSettingsOutline } from "react-icons/io5"
+
+import routes from "../../routes";
 
 import styles from "./Navbar.module.css";
 
@@ -10,11 +13,11 @@ function Navbar({ language, setLang }) {
   console.log(language);
   return (
     <nav className={styles.Navigation}>
-      <div className={styles.container}>
+      <div className={styles.Container}>
         <ul className={styles.NavList}>
           <li className={styles.NavListItem}>
             <NavLink
-              to="/" // TEST ROUTE
+              to={routes.home}
               exact
               className={styles.NavLink}
               activeClassName={styles.ActiveNavlink}
@@ -24,23 +27,25 @@ function Navbar({ language, setLang }) {
           </li>
           <li className={styles.NavListItem}>
             <NavLink
-              to="/1" // TEST ROUTE
+              to={routes.search}
               className={styles.NavLink}
               activeClassName={styles.ActiveNavlink}
             >
-              {t("Menu search")}
+              {t("Search")}
             </NavLink>
           </li>
         </ul>
         <div className={styles.ButtonSection}>
-          <Button size="sm" variant="warning" className={styles.CreateBtn}>
-            Create
-          </Button>
+          <NavLink to={routes.addSong}>
+            <Button size="sm" variant="warning" className={styles.CreateBtn}>
+              {t("Create button")}
+            </Button>
+          </NavLink>
           <DropdownButton
             className={styles.SettingsBtn}
             id="dropdown-variants-primary"
             size="sm"
-            title="Settings"
+            title={<IoSettingsOutline size="1.4em"/>}
             autoClose="outside"
           >
             <Dropdown.Item className={styles.ThemeChanger}>Theme</Dropdown.Item>

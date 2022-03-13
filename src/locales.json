@@ -2,13 +2,15 @@
     "en": {
     "translation": {
       "Menu top": "Top",
-      "Menu search": "Search"
+      "Search": "Search",
+      "Create button": "Create"
     }
   },
   "ua": {
     "translation": {
     "Menu top": "Топ",
-    "Menu search": "Пошук"
+    "Search": "Пошук",
+    "Create button": "Створити"
     } 
   }
 }
