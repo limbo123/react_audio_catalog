@@ -26,7 +26,7 @@ class SearchForm extends Component {
             className={styles.SearchFormInput}
             type="text"
             autoFocus="off"
-            autoComplete="true"
+            name="query"
             placeholder={this.props.t("Search")}
             value={this.state.searchQuery}
             onChange={this.handleChange}
