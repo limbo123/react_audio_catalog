@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap');
+
+* {
+    font-family: "Lato", sans-serif;
+}
+
+.audios {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: 712px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.searchAudios {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 30px;
+}

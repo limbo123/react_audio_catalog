@@ -10,7 +10,7 @@ import styles from './Navbar.module.css'
 
 function Navbar({ language, setLang }) {
   const { t, i18n } = useTranslation()
-  console.log(language)
+
   return (
     <nav className={styles.Navigation}>
       <div className={styles.Container}>
