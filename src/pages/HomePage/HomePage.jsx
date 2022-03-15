@@ -12,7 +12,7 @@ function HomePage() {
         <h2 className={styles.homeTitle}>New releases:</h2>
       </div>
 
-      <AudioList />
+      <AudioList name="audios"/>
     </div>
   )
 }

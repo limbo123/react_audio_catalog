@@ -1,7 +1,7 @@
 import React from "react";
 import { getI18n } from "react-i18next";
 import { Route, Switch, Redirect } from "react-router-dom";
-import "./App.module.css";
+import "./App.css";
 
 import HomePage from "./pages/HomePage/HomePage"
 import SearchPage from "./pages/SearchPage/SearchPage"
