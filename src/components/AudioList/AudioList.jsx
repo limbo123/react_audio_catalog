@@ -11,6 +11,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -19,6 +20,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -27,6 +29,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -35,6 +38,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -43,6 +47,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -51,6 +56,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -59,6 +65,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -67,6 +74,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -75,6 +83,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -83,6 +92,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -91,6 +101,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
             <div className={styles.audioCard}>
@@ -99,6 +110,7 @@ function AudioList() {
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play}/></button>
+                    <p>Play</p>
                 </div>
             </div>
         </div>

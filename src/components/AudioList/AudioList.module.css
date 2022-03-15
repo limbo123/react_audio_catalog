@@ -47,6 +47,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 25px;
 }
 
 .audioHover:hover {
@@ -71,4 +72,9 @@
 
 .play:hover {
     color: #F8991C;
+}
+
+.audioHover>p {
+    margin-top: 10px;
+    color: #fff;
 }
