@@ -1,13 +1,14 @@
 import React from "react";
 import { getI18n } from "react-i18next";
 import { Route, Switch, Redirect } from "react-router-dom";
+import "./App.css";
 
 import HomePage from "./pages/HomePage/HomePage"
 import SearchPage from "./pages/SearchPage/SearchPage"
 import AddSongPage from "./pages/AddSongPage/AddSongPage"
 import Navbar from "./components/Navbar/Navbar";
 
-import routes from "./routes"
+import routes from "./routes";
 
 export default class App extends React.Component {
   state = {
