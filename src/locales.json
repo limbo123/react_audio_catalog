@@ -1,0 +1,16 @@
+{
+    "en": {
+    "translation": {
+      "Menu top": "Top",
+      "Search": "Search",
+      "Create button": "Create"
+    }
+  },
+  "ua": {
+    "translation": {
+    "Menu top": "Топ",
+    "Search": "Пошук",
+    "Create button": "Створити"
+    } 
+  }
+}
