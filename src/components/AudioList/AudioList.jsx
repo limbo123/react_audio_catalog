@@ -13,7 +13,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -23,7 +23,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -33,7 +33,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -43,7 +43,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -53,7 +53,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -63,7 +63,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -73,7 +73,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -83,7 +83,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -93,7 +93,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -103,7 +103,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -113,7 +113,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>
@@ -123,7 +123,7 @@ function AudioList({ name }) {
                 <h3>Runnin</h3>
                 <h4>Pharell Williams</h4>
                 <div className={styles.audioHover}>
-                    <h5>{t("Release year")}: <br/> <b>2016</b></h5>
+                    <h5>{t("Release year")}: <br/> <b>2022</b></h5>
                     <button type="button"><AiFillPlayCircle size="3rem" className={styles.play} /></button>
                     <p>{t("Play text")}</p>
                 </div>

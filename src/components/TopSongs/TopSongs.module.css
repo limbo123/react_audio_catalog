@@ -1,0 +1,75 @@
+.topSongs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 712px;
+    margin-left: 50px;
+}
+
+.topCard {
+    display: flex;
+    max-height: 40px;
+    align-items: center;
+}
+
+.topCard:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.topCard>img {
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.topDescription {
+    margin-left: 20px;
+}
+
+.topDescription>h3 {
+    font-size: 16px;
+}
+
+.topCard h4 {
+    font-size: 14px;
+    color: #7C8DB5;
+}
+
+.topDuration {
+    margin: 0;
+    padding-left: 490px;
+}
+
+.topHover {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.topHover:hover {
+    opacity: 100%;
+}
+
+.topHover>button {
+    background: none;
+    border: none;
+}
+
+.topPlay {
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s;
+    color: #fff;
+}
+
+.topPlay:hover {
+    color: #F8991C;
+}

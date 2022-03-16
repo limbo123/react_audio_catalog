@@ -6,7 +6,8 @@
       "Create button": "Create",
       "New releases header": "New releases",
       "Play text": "Play",
-      "Release year": "Release year"
+      "Release year": "Release year",
+      "Top songs header": "Top 10 songs"
     }
   },
   "ua": {
@@ -16,7 +17,8 @@
     "Create button": "Створити",
     "New releases header": "Нові релізи",
     "Play text": "Грати",
-    "Release year": "Рік випуску"
+    "Release year": "Рік випуску",
+    "Top songs header": "Найкращі 10 пісень"
     } 
   }
 }
