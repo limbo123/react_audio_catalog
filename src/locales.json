@@ -3,14 +3,18 @@
     "translation": {
       "Menu top": "Top",
       "Search": "Search",
-      "Create button": "Create"
+      "Create button": "Create",
+      "New releases header": "New releases",
+      "Play text": "Play"
     }
   },
   "ua": {
     "translation": {
     "Menu top": "Топ",
     "Search": "Пошук",
-    "Create button": "Створити"
+    "Create button": "Створити",
+    "New releases header": "Нові релізи",
+    "Play text": "Грати"
     } 
   }
 }
