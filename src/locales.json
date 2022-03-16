@@ -5,7 +5,8 @@
       "Search": "Search",
       "Create button": "Create",
       "New releases header": "New releases",
-      "Play text": "Play"
+      "Play text": "Play",
+      "Release year": "Release year"
     }
   },
   "ua": {
@@ -14,7 +15,8 @@
     "Search": "Пошук",
     "Create button": "Створити",
     "New releases header": "Нові релізи",
-    "Play text": "Грати"
+    "Play text": "Грати",
+    "Release year": "Рік випуску"
     } 
   }
 }
