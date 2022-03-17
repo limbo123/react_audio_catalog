@@ -1,5 +1,4 @@
 import React from "react";
-import { getI18n } from "react-i18next";
 import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 
@@ -19,7 +18,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.setState({
-      currentLanguage: getI18n().language,
+      currentLanguage: localStorage.getItem("language"),
     });
   }
 

@@ -54,6 +54,8 @@ function Navbar({ language, setLang }) {
                 onClick={() => {
                   i18n.changeLanguage("ua");
                   setLang("ua");
+
+                  localStorage.setItem("language", "ua");
                 }}
                 className={language === "ua" ? styles.ActiveLanguageBtn : null}
               >
@@ -64,6 +66,8 @@ function Navbar({ language, setLang }) {
                 onClick={() => {
                   i18n.changeLanguage("en");
                   setLang("en");
+
+                  localStorage.setItem("language", "en");
                 }}
                 className={language === "en" ? styles.ActiveLanguageBtn : null}
               >
