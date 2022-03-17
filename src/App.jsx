@@ -7,8 +7,10 @@ import HomePage from "./pages/HomePage/HomePage"
 import SearchPage from "./pages/SearchPage/SearchPage"
 import AddSongPage from "./pages/AddSongPage/AddSongPage"
 import Navbar from "./components/Navbar/Navbar";
+import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
 
 import routes from "./routes";
+import { Modal } from "bootstrap";
 
 export default class App extends React.Component {
   state = {
@@ -30,6 +32,7 @@ export default class App extends React.Component {
   render() {
     return (
       <>
+      {/* <ModalPlayer /> */}
         {this.state.currentLanguage !== "" && (
           <Navbar
             language={this.state.currentLanguage}

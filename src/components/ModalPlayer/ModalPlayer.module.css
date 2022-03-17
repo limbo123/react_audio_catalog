@@ -1,0 +1,56 @@
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2d2d2d;
+  z-index: 1200;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+}
+
+.ModalTitle {
+    position: absolute;
+    top: 40px;
+    font-size: 14px;
+}
+
+.CloseModalBtn {
+    position: fixed;
+    right: 5vw;
+    top: 5vh;
+}
+
+.SongDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.SongImage {
+    height: auto;  
+    width: 35vw;
+    margin-bottom: 30px;
+}
+
+.PlayerControls {
+    position: absolute;
+    bottom: 30px;
+}
+
+.PlayerControls button {
+    border: none;
+    background: inherit;
+    margin: 0 10px;
+}
+
+.PlayBtn {
+    background: #424242 !important;
+    height: 45px;
+    border-radius: 10px;
+}
