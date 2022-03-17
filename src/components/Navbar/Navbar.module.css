@@ -64,7 +64,7 @@
 .LangChanger button{
   border: none;
   border-radius: 10px;
-  margin: 0;
+  margin: 0 10px;
 }
 
 .LangChanger .ActiveLanguageBtn, .LangChanger .ActiveLanguageBtn:hover {
