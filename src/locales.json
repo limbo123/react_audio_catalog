@@ -1,7 +1,7 @@
 {
     "en": {
     "translation": {
-      "Menu top": "Top",
+      "Menu top": "Home",
       "Search": "Search",
       "Create button": "Create",
       "New releases header": "New releases",
@@ -12,7 +12,7 @@
   },
   "ua": {
     "translation": {
-    "Menu top": "Топ",
+    "Menu top": "Головна",
     "Search": "Пошук",
     "Create button": "Створити",
     "New releases header": "Нові релізи",
