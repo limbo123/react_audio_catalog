@@ -25,8 +25,8 @@
 }
 
 .ActiveNavlink {
-  color: #000000;
   font-weight: bold;
+  color: #F8991C;
 }
 
 .NavListItem {
@@ -59,6 +59,12 @@
 
 .SettingsBtn button::after {
   display: none;
+}
+
+.LangChanger, .ThemeChanger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .LangChanger button{
