@@ -7,23 +7,23 @@ import {
   BsFillSkipEndFill,
   BsFillSkipStartFill,
 } from "react-icons/bs";
-import { GrClose } from "react-icons/gr";
+import { IoCloseOutline } from "react-icons/io5";
 import audios from "../../audios.json";
-import formatTime from "../../formatTime"
+import formatTime from "../../formatTime";
 
 import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = () => {
+const ModalPlayer = ({ handleModal, currentTrack }) => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [time, setTime] = useState(0);
   const audioElement = useRef(null);
 
   const timeUpdate = () => {
-    setTime(audioElement.current.currentTime)
-  }
+    setTime(audioElement.current.currentTime);
+  };
 
   useEffect(() => {
     isPlaying ? audioElement.current.play() : audioElement.current.pause();
@@ -32,46 +32,47 @@ const ModalPlayer = () => {
   const skipSong = (forward = true) => {
     if (forward) {
       setCurrentSongIndex(() => {
-        let newIndex = currentSongIndex;
-        newIndex++;
-        if (currentSongIndex > audios.length - 1) {
-          newIndex = 0;
+        let nextIndex = currentSongIndex;
+        nextIndex++;
+        if (!audios[nextIndex]) {
+          nextIndex = 0;
         }
-
-        return newIndex;
+        console.log(nextIndex);
+        return nextIndex;
       });
     } else {
       setCurrentSongIndex(() => {
-        let newIndex = currentSongIndex;
-        newIndex--;
-        if (currentSongIndex < 0) {
-          newIndex = audios.length - 1;
+        let nextIndex = currentSongIndex;
+        nextIndex--;
+        if (!audios[nextIndex]) {
+          nextIndex = audios.length - 1;
         }
-
-        return newIndex;
+        console.log(nextIndex);
+        return nextIndex;
       });
     }
   };
 
   useEffect(() => {
-    const audio = audioElement.current; 
-    audio.addEventListener('timeupdate', timeUpdate);
+    const audio = audioElement.current;
+    audio.addEventListener("timeupdate", timeUpdate);
+    audio.addEventListener("ended", skipSong);
 
     return () => {
-      audio.removeEventListener('timeupdate', timeUpdate);
+      audio.removeEventListener("timeupdate", timeUpdate);
+      audio.addEventListener("ended", skipSong);
     };
   });
 
-  const timePercent = (time / audioElement.current.duration) * 100;
-  const formattedDuration = formatTime(audioElement.current.duration);
+  const timePercent = (time / audioElement?.current?.duration) * 100;
+  const formattedDuration = formatTime(audioElement?.current?.duration);
   const formattedTime = formatTime(time);
 
   return createPortal(
     <div className={styles.Overlay}>
-
       <h6 className={styles.ModalTitle}>Now playing</h6>
-      <div className={styles.CloseModalBtn}>
-        <GrClose size="1.6rem" />
+      <div className={styles.CloseModalBtn} onClick={handleModal}>
+        <IoCloseOutline size="1.6rem" />
       </div>
       <div className={styles.SongDetails}>
         <img className={styles.SongImage} src={SongImg} alt="" />
@@ -80,22 +81,27 @@ const ModalPlayer = () => {
       </div>
 
       <div className={styles.PlayerTimeline}>
-          <span className={styles.playerTimeCurrent}>{formattedTime}</span>
-          <input
-            type="range"
-            className={styles.playerTimeControl}
-            value={time}
-            max={audioElement.current.duration || 0}
-            onChange={(e) => audioElement.current.currentTime = e.currentTarget.value}
-            style={{
-              background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
-            }}
-          />
-          <span className={styles.playerTimeDuration}>{formattedDuration}</span>
-        </div>
+        <span className={styles.playerTimeCurrent}>{formattedTime}</span>
+        <input
+          type="range"
+          className={styles.playerTimeControl}
+          value={time}
+          max={audioElement?.current?.duration || 0}
+          onChange={(e) =>
+            (audioElement.current.currentTime = e.currentTarget.value)
+          }
+          style={{
+            background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
+          }}
+        />
+        <span className={styles.playerTimeDuration}>{formattedDuration}</span>
+      </div>
 
       <div className={styles.PlayerControls}>
-      <audio src={audios[currentSongIndex].fileUrl} ref={audioElement}></audio>
+        <audio
+          src={audios[currentSongIndex].fileUrl}
+          ref={audioElement}
+        ></audio>
         <button className={styles.SkipBackBtn} onClick={() => skipSong(false)}>
           <BsFillSkipStartFill color="#fff" size="1.3rem" />
         </button>
