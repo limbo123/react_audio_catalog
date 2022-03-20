@@ -2,27 +2,21 @@ import React from "react";
 import styles from "./NewReleasesListTrack.module.css"
 import AudioImage from "../../static/AudioImage.png";
 import { useTranslation } from "react-i18next";
-import { AiFillPlayCircle } from "react-icons/ai";
+import { CgPlayButtonO } from "react-icons/cg";
 
 
 
 function NewReleasesListTrack({ handleModal }) {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className={styles.audioCard}>
       <img src={AudioImage} alt="Audio Card" />
       <h3>Runnin</h3>
       <h4>Pharell Williams</h4>
-      <div className={styles.audioHover}>
-        <h5>
-          {t("Release year")}: <br /> <b>2022</b>
-        </h5>
-        <button type="button" onClick={handleModal}>
-          <AiFillPlayCircle size="3rem" className={styles.play} />
+        <button type="button" className={styles.button_play} onClick={handleModal}>
+          <CgPlayButtonO size="3rem" className={styles.play} />
         </button>
-        <p>{t("Play text")}</p>
-      </div>
     </div>
   );
 }

@@ -3,7 +3,11 @@ import { NavLink } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { Button, DropdownButton, Dropdown } from "react-bootstrap";
 import { IoSettingsOutline } from "react-icons/io5";
+import { HiSun } from "react-icons/hi";
+import { HiMoon } from "react-icons/hi";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
+import "react-toggle/style.css" // for ES6 modules
+import Toggle from 'react-toggle'
 
 import routes from "../../routes";
 
@@ -127,6 +131,13 @@ class Navbar extends Component {
                   </div>
                 </div>
               </Dropdown.Item>
+              <Dropdown.Item className={styles.ThemeChanger}>
+                <label>
+                  <Toggle
+                    onChange={()=>{console.log('ewij')}} />
+                  <span>Custom className</span>
+                </label>
+              </Dropdown.Item>
               <Dropdown.Item className={styles.LangChanger}>
                 <button
                   onClick={() => {
@@ -138,9 +149,9 @@ class Navbar extends Component {
                   className={this.props.language === "ua" ? styles.ActiveLanguageBtn : null}
                 >
                   UA
-              </button>
+                </button>
                 |
-              <button
+                <button
                   onClick={() => {
                     this.props.i18n.changeLanguage("en");
                     this.props.setLang("en");
@@ -150,7 +161,7 @@ class Navbar extends Component {
                   className={this.props.language === "en" ? styles.ActiveLanguageBtn : null}
                 >
                   EN
-              </button>
+                </button>
               </Dropdown.Item>
             </DropdownButton>
           </div>

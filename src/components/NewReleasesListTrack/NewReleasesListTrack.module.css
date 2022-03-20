@@ -25,44 +25,33 @@
     color: #7C8DB5;
 }
 
-.audioHover {
-    opacity: 0;
+.audioCard:hover .button_play{
+    display: block;
+    animation-name: play-button;
+    animation-duration: 0.5s;
+}
+
+.button_play{
+    display: none;
+    /* background-image: url(../images/icons/play-button.png); */
+    height: 50px;
+    width: 50px;
     position: absolute;
-    width: 163px;
-    height: 205px;
-    top: 0;
-    left: 0;
-    border-radius: 15px;
-    background: linear-gradient(179.45deg, #F8991C 0%, #000 100%);
-    transition: all 0.2s linear;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.audioHover:hover {
-    opacity: 90%;
-}
-
-.audioHover>button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: auto;
+    top: 49%;
+    left: 63%;
+    z-index: 5;
     border: none;
-    border-radius: 50%;
-    padding: 0;
-    margin: 0;
+    border-radius: 50px;
+    /* background-color: white; */
+    background: none;
+    /* padding-right: auto; */
+    /* padding-left: auto; */
 }
 
 .play {
     transition: all 0.2s;
+    background-color: #fff;
+    border-radius: 50%;
 }
 
 .play:hover {
@@ -83,3 +72,16 @@
 .audioHover>h5>b {
     font-weight: 900;
 }
+
+@keyframes play-button {
+    0% {
+      top: 60%;
+      opacity: 0%;
+    }
+  
+
+    100% {
+      top: 49%;
+      opacity: 100%;
+    }
+  }
