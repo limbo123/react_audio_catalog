@@ -1,0 +1,87 @@
+.audioCard {
+    position: relative;
+    width: 163px;
+    height: 205px;
+    border: 1px solid #E6EFFB;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.audioCard>img {
+    border-radius: 15px;
+    width: 133px;
+    height: 125px;
+}
+
+.audioCard>h3 {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.audioCard>h4 {
+    font-size: 12px;
+    color: #7C8DB5;
+}
+
+.audioCard:hover .button_play{
+    display: block;
+    animation-name: play-button;
+    animation-duration: 0.5s;
+}
+
+.button_play{
+    display: none;
+    /* background-image: url(../images/icons/play-button.png); */
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 49%;
+    left: 63%;
+    z-index: 5;
+    border: none;
+    border-radius: 50px;
+    /* background-color: white; */
+    background: none;
+    /* padding-right: auto; */
+    /* padding-left: auto; */
+}
+
+.play {
+    transition: all 0.2s;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.play:hover {
+    color: #F8991C;
+}
+
+.audioHover>p {
+    margin-top: 5px;
+    color: #fff;
+}
+
+.audioHover>h5 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.audioHover>h5>b {
+    font-weight: 900;
+}
+
+@keyframes play-button {
+    0% {
+      top: 60%;
+      opacity: 0%;
+    }
+  
+
+    100% {
+      top: 49%;
+      opacity: 100%;
+    }
+  }

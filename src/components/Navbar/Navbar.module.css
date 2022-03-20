@@ -4,7 +4,7 @@
   height: 45px;
 }
 
-.container {
+.Container {
   width: 900px;
   height: auto;
   margin: auto;
@@ -25,8 +25,8 @@
 }
 
 .ActiveNavlink {
-  color: #000000;
   font-weight: bold;
+  color: #F8991C;
 }
 
 .NavListItem {
@@ -34,5 +34,46 @@
   margin-right: 10px;
 }
 
-.UserInfo {
+.ButtonSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CreateBtn {
+  width: 80px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.SettingsBtn button, .SettingsBtn button:hover{
+  background-color: #fff;
+  color: #7C8DB5;
+  border-color: #DADADA;
+  text-align: center;
+}
+
+.SettingsBtn button:hover svg {
+  transform: rotate(180deg);
+  transition: 500ms;
+}
+
+.SettingsBtn button::after {
+  display: none;
+}
+
+.LangChanger, .ThemeChanger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LangChanger button{
+  border: none;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+.LangChanger .ActiveLanguageBtn, .LangChanger .ActiveLanguageBtn:hover {
+  background: #0A58CA;
+  color: white;
 }

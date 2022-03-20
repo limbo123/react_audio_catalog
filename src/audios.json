@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "Двоє",
+    "author": "SadSvit",
+    "fileUrl": "/audios/SadSvit - Двоє_(MP3Ball.ru).mp3",
+    "duration": 214
+  },
+  {
+    "id": "2",
+    "title": "Молодість",
+    "author": "SadSvit",
+    "fileUrl": "/audios/SadSvit_-_Molodist.mp3",
+    "duration": 150
+  },
+  {
+    "id": "3",
+    "title": "Ніч",
+    "author": "SadSvit",
+    "fileUrl": "/audios/sadsvit-nch_102082967.mp3",
+    "duration": 135
+  }
+]
