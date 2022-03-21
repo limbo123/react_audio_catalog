@@ -26,6 +26,14 @@ export default class App extends React.Component {
     this.setState((prevState) => ({
       isModalOpened: !prevState.isModalOpened,
     }));
+
+    setTimeout(() => {
+      if (this.state.isModalOpened) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
+    }, 50);
   };
 
   setLanguage = (lang) => {
@@ -37,7 +45,7 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-      {this.state.isModalOpened && <ModalPlayer handleModal={this.handleModal}/>}
+        {this.state.isModalOpened && <ModalPlayer handleModal={this.handleModal} />}
 
         {this.state.currentLanguage !== "" && (
           <Navbar
