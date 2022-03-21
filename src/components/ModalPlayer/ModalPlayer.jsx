@@ -15,9 +15,9 @@ import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = ({ handleModal, currentTrack }) => {
+const ModalPlayer = ({ handleModal }) => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
   const audioElement = useRef(null);
 
@@ -70,7 +70,7 @@ const ModalPlayer = ({ handleModal, currentTrack }) => {
 
   return createPortal(
     <div className={styles.Overlay}>
-      <h6 className={styles.ModalTitle}>Now playing</h6>
+      <h6 className={styles.ModalTitle}>NOW PLAYING:</h6>
       <div className={styles.CloseModalBtn} onClick={handleModal}>
         <IoCloseOutline size="1.6rem" />
       </div>

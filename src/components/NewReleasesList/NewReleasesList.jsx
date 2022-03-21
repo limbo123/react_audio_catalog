@@ -6,17 +6,39 @@ function AudioList({ name, handleModal }) {
       <NewReleasesListTrack
         handleModal={handleModal}
       />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
-      <NewReleasesListTrack />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
+      <NewReleasesListTrack
+        handleModal={handleModal}
+      />
     </div>
   );
 }
