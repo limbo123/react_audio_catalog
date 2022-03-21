@@ -73,6 +73,11 @@
     font-weight: 900;
 }
 
+.decide_item{
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
 @keyframes play-button {
     0% {
       top: 60%;
