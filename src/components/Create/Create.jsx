@@ -1,17 +1,13 @@
 import React from 'react'
 import styles from './Create.module.css'
+import { AiOutlineUpload } from 'react-icons/ai'
 import ReactDOM from 'react-dom'
-
-// const Create = (
-//   <div>
-//     <h2>Enter song information</h2>
-//   </div>
-// )
 
 const INITIAL_STATE = {
   name: '',
   author: '',
   genres: '',
+  upload: '',
 }
 
 class CreateForm extends React.Component {
@@ -26,12 +22,13 @@ class CreateForm extends React.Component {
   handleSubmit = (evt) => {
     evt.preventDefault()
 
-    const { name, author, genres } = this.state
+    const { name, author, genres, upload } = this.state
 
     console.log(`
       Name: ${name}
       Author: ${author}
       Generes: ${genres}
+      Upload audio: ${upload}
     `)
 
     // this.props.onSubmit({ ...this.state })
@@ -43,10 +40,15 @@ class CreateForm extends React.Component {
   }
 
   render() {
-    const { name, author, genres } = this.state
+    const { name, author, genres, upload } = this.state
 
     return (
       <div className={styles.Container}>
+        <h2>Enter song information</h2>
+        <button type="submit" className={styles.CreateFormButton2}>
+          <AiOutlineUpload className={styles.UploadIcon} />
+          Upload Image
+        </button>
         <form className={styles.CreateForm} onSubmit={this.handleSubmit}>
           <label>
             <input
@@ -81,7 +83,20 @@ class CreateForm extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-
+          <form method="post" encType="multipart/form-data">
+            <div>
+              <input
+                className={styles.CreateFormInput}
+                type="file"
+                id="file"
+                name="file"
+                multiple
+              />
+              {/* <label className={styles.UploadIcon}>
+                <AiOutlineUpload />
+              </label> */}
+            </div>
+          </form>
           <button type="submit" className={styles.CreateFormButton}>
             Submit
           </button>
@@ -91,5 +106,5 @@ class CreateForm extends React.Component {
   }
 }
 
-// ReactDOM.render(Form, document.getElementById('root'))
+// ReactDOM.render(Create, document.getElementById('root'))
 export default CreateForm
