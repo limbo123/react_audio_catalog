@@ -52,8 +52,8 @@ class Navbar extends Component {
     localStorage.setItem("theme", theme);
   }
 
-  theme = this.getTheme();
 
+  theme = this.getTheme();
   changeTheme = () => {
     this.theme = this.theme === this.Theme.LIGHT ? this.Theme.DARK : this.Theme.LIGHT;
 
@@ -114,27 +114,20 @@ class Navbar extends Component {
               title={<IoSettingsOutline size="1.4em" />}
               autoClose="outside"
             >
-              <Dropdown.Item className={styles.ThemeChanger}>
-                <div className="toolbar">
-                  <div className="theme-switch">
-                    <BsFillSunFill size="32px" className="theme-switch__icon" />
-
-                    <div className="theme-switch__control" onClick={() => this.chageToolbar()}>
-                      <input className="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle" aria-label="Переключить между тёмной и светлой темой" readOnly checked={this.state.inputChecked} />
-                      <label aria-hidden="true" className="theme-switch__track" htmlFor="theme-switch-toggle" />
-                      <div aria-hidden="true" className="theme-switch__marker"></div>
-                    </div>
-
-                    <BsFillMoonFill size="32px" className="theme-switch__icon" />
-                  </div>
-                </div>
-              </Dropdown.Item>
-              <Dropdown.Item className={styles.ThemeChanger}>
-                <label>
+              <Dropdown.Item className={styles.decide_item}>
+              <span>Theme </span>
+                <label className={styles.styled_toggle}>
+          
                   <Toggle
-                    onChange={()=>{console.log('ewij')}} />
-                  <span>Custom className</span>
+                    defaultChecked={this.state.soupIsReady}
+                    icons={{
+                      checked: <BsFillSunFill className={styles.toggle_icon} />,
+                      unchecked: <BsFillMoonFill className={styles.toggle_icon} />,
+                    }}
+                    checked={this.state.inputChecked}
+                    onChange={() => this.chageToolbar()} />
                 </label>
+
               </Dropdown.Item>
               <Dropdown.Item className={styles.LangChanger}>
                 <button
