@@ -1,0 +1,97 @@
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2d2d2d;
+  z-index: 1200;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+}
+
+.ModalTitle {
+  position: absolute;
+  top: 40px;
+  font-size: 14px;
+}
+
+.CloseModalBtn {
+  position: fixed;
+  right: 5vw;
+  top: 5vh;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.CloseModalBtn:hover {
+  color: #0c6bb9;
+}
+
+.SongDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.SongImage {
+  height: auto;
+  width: 30vw;
+  margin-bottom: 20px;
+}
+
+.SongAuthor {
+  font-size: 12px;
+}
+
+.PlayerTimeline {
+  font-size: 12px;
+  display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.playerTimeControl {
+  width: 50vw;
+  height: 3px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0.3) 0%);
+  margin: 0 12px;
+}
+
+.playerTimeControl::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #2d2d2d;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 150ms;
+}
+
+.playerTimeControl::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.PlayerControls {
+  position: absolute;
+  bottom: 25px;
+}
+
+.PlayerControls button {
+  border: none;
+  background: inherit;
+  margin: 0 10px;
+}
+
+.PlayBtn {
+  background: #424242 !important;
+  height: 45px;
+  border-radius: 10px;
+}

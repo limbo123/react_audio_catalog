@@ -4,7 +4,7 @@ import { IoSearchOutline } from "react-icons/io5"
 import { withTranslation } from "react-i18next";
 
 import styles from "./SearchForm.module.css";
-import AudioList from "../../components/AudioList/AudioList";
+import NewReleasesList from "../NewReleasesList/NewReleasesList";
 
 class SearchForm extends Component {
   state = {
@@ -44,7 +44,7 @@ class SearchForm extends Component {
           </form>
         </div>
 
-        {this.state.searchQuery && <AudioList name="searchAudios" />}
+        {this.state.searchQuery && <NewReleasesList name="searchAudios" />}
       </>
     );
   }
