@@ -77,3 +77,12 @@
   background: #0A58CA;
   color: white;
 }
+
+.styled_toggle{
+  top: 15px;
+}
+
+.toggle_icon{
+  color: #fff;
+  padding-bottom: 5px;
+}
