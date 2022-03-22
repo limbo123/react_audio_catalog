@@ -19,7 +19,7 @@
 }
 
 .NavLink {
-  color: #7c8db5;
+  /* color: #7c8db5; */
   font-size: 19px;
   text-decoration: none;
 }
@@ -79,7 +79,10 @@
 }
 
 .styled_toggle{
-  top: 15px;
+  /* background-color: rgb(177, 0, 0); */
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .toggle_icon{

@@ -115,9 +115,8 @@ class Navbar extends Component {
               autoClose="outside"
             >
               <Dropdown.Item className={styles.decide_item}>
-              <span>Theme </span>
                 <label className={styles.styled_toggle}>
-          
+                {/* <span>Theme </span> */}
                   <Toggle
                     defaultChecked={this.state.soupIsReady}
                     icons={{
