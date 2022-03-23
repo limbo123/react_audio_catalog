@@ -12,6 +12,10 @@
     padding: 30px;
 }
 
+.Container h2 {
+    margin-bottom: 20px;
+}
+
 .CreateForm {
     display: flex;
     flex-direction: column;
@@ -34,7 +38,7 @@
     justify-content: center;
     align-items: center;
     padding: 8px 14px;
-    width: 76px;
+    width: 86px;
     height: 32px;
     left: 23px;
     top: 245px;

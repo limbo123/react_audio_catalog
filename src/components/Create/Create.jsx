@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './Create.module.css'
 import { AiOutlineCloudUpload } from 'react-icons/ai';
+import { withTranslation } from "react-i18next";
+
 
 const INITIAL_STATE = {
   name: '',
@@ -43,7 +45,7 @@ class CreateForm extends React.Component {
 
     return (
       <div className={styles.Container}>
-        <h2>Enter song information</h2>
+        <h2>{this.props.t("Enter Song Information")}:</h2>
 
         <input
           type="file"
@@ -52,7 +54,7 @@ class CreateForm extends React.Component {
           id="createImageInput"
         />
         <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
-          Upload a file
+          {this.props.t("Upload File")}
         </label>
 
         {/* <button type="submit" className={styles.CreateFormButton2}>
@@ -65,7 +67,7 @@ class CreateForm extends React.Component {
               className={styles.CreateFormInput}
               type="text"
               autoFocus="off"
-              placeholder="Name"
+              placeholder={this.props.t("Song Name")}
               name="name"
               value={name}
               onChange={this.handleChange}
@@ -76,7 +78,7 @@ class CreateForm extends React.Component {
               className={styles.CreateFormInput}
               type="text"
               autoFocus="off"
-              placeholder="Author"
+              placeholder={this.props.t("Song Author")}
               name="author"
               value={author}
               onChange={this.handleChange}
@@ -87,7 +89,7 @@ class CreateForm extends React.Component {
               className={styles.CreateFormInput}
               type="text"
               autoFocus="off"
-              placeholder="Genres"
+              placeholder={this.props.t("Song Genres")}
               name="genres"
               value={genres}
               onChange={this.handleChange}
@@ -108,7 +110,7 @@ class CreateForm extends React.Component {
           </div>
 
           <button type="submit" className={styles.CreateFormButton}>
-            Submit
+          {this.props.t("Submit")}
           </button>
         </form>
       </div>
@@ -117,4 +119,4 @@ class CreateForm extends React.Component {
 }
 
 // ReactDOM.render(Create, document.getElementById('root'))
-export default CreateForm
+export default withTranslation()(CreateForm);
