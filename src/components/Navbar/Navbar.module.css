@@ -19,9 +19,9 @@
 }
 
 .NavLink {
-  /* color: #7c8db5; */
   font-size: 19px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .ActiveNavlink {

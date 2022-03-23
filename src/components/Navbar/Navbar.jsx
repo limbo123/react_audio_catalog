@@ -7,9 +7,9 @@ import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import "react-toggle/style.css"; // for ES6 modules
 import Toggle from 'react-toggle';
 
-import routes from "../../routes";
+import routes from '../../routes'
 
-import styles from "./Navbar.module.css";
+import styles from './Navbar.module.css'
 
 const body = document.querySelector("body");
 
