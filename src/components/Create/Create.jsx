@@ -44,18 +44,17 @@ class CreateForm extends React.Component {
     return (
       <div className={styles.Container}>
         <h2>Enter song information</h2>
-        <div className={styles.CreateFormBtn2}>
-          <input
-            type="file"
-            accept="image/*"
-            class="form-input visually-hidden"
-            id="createImageInput"
-          />
-          <label className="form-label" for="createImageInput">
-            {/* <AiOutlineCloudUpload className={styles.UploadIcon} /> */}
-            Upload a file
-          </label>
-        </div>
+
+        <input
+          type="file"
+          accept="image/*"
+          className="form-input visually-hidden"
+          id="createImageInput"
+        />
+        <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
+          Upload a file
+        </label>
+
         {/* <button type="submit" className={styles.CreateFormButton2}>
           <AiOutlineCloudUpload className={styles.UploadIcon} />
           Upload Image
@@ -97,7 +96,7 @@ class CreateForm extends React.Component {
 
           <div>
             <label htmlFor="file-input">
-              <AiOutlineCloudUpload />
+              <AiOutlineCloudUpload size="1.5rem" />
             </label>
             <input
               className={`${styles.CreateFormInput} ${styles.visuallyHidden}`}
