@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage/HomePage'
 import SearchPage from './pages/SearchPage/SearchPage'
 import AddSongPage from './pages/AddSongPage/AddSongPage'
 import Navbar from './components/Navbar/Navbar'
-import Create from './components/Create/Create'
 import ModalPlayer from './components/ModalPlayer/ModalPlayer'
 
 import routes from './routes'
@@ -63,7 +62,6 @@ export default class App extends React.Component {
             render={(props) => (
               <HomePage
                 {...props}
-                isModalOpened={this.state.isModalOpened}
                 handleModal={this.handleModal}
               />
             )}
