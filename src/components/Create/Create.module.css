@@ -18,13 +18,9 @@
     border-radius: 10px;
     margin-bottom: 16px;
     background: #FFFFFF;
-    /* border */
     border: 0.5px solid #818181;
     box-sizing: border-box;
-}
-
-.CreateFormInput::placeholder {
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .CreateFormButton {

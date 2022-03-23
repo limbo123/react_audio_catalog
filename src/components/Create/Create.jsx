@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Create.module.css'
-import { AiOutlineCloudUpload } from 'react-icons/ai'
-import ReactDOM from 'react-dom'
+import { AiOutlineCloudUpload } from 'react-icons/ai';
 
 const INITIAL_STATE = {
   name: '',
