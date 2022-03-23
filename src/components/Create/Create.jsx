@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Create.module.css'
-import { AiOutlineUpload } from 'react-icons/ai'
+import { AiOutlineCloudUpload } from 'react-icons/ai'
 import ReactDOM from 'react-dom'
 
 const INITIAL_STATE = {
@@ -45,10 +45,22 @@ class CreateForm extends React.Component {
     return (
       <div className={styles.Container}>
         <h2>Enter song information</h2>
-        <button type="submit" className={styles.CreateFormButton2}>
-          <AiOutlineUpload className={styles.UploadIcon} />
+        <div className={styles.CreateFormBtn2}>
+          <input
+            type="file"
+            accept="image/*"
+            class="form-input visually-hidden"
+            id="createImageInput"
+          />
+          <label className="form-label" for="createImageInput">
+            {/* <AiOutlineCloudUpload className={styles.UploadIcon} /> */}
+            Upload a file
+          </label>
+        </div>
+        {/* <button type="submit" className={styles.CreateFormButton2}>
+          <AiOutlineCloudUpload className={styles.UploadIcon} />
           Upload Image
-        </button>
+        </button> */}
         <form className={styles.CreateForm} onSubmit={this.handleSubmit}>
           <label>
             <input
@@ -83,20 +95,20 @@ class CreateForm extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <form method="post" encType="multipart/form-data">
-            <div>
-              <input
-                className={styles.CreateFormInput}
-                type="file"
-                id="file"
-                name="file"
-                multiple
-              />
-              {/* <label className={styles.UploadIcon}>
-                <AiOutlineUpload />
-              </label> */}
-            </div>
-          </form>
+
+          <div>
+            <label htmlFor="file-input">
+              <AiOutlineCloudUpload />
+            </label>
+            <input
+              className={`${styles.CreateFormInput} ${styles.visuallyHidden}`}
+              type="file"
+              id="file-input"
+              name="file"
+              multiple
+            />
+          </div>
+
           <button type="submit" className={styles.CreateFormButton}>
             Submit
           </button>
