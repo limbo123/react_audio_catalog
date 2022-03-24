@@ -1,14 +1,13 @@
 import React from 'react'
 import styles from './Create.module.css'
-import { AiOutlineCloudUpload } from 'react-icons/ai';
-import { withTranslation } from "react-i18next";
-
+import { AiOutlineCloudUpload } from 'react-icons/ai'
+import { withTranslation } from 'react-i18next'
+import axios from 'axios'
 
 const INITIAL_STATE = {
-  name: '',
+  title: '',
   author: '',
   genres: '',
-  upload: '',
 }
 
 class CreateForm extends React.Component {
@@ -23,16 +22,13 @@ class CreateForm extends React.Component {
   handleSubmit = (evt) => {
     evt.preventDefault()
 
-    const { name, author, genres, upload } = this.state
+    const formData = new FormData(document.forms.createForm)
 
-    console.log(`
-      Name: ${name}
-      Author: ${author}
-      Generes: ${genres}
-      Upload audio: ${upload}
-    `)
+    axios
+      .post(`/audios`, formData)
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error))
 
-    // this.props.onSubmit({ ...this.state })
     this.reset()
   }
 
@@ -41,36 +37,40 @@ class CreateForm extends React.Component {
   }
 
   render() {
-    const { name, author, genres, upload } = this.state
+    const { title, author, genres } = this.state
 
     return (
-      <div className={styles.Container}>
-        <h2>{this.props.t("Enter Song Information")}:</h2>
+      <form
+        className={styles.Container}
+        onSubmit={this.handleSubmit}
+        name="createForm"
+        encType="multipart/form-data"
+      >
+        <h2>{this.props.t('Enter Song Information')}:</h2>
 
         <input
           type="file"
           accept="image/*"
           className="form-input visually-hidden"
           id="createImageInput"
+          name="image"
+          required
         />
         <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
-          {this.props.t("Upload File")}
+          {this.props.t('Upload File')}
         </label>
 
-        {/* <button type="submit" className={styles.CreateFormButton2}>
-          <AiOutlineCloudUpload className={styles.UploadIcon} />
-          Upload Image
-        </button> */}
-        <form className={styles.CreateForm} onSubmit={this.handleSubmit}>
+        <div className={styles.CreateForm}>
           <label>
             <input
               className={styles.CreateFormInput}
               type="text"
               autoFocus="off"
-              placeholder={this.props.t("Song Name")}
-              name="name"
-              value={name}
+              placeholder={this.props.t('Song Name')}
+              name="title"
+              value={title}
               onChange={this.handleChange}
+              required
             />
           </label>
           <label>
@@ -78,10 +78,11 @@ class CreateForm extends React.Component {
               className={styles.CreateFormInput}
               type="text"
               autoFocus="off"
-              placeholder={this.props.t("Song Author")}
+              placeholder={this.props.t('Song Author')}
               name="author"
               value={author}
               onChange={this.handleChange}
+              required
             />
           </label>
           <label>
@@ -89,10 +90,11 @@ class CreateForm extends React.Component {
               className={styles.CreateFormInput}
               type="text"
               autoFocus="off"
-              placeholder={this.props.t("Song Genres")}
+              placeholder={this.props.t('Song Genres') + ' (tag1, tag2)'}
               name="genres"
               value={genres}
               onChange={this.handleChange}
+              required
             />
           </label>
 
@@ -104,19 +106,20 @@ class CreateForm extends React.Component {
               className={`${styles.CreateFormInput} ${styles.visuallyHidden}`}
               type="file"
               id="file-input"
-              name="file"
-              multiple
+              name="audio"
+              accept="audio/*"
+              required
             />
           </div>
 
           <button type="submit" className={styles.CreateFormButton}>
-          {this.props.t("Submit")}
+            {this.props.t('Submit')}
           </button>
-        </form>
-      </div>
+        </div>
+      </form>
     )
   }
 }
 
 // ReactDOM.render(Create, document.getElementById('root'))
-export default withTranslation()(CreateForm);
+export default withTranslation()(CreateForm)
