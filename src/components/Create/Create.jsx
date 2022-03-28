@@ -8,6 +8,8 @@ const INITIAL_STATE = {
   title: '',
   author: '',
   genres: '',
+  uploadImg: null,
+  uploadAudioName: null,
 }
 
 class CreateForm extends React.Component {
@@ -17,6 +19,18 @@ class CreateForm extends React.Component {
     const { name, value } = target
 
     this.setState({ [name]: value })
+  }
+
+  handleUploadImg = (event) => {
+    this.setState({
+      uploadImg: URL.createObjectURL(event.target.files[0]),
+    })
+  }
+
+  handleUploadAudio = (event) => {
+    this.setState({
+      uploadAudioName: event.target.files[0].name,
+    })
   }
 
   handleSubmit = (evt) => {
@@ -54,10 +68,19 @@ class CreateForm extends React.Component {
           className="form-input visually-hidden"
           id="createImageInput"
           name="image"
+          onChange={this.handleUploadImg}
           required
         />
         <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
+          <AiOutlineCloudUpload className={styles.CreateFormUploadImg} />
+
           {this.props.t('Upload File')}
+
+          <img
+            src={this.state.uploadImg}
+            alt=""
+            className={styles.uploadImage}
+          />
         </label>
 
         <div className={styles.CreateForm}>
@@ -98,9 +121,21 @@ class CreateForm extends React.Component {
             />
           </label>
 
-          <div>
+          <div className={styles.uploadAudio}>
+            <div>
+              <label htmlFor="file-input">
+                <AiOutlineCloudUpload size="1.5rem" />
+              </label>
+              <label htmlFor="file-input">
+                <p className={styles.uploadAudioTip}>
+                  {this.props.t('Upload Audio')}
+                </p>
+              </label>
+            </div>
             <label htmlFor="file-input">
-              <AiOutlineCloudUpload size="1.5rem" />
+              <p className={styles.uploadAudioName}>
+                {this.state.uploadAudioName}
+              </p>
             </label>
             <input
               className={`${styles.CreateFormInput} ${styles.visuallyHidden}`}
@@ -108,6 +143,7 @@ class CreateForm extends React.Component {
               id="file-input"
               name="audio"
               accept="audio/*"
+              onChange={this.handleUploadAudio}
               required
             />
           </div>
@@ -121,5 +157,4 @@ class CreateForm extends React.Component {
   }
 }
 
-// ReactDOM.render(Create, document.getElementById('root'))
 export default withTranslation()(CreateForm)
