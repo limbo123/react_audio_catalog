@@ -96,8 +96,8 @@
 }
 
 .CreateFormUploadImg {
-    width: 70px;
-    height: 70px;
+    width: 30px;
+    height: 30px;
     margin-bottom: 10px;
 }
 
@@ -147,16 +147,13 @@
     .Container {
         max-width: 700px;
     }
-
     .CreateFormInput {
         width: 300px;
     }
-
     .CreateFormBtn2 {
         margin: 0;
         margin-left: 50px;
     }
-
     .uploadAudio {
         width: 300px;
     }
