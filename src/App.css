@@ -4,9 +4,8 @@
     }
     
     .audios {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         width: 712px;
         margin: 0 auto;
         margin-top: 30px;
