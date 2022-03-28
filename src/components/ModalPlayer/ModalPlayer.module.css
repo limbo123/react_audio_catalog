@@ -25,6 +25,12 @@
   position: fixed;
   right: 5vw;
   top: 5vh;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.CloseModalBtn:hover {
+  color: #0c6bb9;
 }
 
 .SongDetails {
@@ -34,7 +40,7 @@
 
 .SongImage {
   height: auto;
-  width: 35vw;
+  width: 30vw;
   margin-bottom: 20px;
 }
 
@@ -75,7 +81,7 @@
 
 .PlayerControls {
   position: absolute;
-  bottom: 10px;
+  bottom: 25px;
 }
 
 .PlayerControls button {
@@ -88,4 +94,15 @@
   background: #424242 !important;
   height: 45px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 769px) {
+  .Overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  .SongImage {
+    width: 40vw;
+  }
 }

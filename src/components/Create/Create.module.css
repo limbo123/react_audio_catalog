@@ -1,0 +1,163 @@
+* {
+    outline: 0 !important;
+}
+
+.Container {
+    max-width: 900px;
+    margin: auto;
+    border: 1px solid #E6EFFB;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.Container h2 {
+    margin-bottom: 20px;
+}
+
+.CreateForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.CreateFormInput {
+    height: 48px;
+    width: 420px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    background: #FFFFFF;
+    border: 0.5px solid #818181;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+.CreateFormButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 14px;
+    width: 86px;
+    height: 32px;
+    left: 23px;
+    top: 245px;
+    background: #F8991C;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 12px 0px;
+}
+
+.CreateFormBtn2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 234px;
+    height: 220px;
+    left: 332px;
+    top: 0px;
+    left: 0;
+    float: right;
+    color: #7C8DB5;
+    background-color: #DADADA;
+    border-radius: 20px;
+    border: none;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 0px 12px;
+    cursor: pointer;
+    position: relative;
+}
+
+.visuallyHidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.form-input:focus+.form-label {
+    border-color: #000;
+}
+
+.CreateFormUploadImg {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.uploadImage {
+    width: 234px;
+    height: 220px;
+    border-radius: 20px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.uploadAudio {
+    display: flex;
+    justify-content: center;
+    color: #818181;
+    position: relative;
+    flex-direction: column;
+    width: 420px;
+    border: 0.5px solid #818181;
+    border-radius: 10px;
+    background-color: #ffffff;
+    min-height: 48px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.uploadAudio label {
+    cursor: pointer;
+}
+
+.uploadAudioTip {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.uploadAudioName {
+    font-size: 16px;
+    margin: 0;
+    color: #7C8DB5;
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width: 769px) {
+    .Container {
+        max-width: 700px;
+    }
+
+    .CreateFormInput {
+        width: 300px;
+    }
+
+    .CreateFormBtn2 {
+        margin: 0;
+        margin-left: 50px;
+    }
+
+    .uploadAudio {
+        width: 300px;
+    }
+}

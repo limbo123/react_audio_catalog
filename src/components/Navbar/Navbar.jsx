@@ -3,15 +3,13 @@ import { NavLink } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { Button, DropdownButton, Dropdown } from "react-bootstrap";
 import { IoSettingsOutline } from "react-icons/io5";
-import { HiSun } from "react-icons/hi";
-import { HiMoon } from "react-icons/hi";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
-import "react-toggle/style.css" // for ES6 modules
-import Toggle from 'react-toggle'
+import "react-toggle/style.css"; // for ES6 modules
+import Toggle from 'react-toggle';
 
-import routes from "../../routes";
+import routes from '../../routes'
 
-import styles from "./Navbar.module.css";
+import styles from './Navbar.module.css'
 
 const body = document.querySelector("body");
 
@@ -117,9 +115,8 @@ class Navbar extends Component {
               autoClose="outside"
             >
               <Dropdown.Item className={styles.decide_item}>
-              <span>Theme </span>
                 <label className={styles.styled_toggle}>
-          
+                {/* <span>Theme </span> */}
                   <Toggle
                     defaultChecked={this.state.soupIsReady}
                     icons={{

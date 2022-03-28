@@ -1,14 +1,9 @@
 import React from "react";
 import styles from "./NewReleasesListTrack.module.css"
 import AudioImage from "../../static/AudioImage.png";
-import { useTranslation } from "react-i18next";
 import { CgPlayButtonO } from "react-icons/cg";
 
-
-
 function NewReleasesListTrack({ handleModal }) {
-  const { t } = useTranslation();
-
   return (
     <div className={styles.audioCard}>
       <img src={AudioImage} alt="Audio Card" />

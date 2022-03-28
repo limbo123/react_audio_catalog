@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import NewReleasesList from "../../components/NewReleasesList/NewReleasesList";
 import TopSongs from "../../components/TopSongs/TopSongs";
 
-function HomePage({ handleModal, isModalOpened }) {
+function HomePage({ handleModal }) {
   const { t } = useTranslation();
 
   return (

@@ -101,3 +101,13 @@
         background-color: #2D2D2D;
         color: #fff;
     }
+
+@media screen and (max-width: 769px) {
+    .audios {
+        width: 85%;
+    }
+
+    .searchAudios {
+        width: 80%;
+    }
+}

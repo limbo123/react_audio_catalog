@@ -19,9 +19,9 @@
 }
 
 .NavLink {
-  color: #7c8db5;
   font-size: 19px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .ActiveNavlink {
@@ -79,10 +79,27 @@
 }
 
 .styled_toggle{
-  top: 15px;
+  /* background-color: rgb(177, 0, 0); */
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .toggle_icon{
   color: #fff;
   padding-bottom: 5px;
+}
+
+@media screen and (max-width: 769px) {
+  .Navigation {
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  .Container {
+    width: 690px;
+  }
 }

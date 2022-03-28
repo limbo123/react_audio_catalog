@@ -33,7 +33,6 @@
 
 .button_play{
     display: none;
-    /* background-image: url(../images/icons/play-button.png); */
     height: 50px;
     width: 50px;
     position: absolute;
@@ -42,10 +41,8 @@
     z-index: 5;
     border: none;
     border-radius: 50px;
-    /* background-color: white; */
     background: none;
-    /* padding-right: auto; */
-    /* padding-left: auto; */
+    transition: all 0.2s;
 }
 
 .play {
@@ -55,6 +52,7 @@
 }
 
 .play:hover {
+    transition: all 0.2s;
     color: #F8991C;
 }
 

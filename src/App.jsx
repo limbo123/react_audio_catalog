@@ -25,8 +25,16 @@ export default class App extends React.Component {
   handleModal = () => {
     this.setState((prevState) => ({
       isModalOpened: !prevState.isModalOpened,
-    }))
-  }
+    }));
+
+    setTimeout(() => {
+      if (this.state.isModalOpened) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
+    }, 50);
+  };
 
   setLanguage = (lang) => {
     this.setState({
@@ -54,7 +62,6 @@ export default class App extends React.Component {
             render={(props) => (
               <HomePage
                 {...props}
-                isModalOpened={this.state.isModalOpened}
                 handleModal={this.handleModal}
               />
             )}
