@@ -121,6 +121,11 @@
     background-color: #ffffff;
     min-height: 48px;
     padding-left: 15px;
+    cursor: pointer;
+}
+
+.uploadAudio label {
+    cursor: pointer;
 }
 
 .uploadAudioTip {
