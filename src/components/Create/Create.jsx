@@ -4,6 +4,8 @@ import { AiOutlineCloudUpload } from 'react-icons/ai';
 import { withTranslation } from "react-i18next";
 import axios from 'axios';
 
+axios.defaults.baseURL = "https://app-audio.herokuapp.com/api/";
+
 const INITIAL_STATE = {
   title: '',
   author: '',
@@ -47,7 +49,7 @@ class CreateForm extends React.Component {
   }
 
   reset = () => {
-    this.setState({ ...INITIAL_STATE })
+    this.setState({ ...INITIAL_STATE });
   }
 
   render() {
