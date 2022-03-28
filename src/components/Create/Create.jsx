@@ -72,7 +72,7 @@ class CreateForm extends React.Component {
 
           {this.props.t("Upload File")}
 
-          <img src={this.state.uploadImg} alt="" className={styles.uploadImage} />
+          {this.state.uploadImg && <img src={this.state.uploadImg} alt="" className={styles.uploadImage} />}
         </label>
 
         <div className={styles.CreateForm}>
