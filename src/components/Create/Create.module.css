@@ -1,0 +1,117 @@
+* {
+    outline: 0 !important;
+}
+
+.Container {
+    max-width: 900px;
+    margin: auto;
+    border: 1px solid #E6EFFB;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.Container h2 {
+    margin-bottom: 20px;
+}
+
+.CreateForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.CreateFormInput {
+    height: 48px;
+    width: 320px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    background: #FFFFFF;
+    border: 0.5px solid #818181;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+.CreateFormButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 14px;
+    width: 86px;
+    height: 32px;
+    left: 23px;
+    top: 245px;
+    background: #F8991C;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin: 12px 0px;
+}
+
+.CreateFormBtn2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute; */
+    width: 380px;
+    height: 176px;
+    left: 332px;
+    top: 0px;
+    float: right;
+    /* disabled */
+    color: #7C8DB5;
+    background: #DADADA;
+    border-radius: 10px;
+    border: none;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 0px 12px;
+}
+
+.visuallyHidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.form-input:focus+.form-label {
+    border-color: #000;
+}
+
+.UploadIcon {
+    font-size: 25px;
+    margin-right: 10px;
+    color: #6e6e6e;
+}
+
+
+/* 
+.form-label {
+    font-size: 30px;
+    color: aqua;
+} */
+
+
+/* .file-input {
+    font-size: 25px;
+    color: red;
+    background-color: #0032a8;
+} */
+
+.Upload {}
