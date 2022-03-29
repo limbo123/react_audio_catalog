@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5"
 import { withTranslation } from "react-i18next";
 import axios from "axios";
+import { PacmanLoader } from "react-spinners";
 
 import styles from "./SearchForm.module.css";
 import NewReleasesListTrack from "../NewReleasesListTrack/NewReleasesListTrack.jsx";
@@ -14,6 +15,7 @@ class SearchForm extends Component {
     searchQuery: "",
     page: 1,
     audios: [],
+    loading: false,
   };
 
   handleChange = event => {
@@ -29,9 +31,11 @@ class SearchForm extends Component {
 
     history.push(`${location.pathname}?query=${this.state.searchQuery}`);
 
+    this.setState({ loading: true, });
+
     axios
       .get(`audios?query=${this.state.searchQuery}&page=${this.state.page}&perPage=12`)
-      .then(response => this.setState({ audios: response.data }))
+      .then(response => this.setState({ audios: response.data, loading: false, }))
       .catch(error => console.error(error));
   }
 
@@ -54,7 +58,11 @@ class SearchForm extends Component {
           </form>
         </div>
 
-        {this.state.audios.length > 0 &&
+        {this.state.loading && <div className="loader">
+          <PacmanLoader color="#F8991C" loading={true} size={30} speedMultiplier="1.5" />
+        </div>}
+
+        {this.state.audios.length > 0 && this.state.searchQuery &&
           <>
             <h2 className={styles.searchTitle}>Results for query "<i>{this.state.searchQuery}</i>":</h2>
 

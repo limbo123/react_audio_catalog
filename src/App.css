@@ -92,6 +92,11 @@
         color: #fff;
     }
 
+    .loader {
+        margin: 50px auto;
+        text-align: center;
+    }
+
 @media screen and (max-width: 769px) {
     .audios {
         width: 85%;
