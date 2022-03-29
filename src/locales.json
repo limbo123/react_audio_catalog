@@ -11,6 +11,7 @@
       "Song Name": "Name",
       "Song Author": "Author",
       "Song Genres": "Genres",
+      "Upload Audio": "Upload audio",
       "Submit": "Submit"
     }
   },
@@ -26,6 +27,7 @@
     "Song Name": "Назва",
     "Song Author": "Автор",
     "Song Genres": "Жанри",
+    "Upload Audio": "Завантажити аудіо файл",
     "Submit": "Створити"
     } 
   }

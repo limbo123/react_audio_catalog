@@ -23,7 +23,7 @@
 
 .CreateFormInput {
     height: 48px;
-    width: 320px;
+    width: 420px;
     border-radius: 10px;
     margin-bottom: 16px;
     background: #FFFFFF;
@@ -58,16 +58,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* position: absolute; */
-    width: 380px;
-    height: 176px;
+    width: 234px;
+    height: 220px;
     left: 332px;
     top: 0px;
+    left: 0;
     float: right;
-    /* disabled */
     color: #7C8DB5;
-    background: #DADADA;
-    border-radius: 10px;
+    background-color: #DADADA;
+    border-radius: 20px;
     border: none;
     /* Inside auto layout */
     flex: none;
@@ -75,6 +74,8 @@
     align-self: stretch;
     flex-grow: 1;
     margin: 0px 12px;
+    cursor: pointer;
+    position: relative;
 }
 
 .visuallyHidden {
@@ -94,10 +95,52 @@
     border-color: #000;
 }
 
-.UploadIcon {
-    font-size: 25px;
-    margin-right: 10px;
-    color: #6e6e6e;
+.CreateFormUploadImg {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.uploadImage {
+    width: 234px;
+    height: 220px;
+    border-radius: 20px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.uploadAudio {
+    display: flex;
+    justify-content: center;
+    color: #818181;
+    position: relative;
+    flex-direction: column;
+    width: 420px;
+    border: 0.5px solid #818181;
+    border-radius: 10px;
+    background-color: #ffffff;
+    min-height: 48px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.uploadAudio label {
+    cursor: pointer;
+}
+
+.uploadAudioTip {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.uploadAudioName {
+    font-size: 16px;
+    margin: 0;
+    color: #7C8DB5;
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
 
 @media screen and (max-width: 769px) {
@@ -106,11 +149,15 @@
     }
 
     .CreateFormInput {
-        width: 230px;
+        width: 300px;
     }
 
     .CreateFormBtn2 {
         margin: 0;
         margin-left: 50px;
+    }
+
+    .uploadAudio {
+        width: 300px;
     }
 }
