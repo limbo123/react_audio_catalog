@@ -11,15 +11,6 @@
         margin-top: 30px;
     }
     
-    .searchAudios {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
-        width: 900px;
-        margin: 0 auto;
-        margin-top: 30px;
-    }
-    
     .theme-switch {
         display: flex;
         align-items: center;

@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5"
 import { withTranslation } from "react-i18next";
+import axios from "axios";
 
 import styles from "./SearchForm.module.css";
-import NewReleasesList from "../NewReleasesList/NewReleasesList";
+import NewReleasesListTrack from "../NewReleasesListTrack/NewReleasesListTrack.jsx";
+
+axios.defaults.baseURL = "https://app-audio.herokuapp.com/api/";
 
 class SearchForm extends Component {
   state = {
     searchQuery: "",
+    page: 1,
+    audios: [],
   };
 
   handleChange = event => {
@@ -23,6 +28,11 @@ class SearchForm extends Component {
     event.preventDefault();
 
     history.push(`${location.pathname}?query=${this.state.searchQuery}`);
+
+    axios
+      .get(`audios?query=${this.state.searchQuery}&page=${this.state.page}&perPage=12`)
+      .then(response => this.setState({ audios: response.data }))
+      .catch(error => console.error(error));
   }
 
   render() {
@@ -44,7 +54,19 @@ class SearchForm extends Component {
           </form>
         </div>
 
-        {this.state.searchQuery && <NewReleasesList name="searchAudios" />}
+        {this.state.audios.length > 0 &&
+          <>
+            <h2 className={styles.searchTitle}>Results for query "<i>{this.state.searchQuery}</i>":</h2>
+
+            <div className={styles.searchResults}>
+              {this.state.audios.map(({ author, title, _id, imageUrl }) => {
+                return (
+                  <NewReleasesListTrack author={author} title={title} key={_id} imageUrl={imageUrl} />
+                );
+              })}
+            </div>
+          </>
+        }
       </>
     );
   }
