@@ -6,6 +6,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+axios.defaults.baseURL = "https://app-audio.herokuapp.com/api/";
+
 const INITIAL_STATE = {
   title: "",
   author: "",

@@ -4,19 +4,9 @@
     }
     
     .audios {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         width: 712px;
-        margin: 0 auto;
-        margin-top: 30px;
-    }
-    
-    .searchAudios {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
-        width: 900px;
         margin: 0 auto;
         margin-top: 30px;
     }
@@ -100,6 +90,11 @@
     .dark-body {
         background-color: #2D2D2D;
         color: #fff;
+    }
+
+    .loader {
+        margin: 50px auto;
+        text-align: center;
     }
 
 @media screen and (max-width: 769px) {
