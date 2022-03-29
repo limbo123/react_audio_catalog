@@ -100,8 +100,6 @@
     color: #6e6e6e;
 }
 
-.Upload {}
-
 @media screen and (max-width: 769px) {
     .Container {
         max-width: 700px;

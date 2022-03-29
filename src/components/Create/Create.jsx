@@ -1,14 +1,14 @@
-import React from 'react';
-import styles from './Create.module.css'
-import { AiOutlineCloudUpload } from 'react-icons/ai';
+import React from "react";
+import styles from "./Create.module.css";
+import { AiOutlineCloudUpload } from "react-icons/ai";
 import { withTranslation } from "react-i18next";
-import axios from 'axios';
+import axios from "axios";
 
 const INITIAL_STATE = {
-  title: '',
-  author: '',
-  genres: '',
-}
+  title: "",
+  author: "",
+  genres: "",
+};
 
 class CreateForm extends React.Component {
   state = { ...INITIAL_STATE };
@@ -16,31 +16,36 @@ class CreateForm extends React.Component {
   handleChange = ({ target }) => {
     const { name, value } = target;
 
-    this.setState({ [name]: value })
+    this.setState({ [name]: value });
   };
 
-  handleSubmit = evt => {
-    evt.preventDefault()
+  handleSubmit = (evt) => {
+    evt.preventDefault();
 
     const formData = new FormData(document.forms.createForm);
 
     axios
       .post(`/audios`, formData)
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
+      .then((data) => console.log(data))
+      .catch((error) => console.error(error));
 
-    this.reset()
-  }
+    this.reset();
+  };
 
   reset = () => {
-    this.setState({ ...INITIAL_STATE })
-  }
+    this.setState({ ...INITIAL_STATE });
+  };
 
   render() {
-    const { title, author, genres } = this.state
+    const { title, author, genres } = this.state;
 
     return (
-      <form className={styles.Container} onSubmit={this.handleSubmit} name="createForm" encType='multipart/form-data'>
+      <form
+        className={styles.Container}
+        onSubmit={this.handleSubmit}
+        name="createForm"
+        encType="multipart/form-data"
+      >
         <h2>{this.props.t("Enter Song Information")}:</h2>
 
         <input
@@ -48,7 +53,7 @@ class CreateForm extends React.Component {
           accept="image/*"
           className="form-input visually-hidden"
           id="createImageInput"
-          name='image'
+          name="image"
           required
         />
         <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
@@ -102,7 +107,7 @@ class CreateForm extends React.Component {
               type="file"
               id="file-input"
               name="audio"
-              accept='audio/*'
+              accept="audio/*"
               required
             />
           </div>
@@ -112,7 +117,7 @@ class CreateForm extends React.Component {
           </button>
         </div>
       </form>
-    )
+    );
   }
 }
 
