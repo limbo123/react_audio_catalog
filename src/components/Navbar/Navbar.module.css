@@ -79,13 +79,16 @@
 }
 
 .styled_toggle{
-  /* background-color: rgb(177, 0, 0); */
-  display: block;
-  margin-top: auto;
-  margin-bottom: auto;
+  /* background-color: #b615a8; */
+}
+
+.styled_toggle.react-toggle {
+  background-color: #8815b6;
 }
 
 .toggle_icon{
   color: #fff;
   padding-bottom: 5px;
 }
+
+
