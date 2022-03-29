@@ -89,7 +89,7 @@
   /* background-color: #b615a8; */
 }
 
-.styled_toggle.react-toggle {
+.styled_toggle .react-toggle {
   background-color: #8815b6;
 }
 
@@ -107,5 +107,4 @@
   .Container {
     width: 690px;
   }
-}
 }
