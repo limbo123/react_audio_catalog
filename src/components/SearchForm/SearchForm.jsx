@@ -19,9 +19,13 @@ class SearchForm extends Component {
   };
 
   handleChange = event => {
-    this.setState({
-      searchQuery: event.target.value,
-    })
+    if (!event.target.value) {
+      this.setState({ audios: [], searchQuery: event.target.value, });
+    } else {
+      this.setState({
+        searchQuery: event.target.value,
+      });
+    }
   }
 
   handleSubmit = event => {
@@ -29,17 +33,17 @@ class SearchForm extends Component {
 
     event.preventDefault();
 
-    history.push(`${location.pathname}?query=${this.state.searchQuery}`);
-
-    this.setState({ loading: true, });
-
-    axios
-      .get(`audios?query=${this.state.searchQuery}&page=${this.state.page}&perPage=12`)
-      .then(response => this.setState({ audios: response.data, loading: false, }))
-      .catch(error => console.error(error));
-
     if (!this.state.searchQuery) {
       this.setState({ audios: [], });
+    } else {
+      history.push(`${location.pathname}?query=${this.state.searchQuery}`);
+
+      this.setState({ loading: true, });
+
+      axios
+        .get(`audios?query=${this.state.searchQuery}&page=${this.state.page}&perPage=12`)
+        .then(response => this.setState({ audios: response.data, loading: false, }))
+        .catch(error => console.error(error));
     }
   }
 
