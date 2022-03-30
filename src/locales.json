@@ -12,7 +12,11 @@
       "Song Author": "Author",
       "Song Genres": "Genres",
       "Upload Audio": "Upload audio",
-      "Submit": "Submit"
+      "Submit": "Submit",
+      "Search Results": "Results for query",
+      "Creating Song": "Creating song...",
+      "Song Created": "Song created!",
+      "Cannot Create A Song": "Cannot create a song! Try again later..."
     }
   },
   "ua": {
@@ -28,7 +32,11 @@
     "Song Author": "Автор",
     "Song Genres": "Жанри",
     "Upload Audio": "Завантажити аудіо файл",
-    "Submit": "Створити"
+    "Submit": "Створити",
+    "Search Results": "Результати пошуку за запитом",
+    "Creating Song": "Пісня створюється...",
+    "Song Created": "Пісня створена!",
+    "Cannot Create A Song": "Неможливо створити пісню! Спробуйте знову пізніше..."
     } 
   }
 }

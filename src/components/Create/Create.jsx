@@ -13,7 +13,7 @@ const INITIAL_STATE = {
   author: "",
   genres: "",
   uploadImg: null,
-  uploadAudioName: null,
+  uploadAudioName: "",
 };
 
 class CreateForm extends React.Component {
@@ -37,20 +37,20 @@ class CreateForm extends React.Component {
     });
   };
 
-  notify = () => {
-    toast("notification");
-  };
-
   handleSubmit = (evt) => {
     evt.preventDefault();
-    this.notify();
+
     const formData = new FormData(document.forms.createForm);
 
-    axios
-      .post(`/audios`, formData)
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
-    //.finally(() => this.notify());
+    toast.promise(
+      axios
+        .post(`/audios`, formData),
+      {
+        pending: `${this.props.t("Creating Song")}`,
+        success: `${this.props.t("Song Created")}`,
+        error: `${this.props.t("Cannot Create A Song")}`,
+      }
+    );
 
     this.reset();
   };
@@ -65,10 +65,10 @@ class CreateForm extends React.Component {
     return (
       <>
         <ToastContainer
-          position="bottom-center"
+          position="top-right"
           autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
+          hideProgressBar
+          newestOnTop
           closeOnClick
           rtl={false}
           pauseOnFocusLoss

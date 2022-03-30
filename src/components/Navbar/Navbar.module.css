@@ -98,6 +98,11 @@
   padding-bottom: 5px;
 }
 
+.decide_item {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 769px) {
   .Navigation {
     width: 90%;

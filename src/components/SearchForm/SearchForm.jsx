@@ -72,7 +72,7 @@ class SearchForm extends Component {
 
         {this.state.audios.length > 0 && this.state.searchQuery &&
           <>
-            <h2 className={styles.searchTitle}>Results for query "<i>{this.state.searchQuery}</i>":</h2>
+            <h2 className={styles.searchTitle}>{this.props.t("Search Results")} "<i>{this.state.searchQuery}</i>":</h2>
 
             <div className={styles.searchResults}>
               {this.state.audios.map(({ author, title, _id, imageUrl }) => {

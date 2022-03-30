@@ -116,7 +116,6 @@ class Navbar extends Component {
             >
               <Dropdown.Item className={styles.decide_item}>
                 <label>
-                  <span>Theme </span>
                   <Toggle
                     defaultChecked={this.state.soupIsReady}
                     className={styles.styled_toggle}
