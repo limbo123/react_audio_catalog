@@ -27,7 +27,7 @@ class AudioList extends Component {
           <PacmanLoader color="#F8991C" loading={true} size={30} speedMultiplier="1.5" />
         </div>} 
 
-        {this.state.audios.map(({ title, _id, author, imageUrl }) => {
+        {this.state.audios.map(({ title, _id, author, imageUrl }, index, array) => {
           return (
             <>
               <NewReleasesListTrack
@@ -36,6 +36,8 @@ class AudioList extends Component {
                 author={author}
                 imageUrl={imageUrl}
                 handleModal={this.props.handleModal}
+                trackIndex={index}
+                audiosArray={array}
               />
             </>
           );

@@ -39,7 +39,7 @@
 }
 
 .SongImage {
-  height: auto;
+  max-height: 59vh;
   width: 30vw;
   margin-bottom: 20px;
 }
