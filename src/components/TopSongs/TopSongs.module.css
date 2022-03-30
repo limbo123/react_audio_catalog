@@ -73,3 +73,9 @@
 .topPlay:hover {
     color: #F8991C;
 }
+
+@media screen and (max-width: 769px) {
+    .topDuration {
+        padding-left: 300px;
+    }
+}

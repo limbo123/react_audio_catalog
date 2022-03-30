@@ -79,11 +79,13 @@
 }
 
 .styled_toggle{
-  /* background-color: #b615a8; */
-}
-
-.styled_toggle.react-toggle {
-  background-color: #8815b6;
+  /* background-color: rgb(177, 0, 0); */
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .toggle_icon{
@@ -91,4 +93,13 @@
   padding-bottom: 5px;
 }
 
+@media screen and (max-width: 769px) {
+  .Navigation {
+    width: 90%;
+    margin: 30px auto;
+  }
 
+  .Container {
+    width: 690px;
+  }
+}

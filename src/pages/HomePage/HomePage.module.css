@@ -24,3 +24,9 @@
 .lightning {
     margin-right: 15px;
 }
+
+@media screen and (max-width: 769px) {
+    .container {
+        width: 700px;
+    }
+}

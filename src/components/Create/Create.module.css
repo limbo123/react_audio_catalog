@@ -100,18 +100,19 @@
     color: #6e6e6e;
 }
 
-
-/* 
-.form-label {
-    font-size: 30px;
-    color: aqua;
-} */
-
-
-/* .file-input {
-    font-size: 25px;
-    color: red;
-    background-color: #0032a8;
-} */
-
 .Upload {}
+
+@media screen and (max-width: 769px) {
+    .Container {
+        max-width: 700px;
+    }
+
+    .CreateFormInput {
+        width: 230px;
+    }
+
+    .CreateFormBtn2 {
+        margin: 0;
+        margin-left: 50px;
+    }
+}
