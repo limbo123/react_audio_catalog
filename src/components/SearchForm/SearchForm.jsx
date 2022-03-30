@@ -37,6 +37,10 @@ class SearchForm extends Component {
       .get(`audios?query=${this.state.searchQuery}&page=${this.state.page}&perPage=12`)
       .then(response => this.setState({ audios: response.data, loading: false, }))
       .catch(error => console.error(error));
+
+    if (!this.state.searchQuery) {
+      this.setState({ audios: [], });
+    }
   }
 
   render() {
