@@ -12,13 +12,6 @@ class AudioList extends Component {
   }
 
   componentDidMount() {
-    // setTimeout(
-    //   axios
-    //     .get('audios/new')
-    //     .then(response => this.setState({ audios: response.data, loading: false, }))
-    //     .catch(error => console.error(error))
-    //   , 500);  
-
     axios
       .get('audios/new')
       .then(response => this.setState({ audios: response.data, loading: false, }))
@@ -36,7 +29,7 @@ class AudioList extends Component {
 
         < div className={this.props.name} >
           {
-            this.state.audios.map(({ title, _id, author, imageUrl }) => {
+            this.state.audios.map(({ title, _id, author, imageUrl }, index, array) => {
               return (
                 <NewReleasesListTrack
                   key={_id}
@@ -44,6 +37,8 @@ class AudioList extends Component {
                   author={author}
                   imageUrl={imageUrl}
                   handleModal={this.props.handleModal}
+                  trackIndex={index}
+                  audiosArray={array}
                 />
               );
             })
