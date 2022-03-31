@@ -92,6 +92,10 @@
         border-color: #727277;
     }
 
+    .styled_toggle.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+        background-color: #57575d;
+    }
+
     .light-body {
         background-color: #fff;
         color: #000; 
