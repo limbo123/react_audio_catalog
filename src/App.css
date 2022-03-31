@@ -83,6 +83,15 @@
         transform: translateX(35px);
     }
 
+    .styled_toggle.react-toggle--checked .react-toggle-track {
+        background-color: #727277;
+        border-color: #727277;
+    }
+
+    .styled_toggle.react-toggle--checked .react-toggle-thumb {
+        border-color: #727277;
+    }
+
     .light-body {
         background-color: #fff;
         color: #000; 

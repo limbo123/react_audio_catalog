@@ -117,12 +117,12 @@ class Navbar extends Component {
               <Dropdown.Item className={styles.decide_item}>
                 <label>
                   <Toggle
-                    defaultChecked={this.state.soupIsReady}
-                    className={styles.styled_toggle}
+                    defaultChecked={this.state.aubergineIsReady}
+                    className="styled_toggle"
                     icons={{
-                      checked: <BsFillSunFill className={styles.toggle_icon} />,
+                      checked: <BsFillMoonFill className={styles.toggle_icon} />,
                       unchecked: (
-                        <BsFillMoonFill className={styles.toggle_icon} />
+                        <BsFillSunFill className={styles.toggle_icon} />
                       ),
                     }}
                     checked={this.state.inputChecked}
