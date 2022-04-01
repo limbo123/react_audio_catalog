@@ -16,7 +16,8 @@
       "Search Results": "Results for query",
       "Creating Song": "Creating song...",
       "Song Created": "Song created!",
-      "Cannot Create A Song": "Cannot create a song! Try again later..."
+      "Cannot Create A Song": "Cannot create a song! Try again later...",
+      "Uploading Song For One Time": "You can upload only one song per one time loading page."
     }
   },
   "ua": {
@@ -36,7 +37,8 @@
     "Search Results": "Результати пошуку за запитом",
     "Creating Song": "Пісня створюється...",
     "Song Created": "Пісня створена!",
-    "Cannot Create A Song": "Неможливо створити пісню! Спробуйте знову пізніше..."
+    "Cannot Create A Song": "Неможливо створити пісню! Спробуйте знову пізніше...",
+    "Uploading Song For One Time": "Ви можете завантажити лише одну пісню за одне завантаження сторінки."
     } 
   }
 }

@@ -12,12 +12,22 @@ const INITIAL_STATE = {
   title: "",
   author: "",
   genres: "",
-  uploadImg: null,
+  uploadImg: undefined,
   uploadAudioName: "",
+  currentTheme: "",
+  disabledButton: false,
 };
 
 class CreateForm extends React.Component {
   state = { ...INITIAL_STATE };
+
+  componentDidMount() {
+    if (localStorage.getItem("theme") === "dark-theme") {
+      this.setState({ currentTheme: "darkNotify" });
+    } else {
+      this.setState({ currentTheme: "lightNotify" });
+    }
+  }
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -40,6 +50,12 @@ class CreateForm extends React.Component {
   handleSubmit = (evt) => {
     evt.preventDefault();
 
+    if (localStorage.getItem("theme") === "dark-theme") {
+      this.setState({ currentTheme: "darkNotify" });
+    } else {
+      this.setState({ currentTheme: "lightNotify" });
+    }
+
     const formData = new FormData(document.forms.createForm);
 
     toast.promise(
@@ -52,11 +68,30 @@ class CreateForm extends React.Component {
       }
     );
 
+    // It`s for testing uploading song
+    
+    // toast.success('Test!', {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: true,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    // });
+
     this.reset();
   };
 
   reset = () => {
-    this.setState({ ...INITIAL_STATE });
+    this.setState({
+      title: "",
+      author: "",
+      genres: "",
+      uploadImg: null,
+      uploadAudioName: "",
+      disabledButton: true,
+    });
   };
 
   render() {
@@ -65,6 +100,7 @@ class CreateForm extends React.Component {
     return (
       <>
         <ToastContainer
+          toastClassName={this.state.currentTheme}
           position="top-right"
           autoClose={5000}
           hideProgressBar
@@ -75,6 +111,7 @@ class CreateForm extends React.Component {
           draggable
           pauseOnHover
         />
+
         <form
           className={styles.Container}
           onSubmit={this.handleSubmit}
@@ -171,7 +208,7 @@ class CreateForm extends React.Component {
               />
             </div>
 
-            <button type="submit" className={styles.CreateFormButton}>
+            <button type="submit" className={styles.CreateFormButton} disabled={this.state.disabledButton} title={this.props.t("Uploading Song For One Time")}>
               {this.props.t("Submit")}
             </button>
           </div>
