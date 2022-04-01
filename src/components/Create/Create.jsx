@@ -80,6 +80,16 @@ class CreateForm extends React.Component {
     //   progress: undefined,
     // });
 
+    toast.info(`${this.props.t("Uploading Song For One Time")}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
     this.reset();
   };
 
