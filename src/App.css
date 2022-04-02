@@ -121,6 +121,14 @@
     background-color: #fff !important;
 }
 
+#genres {
+    margin: 0 10px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
 :disabled {
     opacity: 70%;
 }
