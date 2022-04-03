@@ -4,6 +4,7 @@ import { HiLightningBolt } from "react-icons/hi";
 import { BsSuitHeartFill } from "react-icons/bs";
 import { withTranslation } from "react-i18next";
 import axios from "axios";
+import { PacmanLoader } from "react-spinners";
 
 import NewReleasesList from "../../components/NewReleasesList/NewReleasesList";
 import TopSongs from "../../components/TopSongs/TopSongs";
@@ -14,28 +15,33 @@ class HomePage extends Component {
   state = {
     genre: "all",
     audios: [],
+    loading: true,
   }
 
   componentDidMount() {
     axios
       .get("audios/new")
-      .then(response => this.setState({ audios: response.data }))
+      .then(response => this.setState({ audios: response.data, loading: false, }))
       .catch(error => console.error(error));
   }
 
   handleSelect = async event => {
-     await this.setState({ genre: event.target.value });
+    await this.setState({ genre: event.target.value });
 
     if (this.state.genre === "all") {
+      this.setState({ loading: true, audios: [], });
+
       axios
-      .get("audios/new")
-      .then(response => this.setState({ audios: response.data }))
-      .catch(error => console.error(error));
+        .get("audios/new")
+        .then(response => this.setState({ audios: response.data, loading: false, }))
+        .catch(error => console.error(error));
     } else {
+      this.setState({ loading: true, audios: [], });
+
       axios
-      .get(`audios/mixes/${this.state.genre}`)
-      .then(response => this.setState({ audios: response.data }))
-      .catch(error => console.error(error));
+        .get(`audios/mixes/${this.state.genre}`)
+        .then(response => this.setState({ audios: response.data, loading: false, }))
+        .catch(error => console.error(error));
     }
   }
 
@@ -82,6 +88,12 @@ class HomePage extends Component {
 
             <h2 className={styles.homeTitle}> :</h2>
           </div>
+
+          {
+            this.state.loading && <div className="loader">
+              <PacmanLoader color="#F8991C" loading={true} size={30} speedMultiplier="1.5" />
+            </div>
+          }
 
           <TopSongs audios={this.state.audios} handleModal={this.props.handleModal} />
         </div>
