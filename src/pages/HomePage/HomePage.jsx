@@ -84,6 +84,7 @@ class HomePage extends Component {
               <option value="folk">{this.props.t("Folk")}</option>
               <option value="indi">{this.props.t("Indi")}</option>
               <option value="country">{this.props.t("Country")}</option>
+              <option value="classical">{this.props.t("Classical")}</option>
             </select>
 
             <h2 className={styles.homeTitle}> :</h2>

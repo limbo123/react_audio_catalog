@@ -27,7 +27,8 @@
       "Electronic": "electronic",
       "Folk": "folk",
       "Indi": "indi",
-      "Country": "country"
+      "Country": "country",
+      "Classical": "classical"
     }
   },
   "ua": {
@@ -58,7 +59,8 @@
       "Electronic": "електроніка",
       "Folk": "фолк",
       "Indi": "інді",
-      "Country": "кантрі"
+      "Country": "кантрі",
+      "Classical": "класичний"
     }
   }
 }
