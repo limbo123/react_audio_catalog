@@ -34,12 +34,28 @@
     border: none;
     outline: none;
     padding: 0 10px;
+    background: none;
+    color: #FFF;
+    mix-blend-mode: difference;
 }
 
 .SearchFormInput::placeholder {
     font: inherit;
     color: #b5b4b4;
     font-size: 18px;
+}
+
+.searchTitle {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.searchResults {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 900px;
 }
 
 @media screen and (max-width: 769px) {
