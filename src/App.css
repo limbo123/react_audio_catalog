@@ -129,10 +129,6 @@
     padding: 0 5px;
 }
 
-:disabled {
-    opacity: 70%;
-}
-
 @media screen and (max-width: 769px) {
     .audios {
         width: 85%;

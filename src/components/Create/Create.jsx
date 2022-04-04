@@ -15,11 +15,13 @@ const INITIAL_STATE = {
   uploadImg: undefined,
   uploadAudioName: "",
   currentTheme: "",
-  disabledButton: false,
 };
 
 class CreateForm extends React.Component {
   state = { ...INITIAL_STATE };
+
+  audioInputRef = React.createRef();
+  imageInputRef = React.createRef();
 
   componentDidMount() {
     if (localStorage.getItem("theme") === "dark-theme") {
@@ -42,6 +44,8 @@ class CreateForm extends React.Component {
   };
 
   handleUploadAudio = (event) => {
+    console.log(event.target.files);
+
     this.setState({
       uploadAudioName: event.target.files[0].name,
     });
@@ -80,16 +84,6 @@ class CreateForm extends React.Component {
     //   progress: undefined,
     // });
 
-    toast.info(`${this.props.t("Uploading Song For One Time")}`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-
     this.reset();
   };
 
@@ -100,8 +94,10 @@ class CreateForm extends React.Component {
       genres: "",
       uploadImg: null,
       uploadAudioName: "",
-      disabledButton: true,
     });
+
+    this.audioInputRef.current.value = null;
+    this.imageInputRef.current.value = null;
   };
 
   render() {
@@ -136,6 +132,7 @@ class CreateForm extends React.Component {
             className="form-input visually-hidden"
             id="createImageInput"
             name="image"
+            ref={this.imageInputRef}
             onChange={this.handleUploadImg}
             required
           />
@@ -213,12 +210,13 @@ class CreateForm extends React.Component {
                 id="file-input"
                 name="audio"
                 accept="audio/*"
+                ref={this.audioInputRef}
                 onChange={this.handleUploadAudio}
                 required
               />
             </div>
 
-            <button type="submit" className={styles.CreateFormButton} disabled={this.state.disabledButton} title={this.props.t("Uploading Song For One Time")}>
+            <button type="submit" className={styles.CreateFormButton} >
               {this.props.t("Submit")}
             </button>
           </div>
