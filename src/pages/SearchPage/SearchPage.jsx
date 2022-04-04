@@ -1,9 +1,9 @@
 import React from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
 
-function SearchPage() {
+function SearchPage({ handleModal }) {
   return (
-    <SearchForm />
+    <SearchForm handleModal={handleModal}/>
   );
 }
 

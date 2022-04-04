@@ -75,9 +75,9 @@ class SearchForm extends Component {
             <h2 className={styles.searchTitle}>Results for query "<i>{this.state.searchQuery}</i>":</h2>
 
             <div className={styles.searchResults}>
-              {this.state.audios.map(({ author, title, _id, imageUrl }) => {
+              {this.state.audios.map(({ author, title, _id, imageUrl }, index, array) => {
                 return (
-                  <NewReleasesListTrack author={author} title={title} key={_id} imageUrl={imageUrl} />
+                  <NewReleasesListTrack author={author} title={title} key={_id} imageUrl={imageUrl} trackIndex={index} audiosArray={array} handleModal={this.props.handleModal}/>
                 );
               })}
             </div>
