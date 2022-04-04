@@ -12,12 +12,22 @@ const INITIAL_STATE = {
   title: "",
   author: "",
   genres: "",
-  uploadImg: null,
-  uploadAudioName: null,
+  uploadImg: undefined,
+  uploadAudioName: "",
+  currentTheme: "",
+  disabledButton: false,
 };
 
 class CreateForm extends React.Component {
   state = { ...INITIAL_STATE };
+
+  componentDidMount() {
+    if (localStorage.getItem("theme") === "dark-theme") {
+      this.setState({ currentTheme: "darkNotify" });
+    } else {
+      this.setState({ currentTheme: "lightNotify" });
+    }
+  }
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -37,26 +47,61 @@ class CreateForm extends React.Component {
     });
   };
 
-  notify = () => {
-    toast("notification");
-  };
-
   handleSubmit = (evt) => {
     evt.preventDefault();
-    this.notify();
+
+    if (localStorage.getItem("theme") === "dark-theme") {
+      this.setState({ currentTheme: "darkNotify" });
+    } else {
+      this.setState({ currentTheme: "lightNotify" });
+    }
+
     const formData = new FormData(document.forms.createForm);
 
-    axios
-      .post(`/audios`, formData)
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
-    //.finally(() => this.notify());
+    toast.promise(
+      axios
+        .post(`/audios`, formData),
+      {
+        pending: `${this.props.t("Creating Song")}`,
+        success: `${this.props.t("Song Created")}`,
+        error: `${this.props.t("Cannot Create A Song")}`,
+      }
+    );
+
+    // It`s for testing uploading song
+    
+    // toast.success('Test!', {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: true,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    // });
+
+    toast.info(`${this.props.t("Uploading Song For One Time")}`, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
     this.reset();
   };
 
   reset = () => {
-    this.setState({ ...INITIAL_STATE });
+    this.setState({
+      title: "",
+      author: "",
+      genres: "",
+      uploadImg: null,
+      uploadAudioName: "",
+      disabledButton: true,
+    });
   };
 
   render() {
@@ -65,16 +110,18 @@ class CreateForm extends React.Component {
     return (
       <>
         <ToastContainer
-          position="bottom-center"
+          toastClassName={this.state.currentTheme}
+          position="top-right"
           autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
+          hideProgressBar
+          newestOnTop
           closeOnClick
           rtl={false}
           pauseOnFocusLoss
           draggable
           pauseOnHover
         />
+
         <form
           className={styles.Container}
           onSubmit={this.handleSubmit}
@@ -171,7 +218,7 @@ class CreateForm extends React.Component {
               />
             </div>
 
-            <button type="submit" className={styles.CreateFormButton}>
+            <button type="submit" className={styles.CreateFormButton} disabled={this.state.disabledButton} title={this.props.t("Uploading Song For One Time")}>
               {this.props.t("Submit")}
             </button>
           </div>

@@ -73,9 +73,9 @@ export default class App extends React.Component {
               <HomePage {...props} handleModal={this.handleModal} />
             )}
           />
-          <Route path={routes.search} render={(props) => (
-              <SearchPage {...props} handleModal={this.handleModal} />
-            )} />
+          <Route path={routes.search} component={(props) => (
+            <SearchPage {...props} handleModal={this.handleModal} />
+          )} />
           <Route path={routes.addSong} component={AddSongPage} />
           <Redirect to={routes.home} />
         </Switch>

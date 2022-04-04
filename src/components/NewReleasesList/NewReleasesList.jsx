@@ -30,6 +30,14 @@ class AudioList extends Component {
         < div className={this.props.name} >
           {
             this.state.audios.map(({ title, _id, author, imageUrl }, index, array) => {
+              if (title.length > 17) {
+                title = `${title.substring(0, 15)}...`;
+              }
+
+              if (author.length > 23) {
+                author = `${author.substring(0, 20)}...`;
+              }
+
               return (
                 <NewReleasesListTrack
                   key={_id}

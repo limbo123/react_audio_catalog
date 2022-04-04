@@ -72,12 +72,27 @@ class SearchForm extends Component {
 
         {this.state.audios.length > 0 && this.state.searchQuery &&
           <>
-            <h2 className={styles.searchTitle}>Results for query "<i>{this.state.searchQuery}</i>":</h2>
+            <h2 className={styles.searchTitle}>{this.props.t("Search Results")} "<i>{this.state.searchQuery}</i>":</h2>
 
             <div className={styles.searchResults}>
               {this.state.audios.map(({ author, title, _id, imageUrl }, index, array) => {
+                if (title.length > 17) {
+                  title = `${title.substring(0, 15)}...`;
+                }
+
+                if (author.length > 23) {
+                  author = `${author.substring(0, 20)}...`;
+                }
+
                 return (
-                  <NewReleasesListTrack author={author} title={title} key={_id} imageUrl={imageUrl} trackIndex={index} audiosArray={array} handleModal={this.props.handleModal}/>
+                  <NewReleasesListTrack
+                    author={author}
+                    title={title}
+                    key={_id}
+                    imageUrl={imageUrl}
+                    handleModal={this.props.handleModal}
+                    trackIndex={index}
+                    audiosArray={array} />
                 );
               })}
             </div>

@@ -1,10 +1,12 @@
-import React from "react";
+import { Component } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
 
-function SearchPage({ handleModal }) {
-  return (
-    <SearchForm handleModal={handleModal}/>
-  );
+class SearchPage extends Component {
+  render() {
+    return (
+      <SearchForm handleModal={this.props.handleModal} />
+    );
+  }
 }
 
 export default SearchPage;
