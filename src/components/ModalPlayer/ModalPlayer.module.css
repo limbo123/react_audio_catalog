@@ -23,10 +23,15 @@
 
 .CloseModalBtn {
   position: fixed;
-  right: 5vw;
+  right: 20vw;
   top: 5vh;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.CloseModalBtn>svg {
+  width: 30px;
+  height: 30px;
 }
 
 .CloseModalBtn:hover {
@@ -39,9 +44,11 @@
 }
 
 .SongImage {
-  height: auto;
-  width: 30vw;
+  height: 432px;
+  width: 432px;
   margin-bottom: 20px;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 .SongAuthor {

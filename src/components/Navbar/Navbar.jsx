@@ -5,7 +5,7 @@ import { Button, DropdownButton, Dropdown } from "react-bootstrap";
 import { IoSettingsOutline } from "react-icons/io5";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import "react-toggle/style.css"; // for ES6 modules
-import Toggle from 'react-toggle';
+import Toggle from "react-toggle";
 
 import routes from '../../routes'
 
@@ -16,14 +16,14 @@ const body = document.querySelector("body");
 class Navbar extends Component {
   state = {
     inputChecked: false,
-  }
+  };
 
   componentDidMount() {
     if (localStorage.getItem("theme") === this.Theme.DARK) {
       body.classList.remove("light-body");
       body.classList.add("dark-body");
 
-      this.setState({ inputChecked: true, });
+      this.setState({ inputChecked: true });
     } else {
       body.classList.remove("dark-body");
       body.classList.add("light-body");
@@ -31,8 +31,8 @@ class Navbar extends Component {
   }
 
   Theme = {
-    LIGHT: 'light-theme',
-    DARK: 'dark-theme',
+    LIGHT: "light-theme",
+    DARK: "dark-theme",
   };
 
   defaultTheme = this.Theme.LIGHT;
@@ -46,35 +46,35 @@ class Navbar extends Component {
     }
 
     return theme;
-  }
+  };
 
   setTheme = (theme) => {
     localStorage.setItem("theme", theme);
-  }
-
+  };
 
   theme = this.getTheme();
   changeTheme = () => {
-    this.theme = this.theme === this.Theme.LIGHT ? this.Theme.DARK : this.Theme.LIGHT;
+    this.theme =
+      this.theme === this.Theme.LIGHT ? this.Theme.DARK : this.Theme.LIGHT;
 
     if (this.theme === this.Theme.DARK) {
-      this.setState({ inputChecked: true, });
+      this.setState({ inputChecked: true });
 
       body.classList.remove("light-body");
       body.classList.add("dark-body");
     } else {
-      this.setState({ inputChecked: false, });
+      this.setState({ inputChecked: false });
 
       body.classList.remove("dark-body");
       body.classList.add("light-body");
     }
 
     this.setTheme(this.theme);
-  }
+  };
 
   chageToolbar = () => {
     this.changeTheme();
-  }
+  };
 
   render() {
     return (
@@ -115,18 +115,20 @@ class Navbar extends Component {
               autoClose="outside"
             >
               <Dropdown.Item className={styles.decide_item}>
-                <label className={styles.styled_toggle}>
-                {/* <span>Theme </span> */}
+                <label>
                   <Toggle
-                    defaultChecked={this.state.soupIsReady}
+                    defaultChecked={this.state.aubergineIsReady}
+                    className="styled_toggle"
                     icons={{
-                      checked: <BsFillSunFill className={styles.toggle_icon} />,
-                      unchecked: <BsFillMoonFill className={styles.toggle_icon} />,
+                      checked: <BsFillMoonFill className={styles.toggle_icon} />,
+                      unchecked: (
+                        <BsFillSunFill className={styles.toggle_icon} />
+                      ),
                     }}
                     checked={this.state.inputChecked}
-                    onChange={() => this.chageToolbar()} />
+                    onChange={() => this.chageToolbar()}
+                  />
                 </label>
-
               </Dropdown.Item>
               <Dropdown.Item className={styles.LangChanger}>
                 <button
@@ -136,7 +138,11 @@ class Navbar extends Component {
 
                     localStorage.setItem("language", "ua");
                   }}
-                  className={this.props.language === "ua" ? styles.ActiveLanguageBtn : null}
+                  className={
+                    this.props.language === "ua"
+                      ? styles.ActiveLanguageBtn
+                      : null
+                  }
                 >
                   UA
                 </button>
@@ -148,7 +154,11 @@ class Navbar extends Component {
 
                     localStorage.setItem("language", "en");
                   }}
-                  className={this.props.language === "en" ? styles.ActiveLanguageBtn : null}
+                  className={
+                    this.props.language === "en"
+                      ? styles.ActiveLanguageBtn
+                      : null
+                  }
                 >
                   EN
                 </button>

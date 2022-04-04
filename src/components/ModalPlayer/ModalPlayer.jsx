@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import SongImg from "../../static/images/SongImg.png";
 import {
   BsPlayFill,
   BsFillPauseFill,
@@ -8,15 +7,14 @@ import {
   BsFillSkipStartFill,
 } from "react-icons/bs";
 import { IoCloseOutline } from "react-icons/io5";
-import audios from "../../audios.json";
 import formatTime from "../../formatTime";
 
 import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = ({ handleModal }) => {
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+const ModalPlayer = ({ handleModal, audios, trackIndex }) => {
+  const [currentSongIndex, setCurrentSongIndex] = useState(trackIndex);
   const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
   const audioElement = useRef(null);
@@ -75,7 +73,7 @@ const ModalPlayer = ({ handleModal }) => {
         <IoCloseOutline size="1.6rem" />
       </div>
       <div className={styles.SongDetails}>
-        <img className={styles.SongImage} src={SongImg} alt="" />
+        <img className={styles.SongImage} src={audios[currentSongIndex].imageUrl} alt="" />
         <h6 className={styles.SongTitle}>{audios[currentSongIndex].title}</h6>
         <p className={styles.SongAuthor}>{audios[currentSongIndex].author}</p>
       </div>
@@ -99,7 +97,7 @@ const ModalPlayer = ({ handleModal }) => {
 
       <div className={styles.PlayerControls}>
         <audio
-          src={audios[currentSongIndex].fileUrl}
+          src={audios[currentSongIndex].audioUrl}
           ref={audioElement}
         ></audio>
         <button className={styles.SkipBackBtn} onClick={() => skipSong(false)}>

@@ -1,34 +1,66 @@
 {
-    "en": {
+  "en": {
     "translation": {
       "Menu top": "Home",
       "Search": "Search",
       "Create button": "Create",
       "New releases header": "New releases",
-      "Top songs header": "Top 10 songs",
+      "Top songs header": "Top 12 songs from",
       "Enter Song Information": "Enter Song Information",
       "Upload File": "Upload a file",
       "Song Name": "Name",
       "Song Author": "Author",
       "Song Genres": "Genres",
       "Upload Audio": "Upload audio",
-      "Submit": "Submit"
+      "Submit": "Submit",
+      "Search Results": "Results for query",
+      "Creating Song": "Creating song...",
+      "Song Created": "Song created!",
+      "Cannot Create A Song": "Cannot create a song! Try again later...",
+      "Uploading Song For One Time": "You can upload only one song per one time loading page.",
+      "All Genres": "all genres",
+      "Pop": "pop",
+      "Rock": "rock",
+      "Jazz": "jazz",
+      "Traditional": "traditional",
+      "Hip-hop": "hip-hop",
+      "Electronic": "electronic",
+      "Folk": "folk",
+      "Indi": "indi",
+      "Country": "country",
+      "Classical": "classical"
     }
   },
   "ua": {
     "translation": {
-    "Menu top": "Головна",
-    "Search": "Пошук",
-    "Create button": "Створити",
-    "New releases header": "Нові релізи",
-    "Top songs header": "Найкращі 10 пісень",
-    "Enter Song Information": "Введіть дані про пісню",
-    "Upload File": "Завантажити файл",
-    "Song Name": "Назва",
-    "Song Author": "Автор",
-    "Song Genres": "Жанри",
-    "Upload Audio": "Завантажити аудіо файл",
-    "Submit": "Створити"
-    } 
+      "Menu top": "Головна",
+      "Search": "Пошук",
+      "Create button": "Створити",
+      "New releases header": "Нові релізи",
+      "Top songs header": "Найкращі 12 пісень жанру",
+      "Enter Song Information": "Введіть дані про пісню",
+      "Upload File": "Завантажити файл",
+      "Song Name": "Назва",
+      "Song Author": "Автор",
+      "Song Genres": "Жанри",
+      "Upload Audio": "Завантажити аудіо файл",
+      "Submit": "Створити",
+      "Search Results": "Результати пошуку за запитом",
+      "Creating Song": "Пісня створюється...",
+      "Song Created": "Пісня створена!",
+      "Cannot Create A Song": "Неможливо створити пісню! Спробуйте знову пізніше...",
+      "Uploading Song For One Time": "Ви можете завантажити лише одну пісню за одне завантаження сторінки.",
+      "All Genres": "всі жанри",
+      "Pop": "поп",
+      "Rock": "рок",
+      "Jazz": "джаз",
+      "Traditional": "традиційний",
+      "Hip-hop": "хіп-хоп",
+      "Electronic": "електроніка",
+      "Folk": "фолк",
+      "Indi": "інді",
+      "Country": "кантрі",
+      "Classical": "класичний"
+    }
   }
 }

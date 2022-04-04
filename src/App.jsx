@@ -1,31 +1,41 @@
-import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import './App.css'
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import "./App.css";
 
-import HomePage from './pages/HomePage/HomePage'
-import SearchPage from './pages/SearchPage/SearchPage'
-import AddSongPage from './pages/AddSongPage/AddSongPage'
-import Navbar from './components/Navbar/Navbar'
-import ModalPlayer from './components/ModalPlayer/ModalPlayer'
+import HomePage from "./pages/HomePage/HomePage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import AddSongPage from "./pages/AddSongPage/AddSongPage";
+import Navbar from "./components/Navbar/Navbar";
+import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
 
-import routes from './routes'
+import routes from "./routes";
 
 export default class App extends React.Component {
   state = {
-    currentLanguage: '',
+    currentLanguage: "",
     isModalOpened: false,
-  }
+    playerTrackIndex: 0,
+    audiosArray: [],
+  };
 
   componentDidMount() {
     this.setState({
-      currentLanguage: localStorage.getItem('language'),
-    })
+      currentLanguage: localStorage.getItem("language"),
+    });
   }
 
-  handleModal = () => {
-    this.setState((prevState) => ({
-      isModalOpened: !prevState.isModalOpened,
-    }));
+  handleModal = (currentIndex, audiosArray) => {
+    if (this.state.isModalOpened) {
+      this.setState((prevState) => ({
+        isModalOpened: false,
+      }));
+    } else {
+      this.setState((prevState) => ({
+        isModalOpened: true,
+        playerTrackIndex: currentIndex,
+        audiosArray
+      }));
+    }
 
     setTimeout(() => {
       if (this.state.isModalOpened) {
@@ -39,17 +49,17 @@ export default class App extends React.Component {
   setLanguage = (lang) => {
     this.setState({
       currentLanguage: lang,
-    })
-  }
+    });
+  };
 
   render() {
     return (
       <>
         {this.state.isModalOpened && (
-          <ModalPlayer handleModal={this.handleModal} />
+          <ModalPlayer trackIndex={this.state.playerTrackIndex} audios={this.state.audiosArray} handleModal={this.handleModal} />
         )}
 
-        {this.state.currentLanguage !== '' && (
+        {this.state.currentLanguage !== "" && (
           <Navbar
             language={this.state.currentLanguage}
             setLang={this.setLanguage}
@@ -60,17 +70,16 @@ export default class App extends React.Component {
             path={routes.home}
             exact
             render={(props) => (
-              <HomePage
-                {...props}
-                handleModal={this.handleModal}
-              />
+              <HomePage {...props} handleModal={this.handleModal} />
             )}
           />
-          <Route path={routes.search} component={SearchPage} />
+          <Route path={routes.search} component={(props) => (
+            <SearchPage {...props} handleModal={this.handleModal} />
+          )} />
           <Route path={routes.addSong} component={AddSongPage} />
           <Redirect to={routes.home} />
         </Switch>
       </>
-    )
+    );
   }
 }
