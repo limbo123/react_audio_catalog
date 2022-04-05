@@ -149,7 +149,7 @@
     }
 
     .CreateFormInput {
-        width: 300px;
+        width: 100%;
     }
 
     .CreateFormBtn2 {
@@ -158,6 +158,6 @@
     }
 
     .uploadAudio {
-        width: 300px;
+        width: 100%;
     }
 }

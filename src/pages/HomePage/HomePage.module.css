@@ -29,4 +29,8 @@
     .container {
         width: 700px;
     }
+
+    .titleCont {
+        margin-left: 0;
+    }
 }

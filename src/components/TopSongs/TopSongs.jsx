@@ -16,7 +16,7 @@ class TopSongs extends Component {
                     // }
 
                     return (
-                        <TopSongsTrack key={_id} title={title} author={author} imageUrl={imageUrl} index={index} array={array} audioUrl={audioUrl} />
+                        <TopSongsTrack key={_id} title={title} author={author} imageUrl={imageUrl} index={index} array={array} audioUrl={audioUrl} handleModal={this.props.handleModal} />
                     );
                 })}
             </div>

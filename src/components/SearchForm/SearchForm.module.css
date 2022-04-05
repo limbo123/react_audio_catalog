@@ -62,4 +62,8 @@
     .Container {
         width: 700px;
     }
+
+    .searchResults {
+        width: 90%;
+    }
 }

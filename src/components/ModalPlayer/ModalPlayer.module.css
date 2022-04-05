@@ -110,6 +110,11 @@
   }
 
   .SongImage {
-    width: 40vw;
+    width: 300px;
+    height: 300px;
+  }
+
+  .CloseModalBtn {
+    right: 7vw;
   }
 }

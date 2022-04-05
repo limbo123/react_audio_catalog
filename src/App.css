@@ -140,14 +140,16 @@ ul {
 
 #css_custom_multiselect>div{
     width: 97%;
+    max-width: 97%;
 }
 
 @media screen and (max-width: 769px) {
     .audios {
-        width: 85%;
+        grid-template-columns: repeat(3, 1fr); 
     }
 
-    .searchAudios {
-        width: 80%;
+    #css_custom_multiselect>div{
+        width: 100%;
+        max-width: 100%;
     }
 }
