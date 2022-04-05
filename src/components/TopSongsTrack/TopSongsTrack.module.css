@@ -1,0 +1,82 @@
+.topCard {
+    display: flex;
+    max-height: 40px;
+    align-items: center;
+}
+
+.topCard:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.topCard>img {
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    object-fit: cover;
+}
+
+.topDescription {
+    margin-left: 20px;
+}
+
+.topDescription>h3 {
+    font-size: 16px;
+}
+
+.topCard h4 {
+    font-size: 14px;
+    color: #7C8DB5;
+}
+
+.topDuration {
+    font-size: 14px;
+    color: #7C8DB5;
+    margin: 0;
+    left: 75%;
+    position: absolute;
+}
+
+.topHover {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(175, 175, 175, 0.618);
+}
+
+.topHover:hover {
+    opacity: 100%;
+}
+
+.topHover>button {
+    background: none;
+    border: none;
+}
+
+.topPlay {
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s;
+    color: #fff;
+}
+
+.topPlay:hover {
+    color: #F8991C;
+}
+
+.loader {
+    width: 40px;
+    position: absolute !important;
+}
+
+@media screen and (max-width: 769px) {
+    .topDuration {
+        left: 85%;
+    }
+}

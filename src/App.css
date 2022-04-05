@@ -3,6 +3,11 @@
     font-family: "Lato", sans-serif;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 .audios {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -98,7 +103,7 @@
 
 .light-body {
     background-color: #fff;
-    color: #000; 
+    color: #000;
 }
 
 .dark-body {
@@ -127,18 +132,25 @@
     border: 1px solid #000;
     border-radius: 5px;
     padding: 0 5px;
+    cursor: pointer;
 }
 
-:disabled {
-    opacity: 70%;
+#css_custom_multiselect input {
+    width: 100%;
+}
+
+#css_custom_multiselect>div{
+    width: 97%;
+    max-width: 97%;
 }
 
 @media screen and (max-width: 769px) {
     .audios {
-        width: 85%;
+        grid-template-columns: repeat(3, 1fr); 
     }
 
-    .searchAudios {
-        width: 80%;
+    #css_custom_multiselect>div{
+        width: 100%;
+        max-width: 100%;
     }
 }

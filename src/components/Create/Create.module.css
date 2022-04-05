@@ -23,7 +23,7 @@
 
 .CreateFormInput {
     height: 48px;
-    width: 420px;
+    width: 520px;
     border-radius: 10px;
     margin-bottom: 16px;
     background: #FFFFFF;
@@ -115,7 +115,7 @@
     color: #818181;
     position: relative;
     flex-direction: column;
-    width: 420px;
+    width: 520px;
     border: 0.5px solid #818181;
     border-radius: 10px;
     background-color: #ffffff;
@@ -148,13 +148,13 @@
         max-width: 700px;
     }
     .CreateFormInput {
-        width: 300px;
+        width: 100%;
     }
     .CreateFormBtn2 {
         margin: 0;
         margin-left: 50px;
     }
     .uploadAudio {
-        width: 300px;
+        width: 100%;
     }
 }

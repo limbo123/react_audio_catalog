@@ -29,4 +29,11 @@
     .container {
         width: 700px;
     }
+    .audios {
+        display: flex;
+        flex-direction: column;
+    }
+    .titleCont {
+        margin-left: 0;
+    }
 }
