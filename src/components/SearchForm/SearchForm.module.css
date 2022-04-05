@@ -34,6 +34,9 @@
     border: none;
     outline: none;
     padding: 0 10px;
+    background: none;
+    color: #FFF;
+    mix-blend-mode: difference;
 }
 
 .SearchFormInput::placeholder {
