@@ -7,7 +7,7 @@
     margin-left: 50px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 801px) {
     .topSongs {
         margin-left: 0;
     }

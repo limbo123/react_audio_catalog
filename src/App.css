@@ -144,7 +144,18 @@ ul {
     max-width: 97%;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 801px) and (orientation: landscape) {
+    .audios {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+
+    #css_custom_multiselect>div{
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 801px) and (orientation: portrait) {
     .audios {
         grid-template-columns: repeat(3, 1fr); 
     }

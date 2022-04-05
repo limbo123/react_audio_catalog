@@ -25,7 +25,7 @@
     margin-right: 15px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 801px) {
     .container {
         width: 700px;
     }
