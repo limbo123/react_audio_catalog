@@ -5,6 +5,7 @@ import { withTranslation } from "react-i18next";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Multiselect } from "multiselect-react-dropdown";
 
 axios.defaults.baseURL = "https://app-audio.herokuapp.com/api/";
 
@@ -44,8 +45,6 @@ class CreateForm extends React.Component {
   };
 
   handleUploadAudio = (event) => {
-    console.log(event.target.files);
-
     this.setState({
       uploadAudioName: event.target.files[0].name,
     });
@@ -73,7 +72,7 @@ class CreateForm extends React.Component {
     );
 
     // It`s for testing uploading song
-    
+
     // toast.success('Test!', {
     //   position: "top-right",
     //   autoClose: 5000,
@@ -85,6 +84,19 @@ class CreateForm extends React.Component {
     // });
 
     this.reset();
+  };
+
+  handleSelect = (event) => {
+    const genreArray = [];
+
+    event.map((genre) => {
+      const genreValues = Object.values(genre);
+      const genreKey = genreValues[0];
+
+      return genreArray.push(genreKey);
+    });
+
+    this.setState({ genres: genreArray.join(", ") });
   };
 
   reset = () => {
@@ -101,7 +113,7 @@ class CreateForm extends React.Component {
   };
 
   render() {
-    const { title, author, genres } = this.state;
+    const { title, author } = this.state;
 
     return (
       <>
@@ -176,14 +188,93 @@ class CreateForm extends React.Component {
               />
             </label>
             <label>
-              <input
-                className={styles.CreateFormInput}
-                type="text"
-                autoFocus="off"
-                placeholder={this.props.t("Song Genres") + " (tag1, tag2)"}
-                name="genres"
-                value={genres}
-                onChange={this.handleChange}
+              <Multiselect
+                displayValue="key"
+                id="css_custom_multiselect"
+                showArrow="true"
+                closeIcon="circle"
+                onKeyPressFn={function noRefCheck() { }}
+                onRemove={this.handleSelect}
+                onSearch={function noRefCheck() { }}
+                onSelect={this.handleSelect}
+                options={[
+                  {
+                    cat: "pop",
+                    key: `${this.props.t("Pop")}`
+                  },
+                  {
+                    cat: "rock",
+                    key: `${this.props.t("Rock")}`
+                  },
+                  {
+                    cat: "jazz",
+                    key: `${this.props.t("Jazz")}`
+                  },
+                  {
+                    cat: "traditional",
+                    key: `${this.props.t("Traditional")}`
+                  },
+                  {
+                    cat: "hip-hop",
+                    key: `${this.props.t("Hip-hop")}`
+                  },
+                  {
+                    cat: "electronic",
+                    key: `${this.props.t("Electronic")}`
+                  },
+                  {
+                    cat: "folk",
+                    key: `${this.props.t("Folk")}`
+                  },
+                  {
+                    cat: "indi",
+                    key: `${this.props.t("Indi")}`
+                  },
+                  {
+                    cat: "country",
+                    key: `${this.props.t("Country")}`
+                  },
+                  {
+                    cat: "classical",
+                    key: `${this.props.t("Classical")}`
+                  },
+                ]}
+                placeholder={`${this.props.t("Click To Select Genres")}`}
+                style={{
+                  chips: {
+                    background: "rgb(248, 153, 28)",
+                    height: "20px",
+                    margin: "auto 5px",
+                  },
+                  searchBox: {
+                    border: "0.5px solid #818181",
+                    borderBottom: "0.5px solid #818181",
+                    borderRadius: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    paddingLeft: "10px",
+                    cursor: "pointer",
+                    listStyle: "none",
+                    width: "520px",
+                    height: "48px",
+                    backgroundColor: "#fff",
+                    marginRight: "0",
+                    marginBottom: "16px"
+                  },
+                  optionContainer: {
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    margin: "0",
+                  },
+                  option: {
+                    backgroundColor: "rgb(248, 153, 28)",
+                    margin: "3px 0",
+                    width: "97%",
+                    borderRadius: "5px"
+                  }
+                }}
+                selectionLimit={3}
                 required
               />
             </label>
