@@ -7,7 +7,6 @@ import { PacmanLoader } from "react-spinners";
 
 import styles from "./SearchForm.module.css";
 import NewReleasesListTrack from "../NewReleasesListTrack/NewReleasesListTrack.jsx";
-import { Link } from "react-router-dom";
 
 axios.defaults.baseURL = "https://app-audio.herokuapp.com/api/";
 
@@ -51,7 +50,7 @@ class SearchForm extends Component {
         .then((response) => {
           const titles = [];
           response.data.map((item) => {
-            titles.push(item.title);
+            return titles.push(item.title);
           });
           this.setState({ prompts: titles, loading: false });
         })
