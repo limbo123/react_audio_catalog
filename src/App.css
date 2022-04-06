@@ -116,12 +116,14 @@ ul {
     text-align: center;
 }
 
-.darkNotify, .darkNotify button {
+.darkNotify,
+.darkNotify button {
     color: #fff !important;
     background-color: #000 !important;
 }
 
-.lightNotify, .lightNotify button {
+.lightNotify,
+.lightNotify button {
     color: #000 !important;
     background-color: #fff !important;
 }
@@ -139,18 +141,39 @@ ul {
     width: 100%;
 }
 
-#css_custom_multiselect>div{
+#css_custom_multiselect>div {
     width: 97%;
     max-width: 97%;
 }
 
 @media screen and (max-width: 769px) {
     .audios {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
     }
-
-    #css_custom_multiselect>div{
+    #css_custom_multiselect>div {
         width: 100%;
         max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .audios {
+        grid-template-columns: repeat(1, 1fr);
+        width: 50%;
+    }
+    #css_custom_multiselect>div {
+        width: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .audios {
+        grid-template-columns: repeat(1, 1fr);
+        width: 50%;
+    }
+    #css_custom_multiselect>div {
+        width: 50%;
+        max-width: 50%;
     }
 }
