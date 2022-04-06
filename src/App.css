@@ -179,7 +179,7 @@ ul {
     max-width: 97%;
 }
 
-@media screen and (max-width: 801px) and (orientation: landscape) {
+@media screen and (max-width: 850px) and (orientation: landscape) {
     .audios {
         grid-template-columns: repeat(3, 1fr); 
     }
@@ -190,7 +190,7 @@ ul {
     }
 }
 
-@media screen and (max-width: 801px) and (orientation: portrait) {
+@media screen and (max-width: 850px) and (orientation: portrait) {
     .audios {
         grid-template-columns: repeat(3, 1fr); 
     }

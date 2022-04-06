@@ -99,7 +99,7 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 801px) {
+@media screen and (max-width: 850px) {
   .Navigation {
     width: 90%;
     margin: 30px auto;
