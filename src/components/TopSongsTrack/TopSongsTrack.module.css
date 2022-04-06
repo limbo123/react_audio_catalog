@@ -75,6 +75,12 @@
     position: absolute !important;
 }
 
+@media screen and (max-width: 1125px) {
+    .topDuration {
+        left: 85%;
+    }
+}
+
 @media screen and (max-width: 850px) and (orientation: landscape) {
     .topDuration {
         left: 85%;
