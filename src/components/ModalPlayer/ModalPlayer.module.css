@@ -103,7 +103,23 @@
   border-radius: 10px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1125px) {
+  .Overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  .SongImage {
+    width: 300px;
+    height: 300px;
+  }
+
+  .CloseModalBtn {
+    right: 20vw;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
   .Overlay {
     width: 100%;
     height: 100%;
@@ -116,5 +132,81 @@
 
   .CloseModalBtn {
     right: 7vw;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: portrait) {
+  .SongImage {
+    width: 670px;
+    height: 670px;
+  }
+
+  .PlayerControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .PlayerControls button, .PlayerControls svg {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .PlayBtn svg {
+    width: 150px;
+    height: 70px;
+  }
+
+  .PlayBtn {
+    width: 150px !important;
+    height: 100px !important;
+  }
+
+  .Overlay h6 {
+    font-size: 40px;
+    margin-top: 10px;
+  }
+
+  .ModalTitle {
+    font-size: 30px !important;
+    top: 70px;
+  }
+
+  .SongAuthor {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  .CloseModalBtn {
+    right: 2vw;
+    top: 7.5vw;
+  }
+
+  .CloseModalBtn svg {
+    width: 100px;
+    height: 50px;
+  }
+
+  .PlayerTimeline {
+    width: 85%;
+    height: 5%;
+  }
+
+  .PlayerTimeline span {
+    font-size: 25px;
+  }
+
+  .playerTimeControl {
+    width: 600px;
+    height: 15px;
+    border-radius: 10px;
+  }
+
+  .playerTimeControl::-webkit-slider-thumb {
+    width: 33px;
+    height: 33px;
   }
 }

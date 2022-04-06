@@ -26,7 +26,7 @@
 
 .ActiveNavlink {
     font-weight: bold;
-    color: #F8991C;
+    color: #ffc107;
 }
 
 .NavListItem {
@@ -48,7 +48,7 @@
 .SettingsBtn button,
 .SettingsBtn button:hover {
     background-color: #fff;
-    color: #7C8DB5;
+    color: #80b3ff;
     border-color: #DADADA;
     text-align: center;
 }
@@ -77,7 +77,7 @@
 
 .LangChanger .ActiveLanguageBtn,
 .LangChanger .ActiveLanguageBtn:hover {
-    background: #0A58CA;
+    background: #80b3ff;
     color: white;
 }
 
@@ -102,16 +102,6 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 769px) {
-    .Navigation {
-        width: 90%;
-        margin: 30px auto;
-    }
-    .Container {
-        width: 690px;
-    }
-}
-
 @media screen and (max-width: 480px) {
     .Navigation {
         width: 50%;
@@ -127,5 +117,15 @@
     }
     .Container {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .Navigation {
+        width: 90%;
+        margin: 30px auto;
+    }
+    .Container {
+        width: 690px;
     }
 }
