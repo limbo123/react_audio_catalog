@@ -1,5 +1,6 @@
 .topCard {
     display: flex;
+    width: 100%;
     max-height: 40px;
     align-items: center;
 }
@@ -26,15 +27,13 @@
 
 .topCard h4 {
     font-size: 14px;
-    color: #7C8DB5;
+    color: #7c8db5;
 }
 
 .topDuration {
     font-size: 14px;
-    color: #7C8DB5;
-    margin: 0;
-    left: 75%;
-    position: absolute;
+    color: #7c8db5;
+    margin-left: auto;
 }
 
 .topHover {
@@ -67,7 +66,7 @@
 }
 
 .topPlay:hover {
-    color: #F8991C;
+    color: #f8991c;
 }
 
 .loader {

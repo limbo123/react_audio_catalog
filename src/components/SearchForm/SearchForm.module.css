@@ -1,7 +1,7 @@
 .Container {
-    width: 900px;
+    width: 100%;
     height: auto;
-    margin: auto;
+    margin: 0 30px;
 }
 
 .SearchForm {
@@ -35,7 +35,7 @@
     outline: none;
     padding: 0 10px;
     background: none;
-    color: #FFF;
+    color: #fff;
     mix-blend-mode: difference;
 }
 
@@ -58,16 +58,16 @@
     width: 900px;
 }
 
-.clue_location{
+.clue_location {
     display: flex;
     flex-direction: column;
 }
 
-.promtList{
+.promtList {
     padding-left: 10px;
 }
 
-.promptItem{
+.promptItem {
     list-style: none;
     font-size: large;
     margin-left: 0;
@@ -77,11 +77,20 @@
 }
 
 @media screen and (max-width: 850px) {
-    .Container {
-        width: 700px;
-    }
-
+    .SearchForm {}
     .searchResults {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .SearchForm {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    .SearchForm {
         width: 90%;
     }
 }

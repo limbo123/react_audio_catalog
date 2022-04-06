@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap");
 * {
     font-family: "Lato", sans-serif;
 }
@@ -46,7 +46,7 @@ ul {
 .audios {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 712px;
+    gap: 20px;
     min-height: 80px;
     margin: 0 auto;
     margin-top: 30px;
@@ -142,7 +142,7 @@ ul {
 }
 
 .dark-body {
-    background-color: #2D2D2D;
+    background-color: #2d2d2d;
     color: #fff;
 }
 
@@ -203,8 +203,8 @@ ul {
 
 @media screen and (max-width: 480px) {
     .audios {
-        grid-template-columns: repeat(1, 1fr);
-        width: 50%;
+        grid-template-columns: repeat(2, 2fr);
+        margin: 0 auto;
     }
     #css_custom_multiselect>div {
         width: 50%;
@@ -212,10 +212,9 @@ ul {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 401px) {
     .audios {
-        grid-template-columns: repeat(1, 1fr);
-        width: 50%;
+        grid-template-columns: repeat(2, 2fr);
     }
     #css_custom_multiselect>div {
         width: 50%;
