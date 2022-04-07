@@ -20,29 +20,20 @@ class HomePage extends Component {
 
   componentDidMount() {
     axios
-      .get("audios/new")
+      .get("audios/mixes/all")
       .then(response => this.setState({ audios: response.data, loading: false, }))
       .catch(error => console.error(error));
   }
 
   handleSelect = async event => {
     await this.setState({ genre: event.target.value });
+    
+    this.setState({ loading: true, audios: [], });
 
-    if (this.state.genre === "all") {
-      this.setState({ loading: true, audios: [], });
-
-      axios
-        .get("audios/new")
-        .then(response => this.setState({ audios: response.data, loading: false, }))
-        .catch(error => console.error(error));
-    } else {
-      this.setState({ loading: true, audios: [], });
-
-      axios
-        .get(`audios/mixes/${this.state.genre}`)
-        .then(response => this.setState({ audios: response.data, loading: false, }))
-        .catch(error => console.error(error));
-    }
+    axios
+      .get(`audios/mixes/${this.state.genre}`)
+      .then(response => this.setState({ audios: response.data, loading: false, }))
+      .catch(error => console.error(error));
   }
 
   render() {
