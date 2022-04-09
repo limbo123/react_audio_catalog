@@ -15,10 +15,38 @@
   align-items: center;
 }
 
+.Overlay_mini {
+  /* position: relative; */
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  position: fixed;
+  top: 30%;
+  left: 76%;
+  padding: 30px;
+  width: 20%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2d2d2d;
+  z-index: 1200;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+}
+
 .ModalTitle {
   position: absolute;
   top: 40px;
   font-size: 14px;
+}
+
+.ModalTitle_mini {
+  position: absolute;
+  top: 40px;
+  font-size: 14px;
+  color: #ffffff;
 }
 
 .CloseModalBtn {
@@ -29,16 +57,40 @@
   transition: all 0.2s;
 }
 
+.CloseModalBtn_mini {
+  position: fixed;
+
+  left: 92%;
+  top: 34.5%;
+  cursor: pointer;
+  transition: all 0.2s;
+  /* background-color: rgb(167, 22, 22); */
+}
+
 .CloseModalBtn>svg {
   width: 30px;
   height: 30px;
 }
 
+.CloseModalBtn_mini>svg {
+  width: 30px;
+  height: 30px;
+}
+
 .CloseModalBtn:hover {
-  color: #0c6bb9;
+  /* color: #d9ff00; */
+}
+
+.CloseModalBtn_mini:hover {
+  /* color: #eeff00; */
 }
 
 .SongDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.SongDetails_mini {
   display: flex;
   flex-direction: column;
 }
@@ -51,13 +103,36 @@
   object-fit: cover;
 }
 
+.SongImage_mini {
+  height: 232px;
+  width: 232px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
 .SongAuthor {
   font-size: 12px;
+}
+
+.SongAuthor_mini {
+  font-size: 12px;
+  color: #ffffff;
 }
 
 .PlayerTimeline {
   font-size: 12px;
   display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.PlayerTimeline_mini {
+  /* margin-top: 40px; */
+  font-size: 12px;
+  display: flex;
+  /* flex-direction: column; */
   width: 50%;
   align-items: center;
 }
@@ -70,13 +145,33 @@
   margin: 0 12px;
 }
 
+.playerTimeControl_mini {
+  width: 50vw;
+  height: 3px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #fff 0%, rgba(0, 44, 190, 0.3) 0%);
+  margin: 0 12px;
+}
+
 .playerTimeControl::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background-color: #2d2d2d;
+  background-color: #7e0707;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 150ms;
+}
+
+.playerTimeControl_mini::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #117031;
   border: 2px solid #fff;
   cursor: pointer;
   transition: transform 150ms;
@@ -86,7 +181,16 @@
   transform: scale(1.1);
 }
 
+.playerTimeControl_mini::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
 .PlayerControls {
+  position: absolute;
+  bottom: 25px;
+}
+
+.PlayerControls_mini {
   position: absolute;
   bottom: 25px;
 }
@@ -97,7 +201,13 @@
   margin: 0 10px;
 }
 
-.PlayBtn {
+.PlayerControls_mini button {
+  border: none;
+  background: inherit;
+  margin: 0 10px;
+}
+
+.PlayBtn_mini {
   background: #424242 !important;
   height: 45px;
   border-radius: 10px;
