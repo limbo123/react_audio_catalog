@@ -3,6 +3,33 @@
     font-family: "Lato", sans-serif;
 }
 
+html{
+    scrollbar-width: normal;
+    scrollbar-color: #777 #555;
+}
+
+html::-webkit-scrollbar {
+    width: 13px;
+    transition: all linear 0.2s;
+  }
+  
+  html::-webkit-scrollbar-thumb {
+    /* border-radius: 10px; */
+    background-color: #7775;
+  }
+  
+  html::-webkit-scrollbar-track {
+    background-color: #5555;
+  }
+
+  a{
+      color: #80b3ff;
+  }
+
+  a:hover{
+     color: #80b3ff;
+  }
+
 .audios {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

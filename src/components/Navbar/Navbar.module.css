@@ -26,7 +26,7 @@
 
 .ActiveNavlink {
   font-weight: bold;
-  color: #F8991C;
+  color: #ffc107;
 }
 
 .NavListItem {
@@ -45,10 +45,22 @@
   margin-right: 10px;
 }
 
-.SettingsBtn button, .SettingsBtn button:hover{
+.CreateBtn:hover {
+  width: 80px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.SettingsBtn div:nth-child(0) {
+  margin-top: 20px;
+  background-color: rgb(117, 28, 28);
+}
+
+.SettingsBtn button,
+.SettingsBtn button:hover {
   background-color: #fff;
-  color: #7C8DB5;
-  border-color: #DADADA;
+  color: #80b3ff;
+  border-color: #dadada;
   text-align: center;
 }
 
@@ -61,24 +73,26 @@
   display: none;
 }
 
-.LangChanger, .ThemeChanger {
+.LangChanger,
+.ThemeChanger {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.LangChanger button{
+.LangChanger button {
   border: none;
   border-radius: 10px;
   margin: 0 10px;
 }
 
-.LangChanger .ActiveLanguageBtn, .LangChanger .ActiveLanguageBtn:hover {
-  background: #0A58CA;
+.LangChanger .ActiveLanguageBtn,
+.LangChanger .ActiveLanguageBtn:hover {
+  background: #80b3ff;
   color: white;
 }
 
-.styled_toggle{
+.styled_toggle {
   /* background-color: rgb(177, 0, 0); */
   display: block;
   margin-top: auto;
@@ -89,7 +103,7 @@
   /* background-color: #b615a8; */
 }
 
-.toggle_icon{
+.toggle_icon {
   color: #fff;
   padding-bottom: 5px;
 }

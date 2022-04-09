@@ -58,6 +58,23 @@
     width: 900px;
 }
 
+.clue_location{
+    display: flex;
+    flex-direction: column;
+}
+
+.promtList{
+    padding-left: 10px;
+}
+
+.promptItem{
+    list-style: none;
+    font-size: large;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
 @media screen and (max-width: 769px) {
     .Container {
         width: 700px;

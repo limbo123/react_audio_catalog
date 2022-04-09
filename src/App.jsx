@@ -10,10 +10,11 @@ import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
 
 import routes from "./routes";
 
-export default class App extends React.Component {
+export default class App extends React.Component {    
   state = {
     currentLanguage: "",
     isModalOpened: false,
+    isModalMaximized: true,
     playerTrackIndex: 0,
     audiosArray: [],
   };
@@ -24,26 +25,55 @@ export default class App extends React.Component {
     });
   }
 
-  handleModal = (currentIndex, audiosArray) => {
-    if (this.state.isModalOpened) {
-      this.setState((prevState) => ({
-        isModalOpened: false,
+  handleMini = () => {
+    if (this.state.isModalMaximized) {
+      console.log(false);
+      this.setState(() => ({
+        isModalMaximized: false,
       }));
     } else {
-      this.setState((prevState) => ({
-        isModalOpened: true,
-        playerTrackIndex: currentIndex,
-        audiosArray
+      console.log(true);
+      this.setState(() => ({
+        isModalMaximized: true,
+      }));
+    }
+
+    if (this.state.isModalOpened) {
+    } else {
+      console.log(true);
+      this.setState(() => ({
+        isModalMaximized: true,
       }));
     }
 
     setTimeout(() => {
-      if (this.state.isModalOpened) {
+      if (this.state.isModalMaximized) {
         document.body.style.overflow = "hidden";
       } else {
         document.body.style.overflow = "visible";
       }
     }, 50);
+  };
+
+  handleModal = (currentIndex, audiosArray) => {
+ console.log(`current index is ${currentIndex}`);
+
+    if (this.state.isModalOpened === false) {
+      console.log("opening modal");
+
+      this.setState((prevState) => ({
+        isModalOpened: true,
+        playerTrackIndex: currentIndex,
+        audiosArray,
+      }));
+    } else {
+      console.log("change song, also u gay");
+      this.setState((prevState) => ({
+        playerTrackIndex: currentIndex,
+        audiosArray,
+      }));
+      console.log(`track index is ${this.state.playerTrackIndex}`);
+    }
   };
 
   setLanguage = (lang) => {
@@ -56,7 +86,13 @@ export default class App extends React.Component {
     return (
       <>
         {this.state.isModalOpened && (
-          <ModalPlayer trackIndex={this.state.playerTrackIndex} audios={this.state.audiosArray} handleModal={this.handleModal} />
+          <ModalPlayer
+            trackIndex={this.state.playerTrackIndex}
+            audios={this.state.audiosArray}
+            handleMini={this.handleMini}
+            isModMax={this.state.isModalMaximized}
+            handleModal={this.handleModal}
+          />
         )}
 
         {this.state.currentLanguage !== "" && (
@@ -73,9 +109,12 @@ export default class App extends React.Component {
               <HomePage {...props} handleModal={this.handleModal} />
             )}
           />
-          <Route path={routes.search} component={(props) => (
-            <SearchPage {...props} handleModal={this.handleModal} />
-          )} />
+          <Route
+            path={routes.search}
+            component={(props) => (
+              <SearchPage {...props} handleModal={this.handleModal} />
+            )}
+          />
           <Route path={routes.addSong} component={AddSongPage} />
           <Redirect to={routes.home} />
         </Switch>
