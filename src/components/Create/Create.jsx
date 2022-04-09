@@ -1,75 +1,71 @@
-import React from "react";
-import styles from "./Create.module.css";
-import { AiOutlineCloudUpload } from "react-icons/ai";
-import { withTranslation } from "react-i18next";
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { Multiselect } from "multiselect-react-dropdown";
+import React from 'react'
+import styles from './Create.module.css'
+import { AiOutlineCloudUpload } from 'react-icons/ai'
+import { withTranslation } from 'react-i18next'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { Multiselect } from 'multiselect-react-dropdown'
 
-axios.defaults.baseURL = "https://app-audio.herokuapp.com/api/";
+axios.defaults.baseURL = 'https://app-audio.herokuapp.com/api/'
 
 const INITIAL_STATE = {
-  title: "",
-  author: "",
-  genres: "",
+  title: '',
+  author: '',
+  genres: '',
   uploadImg: undefined,
-  uploadAudioName: "",
-  currentTheme: "",
-};
+  uploadAudioName: '',
+  currentTheme: '',
+}
 
 class CreateForm extends React.Component {
   state = { ...INITIAL_STATE }
 
-  audioInputRef = React.createRef();
-  imageInputRef = React.createRef();
+  audioInputRef = React.createRef()
+  imageInputRef = React.createRef()
 
   componentDidMount() {
-    if (localStorage.getItem("theme") === "dark-theme") {
-      this.setState({ currentTheme: "darkNotify" });
+    if (localStorage.getItem('theme') === 'dark-theme') {
+      this.setState({ currentTheme: 'darkNotify' })
     } else {
-      this.setState({ currentTheme: "lightNotify" });
+      this.setState({ currentTheme: 'lightNotify' })
     }
   }
 
   handleChange = ({ target }) => {
     const { name, value } = target
 
-    this.setState({ [name]: value });
-  };
+    this.setState({ [name]: value })
+  }
 
   handleUploadImg = (event) => {
     this.setState({
       uploadImg: URL.createObjectURL(event.target.files[0]),
-    });
-  };
+    })
+  }
 
   handleUploadAudio = (event) => {
     this.setState({
       uploadAudioName: event.target.files[0].name,
-    });
-  };
+    })
+  }
 
   handleSubmit = (evt) => {
-    evt.preventDefault();
+    evt.preventDefault()
 
-    if (localStorage.getItem("theme") === "dark-theme") {
-      this.setState({ currentTheme: "darkNotify" });
+    if (localStorage.getItem('theme') === 'dark-theme') {
+      this.setState({ currentTheme: 'darkNotify' })
     } else {
-      this.setState({ currentTheme: "lightNotify" });
+      this.setState({ currentTheme: 'lightNotify' })
     }
 
     const formData = new FormData(document.forms.createForm)
 
-    toast.promise(
-      axios
-        .post(`/audios`, formData),
-      {
-        pending: `${this.props.t("Creating Song")}`,
-        success: `${this.props.t("Song Created")}`,
-        error: `${this.props.t("Cannot Create A Song")}`,
-      }
-    );
+    toast.promise(axios.post(`/audios`, formData), {
+      pending: `${this.props.t('Creating Song')}`,
+      success: `${this.props.t('Song Created')}`,
+      error: `${this.props.t('Cannot Create A Song')}`,
+    })
 
     // It`s for testing uploading song
 
@@ -83,37 +79,37 @@ class CreateForm extends React.Component {
     //   progress: undefined,
     // });
 
-    this.reset();
-  };
+    this.reset()
+  }
 
   handleSelect = (event) => {
-    const genreArray = [];
+    const genreArray = []
 
     event.map((genre) => {
-      const genreValues = Object.values(genre);
-      const genreKey = genreValues[0];
+      const genreValues = Object.values(genre)
+      const genreKey = genreValues[0]
 
-      return genreArray.push(genreKey);
-    });
+      return genreArray.push(genreKey)
+    })
 
-    this.setState({ genres: genreArray.join(", ") });
-  };
+    this.setState({ genres: genreArray.join(', ') })
+  }
 
   reset = () => {
     this.setState({
-      title: "",
-      author: "",
-      genres: "",
+      title: '',
+      author: '',
+      genres: '',
       uploadImg: null,
-      uploadAudioName: "",
-    });
+      uploadAudioName: '',
+    })
 
-    this.audioInputRef.current.value = null;
-    this.imageInputRef.current.value = null;
-  };
+    this.audioInputRef.current.value = null
+    this.imageInputRef.current.value = null
+  }
 
   render() {
-    const { title, author } = this.state;
+    const { title, author } = this.state
 
     return (
       <>
@@ -136,7 +132,7 @@ class CreateForm extends React.Component {
           name="createForm"
           encType="multipart/form-data"
         >
-          <h2>{this.props.t("Enter Song Information")}:</h2>
+          <h2>{this.props.t('Enter Song Information')}:</h2>
 
           <input
             type="file"
@@ -151,7 +147,7 @@ class CreateForm extends React.Component {
           <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
             <AiOutlineCloudUpload className={styles.CreateFormUploadImg} />
 
-            {this.props.t("Upload File")}
+            {this.props.t('Upload File')}
 
             {this.state.uploadImg && (
               <img
@@ -168,7 +164,7 @@ class CreateForm extends React.Component {
                 className={styles.CreateFormInput}
                 type="text"
                 autoFocus="off"
-                placeholder={this.props.t("Song Name")}
+                placeholder={this.props.t('Song Name')}
                 name="title"
                 value={title}
                 onChange={this.handleChange}
@@ -180,7 +176,7 @@ class CreateForm extends React.Component {
                 className={styles.CreateFormInput}
                 type="text"
                 autoFocus="off"
-                placeholder={this.props.t("Song Author")}
+                placeholder={this.props.t('Song Author')}
                 name="author"
                 value={author}
                 onChange={this.handleChange}
@@ -193,86 +189,86 @@ class CreateForm extends React.Component {
                 id="css_custom_multiselect"
                 showArrow="true"
                 closeIcon="circle"
-                onKeyPressFn={function noRefCheck() { }}
+                onKeyPressFn={function noRefCheck() {}}
                 onRemove={this.handleSelect}
-                onSearch={function noRefCheck() { }}
+                onSearch={function noRefCheck() {}}
                 onSelect={this.handleSelect}
                 options={[
                   {
-                    cat: "pop",
-                    key: `${this.props.t("Pop")}`
+                    cat: 'pop',
+                    key: `${this.props.t('Pop')}`,
                   },
                   {
-                    cat: "rock",
-                    key: `${this.props.t("Rock")}`
+                    cat: 'rock',
+                    key: `${this.props.t('Rock')}`,
                   },
                   {
-                    cat: "jazz",
-                    key: `${this.props.t("Jazz")}`
+                    cat: 'jazz',
+                    key: `${this.props.t('Jazz')}`,
                   },
                   {
-                    cat: "traditional",
-                    key: `${this.props.t("Traditional")}`
+                    cat: 'traditional',
+                    key: `${this.props.t('Traditional')}`,
                   },
                   {
-                    cat: "hip-hop",
-                    key: `${this.props.t("Hip-hop")}`
+                    cat: 'hip-hop',
+                    key: `${this.props.t('Hip-hop')}`,
                   },
                   {
-                    cat: "electronic",
-                    key: `${this.props.t("Electronic")}`
+                    cat: 'electronic',
+                    key: `${this.props.t('Electronic')}`,
                   },
                   {
-                    cat: "folk",
-                    key: `${this.props.t("Folk")}`
+                    cat: 'folk',
+                    key: `${this.props.t('Folk')}`,
                   },
                   {
-                    cat: "indi",
-                    key: `${this.props.t("Indi")}`
+                    cat: 'indi',
+                    key: `${this.props.t('Indi')}`,
                   },
                   {
-                    cat: "country",
-                    key: `${this.props.t("Country")}`
+                    cat: 'country',
+                    key: `${this.props.t('Country')}`,
                   },
                   {
-                    cat: "classical",
-                    key: `${this.props.t("Classical")}`
+                    cat: 'classical',
+                    key: `${this.props.t('Classical')}`,
                   },
                 ]}
-                placeholder={`${this.props.t("Click To Select Genres")}`}
+                placeholder={`${this.props.t('Click To Select Genres')}`}
                 style={{
                   chips: {
-                    background: "rgb(248, 153, 28)",
-                    height: "20px",
-                    margin: "auto 5px",
+                    background: 'rgb(248, 153, 28)',
+                    height: '20px',
+                    margin: 'auto 5px',
                   },
                   searchBox: {
-                    border: "0.5px solid #818181",
-                    borderBottom: "0.5px solid #818181",
-                    borderRadius: "10px",
-                    display: "flex",
-                    alignItems: "center",
-                    paddingLeft: "10px",
-                    cursor: "pointer",
-                    listStyle: "none",
-                    width: "520px",
-                    height: "48px",
-                    backgroundColor: "#fff",
-                    marginRight: "0",
-                    marginBottom: "16px"
+                    border: '0.5px solid #818181',
+                    borderBottom: '0.5px solid #818181',
+                    borderRadius: '10px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    paddingLeft: '10px',
+                    cursor: 'pointer',
+                    listStyle: 'none',
+                    width: '520px',
+                    height: '48px',
+                    backgroundColor: '#fff',
+                    marginRight: '0',
+                    marginBottom: '16px',
                   },
                   optionContainer: {
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    margin: "0",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    margin: '0',
                   },
                   option: {
-                    backgroundColor: "rgb(248, 153, 28)",
-                    margin: "3px 0",
-                    width: "97%",
-                    borderRadius: "5px"
-                  }
+                    backgroundColor: 'rgb(248, 153, 28)',
+                    margin: '3px 0',
+                    width: '97%',
+                    borderRadius: '5px',
+                  },
                 }}
                 selectionLimit={3}
                 required
@@ -286,7 +282,7 @@ class CreateForm extends React.Component {
                 </label>
                 <label htmlFor="file-input">
                   <p className={styles.uploadAudioTip}>
-                    {this.props.t("Upload Audio")}
+                    {this.props.t('Upload Audio')}
                   </p>
                 </label>
               </div>
@@ -307,13 +303,13 @@ class CreateForm extends React.Component {
               />
             </div>
 
-            <button type="submit" className={styles.CreateFormButton} >
-              {this.props.t("Submit")}
+            <button type="submit" className={styles.CreateFormButton}>
+              {this.props.t('Submit')}
             </button>
           </div>
         </form>
       </>
-    );
+    )
   }
 }
 
