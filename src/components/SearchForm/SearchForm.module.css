@@ -77,7 +77,10 @@
 }
 
 @media screen and (max-width: 850px) {
-    .SearchForm {}
+    /* .SearchForm {
+        width: 90%;
+    } */
+
     .searchResults {
         width: 90%;
     }
