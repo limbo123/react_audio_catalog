@@ -6,14 +6,14 @@ import {
   BsFillSkipEndFill,
   BsFillSkipStartFill,
 } from "react-icons/bs";
-import { IoCloseOutline } from "react-icons/io5";
+import { FiMinimize2 } from "react-icons/fi";
 import formatTime from "../../formatTime";
 
 import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = ({ handleModal, audios, trackIndex }) => {
+const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) => {
   const [currentSongIndex, setCurrentSongIndex] = useState(trackIndex);
   const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
@@ -67,22 +67,22 @@ const ModalPlayer = ({ handleModal, audios, trackIndex }) => {
   const formattedTime = formatTime(time);
 
   return createPortal(
-    <div className={styles.Overlay}>
-      <h6 className={styles.ModalTitle}>NOW PLAYING:</h6>
-      <div className={styles.CloseModalBtn} onClick={handleModal}>
-        <IoCloseOutline size="1.6rem" />
+    <div className={isModMax ? styles.Overlay : styles.Overlay_mini}>
+      <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING</h6>
+      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={handleMini}>
+        <FiMinimize2 size="1.6rem" />
       </div>
-      <div className={styles.SongDetails}>
-        <img className={styles.SongImage} src={audios[currentSongIndex].imageUrl} alt="" />
-        <h6 className={styles.SongTitle}>{audios[currentSongIndex].title}</h6>
-        <p className={styles.SongAuthor}>{audios[currentSongIndex].author}</p>
+      <div className={isModMax ? styles.SongDetails : styles.SongDetails_mini}>
+        <img className={isModMax ? styles.SongImage : styles.SongImage_mini} src={audios[currentSongIndex].imageUrl} alt="" />
+        <h6 className={isModMax ? styles.SongTitle : styles.SongTitle_mini}>{audios[currentSongIndex].title}</h6>
+        <p className={isModMax ? styles.SongAuthor : styles.SongAuthor_mini}>{audios[currentSongIndex].author}</p>
       </div>
 
-      <div className={styles.PlayerTimeline}>
-        <span className={styles.playerTimeCurrent}>{formattedTime}</span>
+      <div className={isModMax ? styles.PlayerTimeline : styles.PlayerTimeline_mini}>
+        <span className={isModMax ? styles.playerTimeCurrent : styles.playerTimeCurrent_mini}>{formattedTime}</span>
         <input
           type="range"
-          className={styles.playerTimeControl}
+          className={isModMax ? styles.playerTimeControl : styles.playerTimeControl_mini}
           value={time}
           max={audioElement?.current?.duration || 0}
           onChange={(e) =>
@@ -95,16 +95,16 @@ const ModalPlayer = ({ handleModal, audios, trackIndex }) => {
         <span className={styles.playerTimeDuration}>{formattedDuration}</span>
       </div>
 
-      <div className={styles.PlayerControls}>
+      <div className={isModMax ? styles.PlayerControls : styles.PlayerControls_mini}>
         <audio
           src={audios[currentSongIndex].audioUrl}
           ref={audioElement}
         ></audio>
-        <button className={styles.SkipBackBtn} onClick={() => skipSong(false)}>
+        <button className={isModMax ? styles.SkipBackBtn : styles.SkipBackBtn_mini} onClick={() => skipSong(false)}>
           <BsFillSkipStartFill color="#fff" size="1.3rem" />
         </button>
         <button
-          className={styles.PlayBtn}
+          className={isModMax ? styles.PlayBtn : styles.PlayBtn_mini}
           onClick={() => setIsPlaying(!isPlaying)}
         >
           {isPlaying ? (
@@ -113,7 +113,7 @@ const ModalPlayer = ({ handleModal, audios, trackIndex }) => {
             <BsPlayFill color="#fff" size="2rem" />
           )}
         </button>
-        <button className={styles.SkipBackBtn} onClick={() => skipSong()}>
+        <button className={isModMax ? styles.SkipBackBtn : styles.SkipBackBtn_mini} onClick={() => skipSong()}>
           <BsFillSkipEndFill color="#fff" size="1.3rem" />
         </button>
       </div>

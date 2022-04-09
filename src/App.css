@@ -18,16 +18,8 @@ html::-webkit-scrollbar {
     background-color: #7775;
   }
   
-  html::-webkit-scrollbar-thumb:hover {
-    background-color: #777;
-  }
-  
   html::-webkit-scrollbar-track {
     background-color: #5555;
-  }
-  
-  html::-webkit-scrollbar-track:hover {
-    background-color: #555;
   }
 
   a{
