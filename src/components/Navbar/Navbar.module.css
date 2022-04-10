@@ -45,12 +45,23 @@
     margin-right: 10px;
 }
 
+.CreateBtn:hover {
+  width: 80px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.SettingsBtn div:nth-child(0) {
+  margin-top: 20px;
+  background-color: rgb(117, 28, 28);
+}
+
 .SettingsBtn button,
 .SettingsBtn button:hover {
-    background-color: #fff;
-    color: #80b3ff;
-    border-color: #dadada;
-    text-align: center;
+  background-color: #fff;
+  color: #80b3ff;
+  border-color: #dadada;
+  text-align: center;
 }
 
 .SettingsBtn button:hover svg {
@@ -64,37 +75,37 @@
 
 .LangChanger,
 .ThemeChanger {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .LangChanger button {
-    border: none;
-    border-radius: 10px;
-    margin: 0 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 0 10px;
 }
 
 .LangChanger .ActiveLanguageBtn,
 .LangChanger .ActiveLanguageBtn:hover {
-    background: #80b3ff;
-    color: white;
+  background: #80b3ff;
+  color: white;
 }
 
 .styled_toggle {
-    /* background-color: rgb(177, 0, 0); */
-    display: block;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: #b615a8; */
+  /* background-color: rgb(177, 0, 0); */
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #b615a8; */
 }
 
 .toggle_icon {
-    color: #fff;
-    padding-bottom: 5px;
+  color: #fff;
+  padding-bottom: 5px;
 }
 
 .decide_item {
