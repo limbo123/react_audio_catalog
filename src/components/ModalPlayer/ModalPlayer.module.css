@@ -77,14 +77,6 @@
   height: 30px;
 }
 
-.CloseModalBtn:hover {
-  /* color: #d9ff00; */
-}
-
-.CloseModalBtn_mini:hover {
-  /* color: #eeff00; */
-}
-
 .SongDetails {
   display: flex;
   flex-direction: column;
@@ -96,8 +88,8 @@
 }
 
 .SongImage {
-  height: 432px;
-  width: 432px;
+  height: 392px;
+  width: 392px;
   margin-bottom: 20px;
   border-radius: 15px;
   object-fit: cover;
@@ -187,7 +179,7 @@
 
 .PlayerControls {
   position: absolute;
-  bottom: 25px;
+  bottom: 40px;
 }
 
 .PlayerControls_mini {
@@ -318,5 +310,78 @@
   .playerTimeControl::-webkit-slider-thumb {
     width: 33px;
     height: 33px;
+  }
+}
+
+@media screen and (max-width: 609px) {
+  .SongImage {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .CloseModalBtn {
+    top: 12vw;
+    right: 4vw;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .SongImage {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .CloseModalBtn {
+    top: 13vw;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .SongImage {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .SongImage {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .SongImage {
+    width: 120vw;
+    height: 120vw;
+  }
+
+  .PlayerControls {
+    bottom: 100px;
+  }
+
+  .CloseModalBtn {
+    top: 19vw;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .SongImage {
+    width: 140vw;
+    height: 140vw;
+  }
+
+  .PlayerControls {
+    bottom: 120px;
+  }
+
+  .CloseModalBtn {
+    top: 21vw;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .CloseModalBtn {
+    top: 22vw;
   }
 }

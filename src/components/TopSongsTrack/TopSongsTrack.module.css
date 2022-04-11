@@ -71,5 +71,5 @@
 
 .loader {
     width: 40px;
-    position: absolute !important;
+    margin-left: auto;
 }
