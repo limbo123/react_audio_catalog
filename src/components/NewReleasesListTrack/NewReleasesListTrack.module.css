@@ -1,89 +1,101 @@
 .audioCard {
-    position: relative;
-    height: 205px;
-    border: 1px solid #e6effb;
-    box-sizing: border-box;
-    border-radius: 10px;
-    padding: 15px;
+  position: relative;
+  height: 205px;
+  border: 1px solid #e6effb;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px;
 }
 
-.audioCard>img {
-    display: block;
-    border-radius: 15px;
-    width: 100%;
-    height: 125px;
-    object-fit: cover;
-    object-position: center;
+.audioCard > img {
+  display: block;
+  border-radius: 15px;
+  width: 100%;
+  height: 125px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.audioCard>h3 {
-    font-size: 15px;
-    margin-top: 10px;
+.audioCard > h3 {
+  font-size: 15px;
+  margin-top: 10px;
 }
 
-.audioCard>h4 {
-    font-size: 12px;
-    color: #7c8db5;
+.audioCard > h4 {
+  font-size: 12px;
+  color: #7c8db5;
 }
 
 .audioCard:hover .button_play {
-    display: block;
-    animation-name: play-button;
-    animation-duration: 0.5s;
+  display: block;
+  animation-name: play-button;
+  animation-duration: 0.5s;
 }
 
 .button_play {
-    display: none;
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    top: 49%;
-    left: 63%;
-    z-index: 5;
-    border: none;
-    border-radius: 50px;
-    background: none;
-    transition: all 0.2s;
+  display: none;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 49%;
+  left: 63%;
+  z-index: 5;
+  border: none;
+  border-radius: 50px;
+  background: none;
+  transition: all 0.2s;
 }
 
 .play {
-    transition: all 0.2s;
-    background-color: #fff;
-    border-radius: 50%;
+  transition: all 0.2s;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 .play:hover {
-    transition: all 0.2s;
-    color: #f8991c;
+  transition: all 0.2s;
+  color: #f8991c;
 }
 
-.audioHover>p {
-    margin-top: 5px;
-    color: #fff;
+.audioHover > p {
+  margin-top: 5px;
+  color: #fff;
 }
 
-.audioHover>h5 {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 25px;
+.audioHover > h5 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
 }
 
-.audioHover>h5>b {
-    font-weight: 900;
+.audioHover > h5 > b {
+  font-weight: 900;
 }
 
 .decide_item {
-    padding-top: auto;
-    padding-bottom: auto;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.streamsCount {
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 20%;
+  height: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes play-button {
-    0% {
-        top: 60%;
-        opacity: 0%;
-    }
-    100% {
-        top: 49%;
-        opacity: 100%;
-    }
+  0% {
+    top: 60%;
+    opacity: 0%;
+  }
+  100% {
+    top: 49%;
+    opacity: 100%;
+  }
 }
