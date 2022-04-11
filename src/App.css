@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap");
 * {
     font-family: "Lato", sans-serif;
 }
 
-html{
+html {
     scrollbar-width: normal;
     scrollbar-color: #777 #555;
 }
@@ -27,18 +27,23 @@ html::-webkit-scrollbar {
     /* border-radius: 15px; */
   }
 
-  a{
-      color: #80b3ff;
-  }
+a {
+    color: #80b3ff;
+}
 
-  a:hover{
-     color: #80b3ff;
-  }
+a:hover {
+    color: #80b3ff;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
 
 .audios {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    width: 712px;
+    gap: 20px;
     min-height: 80px;
     margin: 0 auto;
     margin-top: 30px;
@@ -130,11 +135,11 @@ html::-webkit-scrollbar {
 
 .light-body {
     background-color: #fff;
-    color: #000; 
+    color: #000;
 }
 
 .dark-body {
-    background-color: #2D2D2D;
+    background-color: #2d2d2d;
     color: #fff;
 }
 
@@ -143,12 +148,14 @@ html::-webkit-scrollbar {
     text-align: center;
 }
 
-.darkNotify, .darkNotify button {
+.darkNotify,
+.darkNotify button {
     color: #fff !important;
     background-color: #000 !important;
 }
 
-.lightNotify, .lightNotify button {
+.lightNotify,
+.lightNotify button {
     color: #000 !important;
     background-color: #fff !important;
 }
@@ -159,14 +166,55 @@ html::-webkit-scrollbar {
     border: 1px solid #000;
     border-radius: 5px;
     padding: 0 5px;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 769px) {
-    .audios {
-        width: 85%;
-    }
+#css_custom_multiselect input {
+    width: 100%;
+}
 
-    .searchAudios {
-        width: 80%;
+#css_custom_multiselect>div {
+    width: 97%;
+    max-width: 97%;
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+    .audios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #css_custom_multiselect>div {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 850px) and (orientation: portrait) {
+    .audios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #css_custom_multiselect>div {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .audios {
+        grid-template-columns: repeat(2, 2fr);
+        margin: 0 auto;
+    }
+    #css_custom_multiselect>div {
+        width: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    .audios {
+        grid-template-columns: repeat(2, 2fr);
+    }
+    #css_custom_multiselect>div {
+        width: 50%;
+        max-width: 50%;
     }
 }

@@ -2,7 +2,7 @@
     width: 900px;
     height: auto;
     margin: auto;
-    border: 1px solid #E6EFFB;
+    border: 1px solid #e6effb;
     box-sizing: border-box;
     box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
@@ -14,7 +14,6 @@
     margin-bottom: 30px;
     display: flex;
     align-items: center;
-    margin-left: 50px;
 }
 
 .homeTitle {
@@ -25,8 +24,35 @@
     margin-right: 15px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 850px) {
     .container {
         width: 700px;
+    }
+    .titleCont {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .titleCont {
+        margin-bottom: 0;
+        height: 50px;
+    }
+    .homeTitle {
+        font-size: 20px;
+        font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        flex-direction: column;
+        margin-bottom: 50px;
+        display: flex;
     }
 }
