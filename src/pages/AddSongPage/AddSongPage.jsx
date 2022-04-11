@@ -1,9 +1,7 @@
 import React from 'react'
-
+import Create from '../../components/Create/Create'
 function AddSongPage() {
-  return (
-    <div>AddSongPage</div>
-  )
+  return <Create />
 }
 
 export default AddSongPage

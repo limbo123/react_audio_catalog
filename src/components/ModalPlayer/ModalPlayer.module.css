@@ -15,16 +15,66 @@
   align-items: center;
 }
 
+.Overlay_mini {
+  /* position: relative; */
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  position: fixed;
+  top: 30%;
+  left: 76%;
+  padding: 30px;
+  width: 20%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2d2d2d;
+  z-index: 1200;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+}
+
 .ModalTitle {
   position: absolute;
   top: 40px;
   font-size: 14px;
 }
 
+.ModalTitle_mini {
+  position: absolute;
+  top: 40px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
 .CloseModalBtn {
   position: fixed;
-  right: 5vw;
+  right: 20vw;
   top: 5vh;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.CloseModalBtn_mini {
+  position: fixed;
+
+  left: 92%;
+  top: 34.5%;
+  cursor: pointer;
+  transition: all 0.2s;
+  /* background-color: rgb(167, 22, 22); */
+}
+
+.CloseModalBtn>svg {
+  width: 30px;
+  height: 30px;
+}
+
+.CloseModalBtn_mini>svg {
+  width: 30px;
+  height: 30px;
 }
 
 .SongDetails {
@@ -32,19 +82,49 @@
   flex-direction: column;
 }
 
+.SongDetails_mini {
+  display: flex;
+  flex-direction: column;
+}
+
 .SongImage {
-  height: auto;
-  width: 35vw;
+  height: 392px;
+  width: 392px;
   margin-bottom: 20px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.SongImage_mini {
+  height: 232px;
+  width: 232px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  object-fit: cover;
 }
 
 .SongAuthor {
   font-size: 12px;
 }
 
+.SongAuthor_mini {
+  font-size: 12px;
+  color: #ffffff;
+}
+
 .PlayerTimeline {
   font-size: 12px;
   display: flex;
+  width: 50%;
+  align-items: center;
+}
+
+.PlayerTimeline_mini {
+  /* margin-top: 40px; */
+  font-size: 12px;
+  display: flex;
+  /* flex-direction: column; */
   width: 50%;
   align-items: center;
 }
@@ -57,13 +137,33 @@
   margin: 0 12px;
 }
 
+.playerTimeControl_mini {
+  width: 50vw;
+  height: 3px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #fff 0%, rgba(0, 44, 190, 0.3) 0%);
+  margin: 0 12px;
+}
+
 .playerTimeControl::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background-color: #2d2d2d;
+  background-color: #7e0707;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 150ms;
+}
+
+.playerTimeControl_mini::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: #117031;
   border: 2px solid #fff;
   cursor: pointer;
   transition: transform 150ms;
@@ -73,9 +173,18 @@
   transform: scale(1.1);
 }
 
+.playerTimeControl_mini::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
 .PlayerControls {
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
+}
+
+.PlayerControls_mini {
+  position: absolute;
+  bottom: 25px;
 }
 
 .PlayerControls button {
@@ -84,8 +193,195 @@
   margin: 0 10px;
 }
 
-.PlayBtn {
+.PlayerControls_mini button {
+  border: none;
+  background: inherit;
+  margin: 0 10px;
+}
+
+.PlayBtn_mini {
   background: #424242 !important;
   height: 45px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 1125px) {
+  .Overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  .SongImage {
+    width: 300px;
+    height: 300px;
+  }
+
+  .CloseModalBtn {
+    right: 20vw;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: landscape) {
+  .Overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  .SongImage {
+    width: 300px;
+    height: 300px;
+  }
+
+  .CloseModalBtn {
+    right: 7vw;
+  }
+}
+
+@media screen and (max-width: 850px) and (orientation: portrait) {
+  .SongImage {
+    width: 670px;
+    height: 670px;
+  }
+
+  .PlayerControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .PlayerControls button, .PlayerControls svg {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .PlayBtn svg {
+    width: 150px;
+    height: 70px;
+  }
+
+  .PlayBtn {
+    width: 150px !important;
+    height: 100px !important;
+  }
+
+  .Overlay h6 {
+    font-size: 40px;
+    margin-top: 10px;
+  }
+
+  .ModalTitle {
+    font-size: 30px !important;
+    top: 70px;
+  }
+
+  .SongAuthor {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  .CloseModalBtn {
+    right: 2vw;
+    top: 7.5vw;
+  }
+
+  .CloseModalBtn svg {
+    width: 100px;
+    height: 50px;
+  }
+
+  .PlayerTimeline {
+    width: 85%;
+    height: 5%;
+  }
+
+  .PlayerTimeline span {
+    font-size: 25px;
+  }
+
+  .playerTimeControl {
+    width: 600px;
+    height: 15px;
+    border-radius: 10px;
+  }
+
+  .playerTimeControl::-webkit-slider-thumb {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+@media screen and (max-width: 609px) {
+  .SongImage {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .CloseModalBtn {
+    top: 12vw;
+    right: 4vw;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .SongImage {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .CloseModalBtn {
+    top: 13vw;
+  }
+}
+
+@media screen and (max-width: 505px) {
+  .SongImage {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .SongImage {
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .SongImage {
+    width: 120vw;
+    height: 120vw;
+  }
+
+  .PlayerControls {
+    bottom: 100px;
+  }
+
+  .CloseModalBtn {
+    top: 19vw;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .SongImage {
+    width: 140vw;
+    height: 140vw;
+  }
+
+  .PlayerControls {
+    bottom: 120px;
+  }
+
+  .CloseModalBtn {
+    top: 21vw;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .CloseModalBtn {
+    top: 22vw;
+  }
 }

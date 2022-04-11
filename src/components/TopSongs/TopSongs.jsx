@@ -1,162 +1,27 @@
 import styles from "./TopSongs.module.css";
-import TopSongImage from "../../static/TopSongImage.jpg";
-import { BsPlayFill } from "react-icons/bs";
+import TopSongsTrack from "../TopSongsTrack/TopSongsTrack";
+import { Component } from "react";
 
-function TopSongs() {
-    return (
-        <div className={styles.topSongs}>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
+class TopSongs extends Component {
+    render() {
+        return (
+            <div className={styles.topSongs}>
+                {this.props.audios.map(({ title, author, _id, imageUrl, audioUrl }, index, array) => {
+                    // if (title.length > 17) {
+                    //     title = `${title.substring(0, 15)}...`;
+                    // }
 
-                <h4 className={styles.topDuration}>3:56</h4>
+                    // if (author.length > 23) {
+                    //     author = `${author.substring(0, 20)}...`;
+                    // }
 
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
+                    return (
+                        <TopSongsTrack key={_id} title={title} author={author} imageUrl={imageUrl} index={index} array={array} audioUrl={audioUrl} handleModal={this.props.handleModal} />
+                    );
+                })}
             </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-            <div className={styles.topCard}>
-                <img src={TopSongImage} alt="Top Song" />
-                <div className={styles.topDescription}>
-                    <h3>Hangover Friendly</h3>
-                    <h4>Tor Komon</h4>
-                </div>
-
-                <h4 className={styles.topDuration}>3:56</h4>
-
-                <div className={styles.topHover}>
-                    <button type="button" className={styles.topButton}>
-                        <BsPlayFill className={styles.topPlay} />
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default TopSongs;
