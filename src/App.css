@@ -14,19 +14,6 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-    /* border-radius: 10px; */
-    background-color: #7775;
-}
-
-html::-webkit-scrollbar-track {
-    background-color: #5555;
-}
-
-a {
-    color: #80b3ff;
-}
-
-html::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #7775;
 }
