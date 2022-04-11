@@ -138,10 +138,14 @@
 
 @media screen and (max-width: 426px) {
     .Navigation {
-        display: none;
+        width: 400px;
+        height: 15px;
+        margin: 0 auto;
     }
     .Container {
-        width: 90%;
+        width: 400px;
+        height: 15px;
+        margin: 0 auto;
     }
 }
 
