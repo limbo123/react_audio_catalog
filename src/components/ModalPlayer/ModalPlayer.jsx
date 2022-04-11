@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -18,10 +19,18 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
   const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
   const audioElement = useRef(null);
+  
 
   const timeUpdate = () => {
     setTime(audioElement.current.currentTime);
   };
+
+  useEffect(() => {
+    setCurrentSongIndex(trackIndex);
+    axios.patch(`/audios/${audios[currentSongIndex]._id}/listen`);
+    console.log(audios[currentSongIndex]);
+    setIsPlaying(true);
+  }, [trackIndex])
 
   useEffect(() => {
     isPlaying ? audioElement.current.play() : audioElement.current.pause();

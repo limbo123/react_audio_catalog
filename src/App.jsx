@@ -56,10 +56,8 @@ export default class App extends React.Component {
   };
 
   handleModal = (currentIndex, audiosArray) => {
- console.log(`current index is ${currentIndex}`);
 
     if (this.state.isModalOpened === false) {
-      console.log("opening modal");
 
       this.setState((prevState) => ({
         isModalOpened: true,
@@ -67,12 +65,10 @@ export default class App extends React.Component {
         audiosArray,
       }));
     } else {
-      console.log("change song, also u gay");
       this.setState((prevState) => ({
         playerTrackIndex: currentIndex,
         audiosArray,
       }));
-      console.log(`track index is ${this.state.playerTrackIndex}`);
     }
   };
 
