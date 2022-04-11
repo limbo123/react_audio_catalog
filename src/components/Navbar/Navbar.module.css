@@ -136,7 +136,16 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 426px) {
+    .Navigation {
+        display: none;
+    }
+    .Container {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 401px) {
     .Navigation {
         width: 50%;
     }

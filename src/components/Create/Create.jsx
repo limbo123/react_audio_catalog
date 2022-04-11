@@ -60,7 +60,7 @@ class CreateForm extends React.Component {
     }
 
     const formData = new FormData(document.forms.createForm)
-
+    formData.append('genres', this.state.genres)
     toast.promise(axios.post(`/audios`, formData), {
       pending: `${this.props.t('Creating Song')}`,
       success: `${this.props.t('Song Created')}`,
@@ -242,6 +242,7 @@ class CreateForm extends React.Component {
                     height: '20px',
                     margin: 'auto 5px',
                   },
+
                   searchBox: {
                     border: '0.5px solid #818181',
                     borderBottom: '0.5px solid #818181',

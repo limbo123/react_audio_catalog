@@ -193,23 +193,22 @@ ul {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 426px) {
     .audios {
         grid-template-columns: repeat(2, 2fr);
         margin: 0 auto;
     }
     #css_custom_multiselect>div {
-        width: 50%;
-        max-width: 50%;
+        width: 80%;
     }
 }
 
-@media screen and (max-width: 401px) {
+
+/* @media screen and (max-width: 401px) {
     .audios {
         grid-template-columns: repeat(2, 2fr);
     }
     #css_custom_multiselect>div {
-        width: 50%;
-        max-width: 50%;
+
     }
-}
+} */
