@@ -30,6 +30,7 @@
   justify-content: center;
   flex-direction: column;
   background-color: #2d2d2d;
+  border: #e6effb 1px solid;
   z-index: 1200;
   color: #fff;
   text-align: center;
