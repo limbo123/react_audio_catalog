@@ -1,25 +1,25 @@
-import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import './App.css'
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import "./App.css";
 
-import HomePage from './pages/HomePage/HomePage'
-import SearchPage from './pages/SearchPage/SearchPage'
-import AddSongPage from './pages/AddSongPage/AddSongPage'
-import Navbar from './components/Navbar/Navbar'
-import ModalPlayer from './components/ModalPlayer/ModalPlayer'
-
-import routes from './routes'
+import HomePage from "./pages/HomePage/HomePage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import AddSongPage from "./pages/AddSongPage/AddSongPage";
+import Navbar from "./components/Navbar/Navbar";
+import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
+import routes from "./routes";
+import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
 
 export default class App extends React.Component {
   state = {
-    currentLanguage: '',
+    currentLanguage: "",
     isModalOpened: false,
-  }
+  };
 
   componentDidMount() {
     this.setState({
-      currentLanguage: localStorage.getItem('language'),
-    })
+      currentLanguage: localStorage.getItem("language"),
+    });
   }
 
   handleModal = () => {
@@ -39,8 +39,8 @@ export default class App extends React.Component {
   setLanguage = (lang) => {
     this.setState({
       currentLanguage: lang,
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -49,21 +49,19 @@ export default class App extends React.Component {
           <ModalPlayer handleModal={this.handleModal} />
         )}
 
-        {this.state.currentLanguage !== '' && (
+        {this.state.currentLanguage !== "" && (
           <Navbar
             language={this.state.currentLanguage}
             setLang={this.setLanguage}
           />
         )}
+        <NavbarMobile />
         <Switch>
           <Route
             path={routes.home}
             exact
             render={(props) => (
-              <HomePage
-                {...props}
-                handleModal={this.handleModal}
-              />
+              <HomePage {...props} handleModal={this.handleModal} />
             )}
           />
           <Route path={routes.search} component={SearchPage} />
@@ -71,6 +69,6 @@ export default class App extends React.Component {
           <Redirect to={routes.home} />
         </Switch>
       </>
-    )
+    );
   }
 }
