@@ -29,7 +29,7 @@ class AudioList extends Component {
 
         < div className={this.props.name} >
           {
-            this.state.audios.map(({ title, _id, author, imageUrl }, index, array) => {
+            this.state.audios.map(({ title, _id, author, imageUrl, streamsCount }, index, array) => {
               if (title.length > 17) {
                 title = `${title.substring(0, 15)}...`;
               }
@@ -47,6 +47,7 @@ class AudioList extends Component {
                   handleModal={this.props.handleModal}
                   trackIndex={index}
                   audiosArray={array}
+                  streamsCount={streamsCount}
                 />
               );
             })
