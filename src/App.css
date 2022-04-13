@@ -178,6 +178,7 @@ ul {
         grid-template-columns: repeat(3, 1fr);
     }
     #css_custom_multiselect>div {
+        /* margin-right: 0; */
         width: 100%;
         max-width: 100%;
     }
@@ -188,6 +189,7 @@ ul {
         grid-template-columns: repeat(3, 1fr);
     }
     #css_custom_multiselect>div {
+        /* margin-right: 0;*/
         width: 100%;
         max-width: 100%;
     }

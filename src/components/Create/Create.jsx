@@ -255,7 +255,7 @@ class CreateForm extends React.Component {
                     width: '520px',
                     height: '48px',
                     backgroundColor: '#fff',
-                    marginRight: '0',
+                    // marginRight: '0',
                     marginBottom: '16px',
                   },
                   optionContainer: {
