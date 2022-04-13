@@ -80,13 +80,12 @@
     /* .SearchForm {
         width: 90%;
     } */
-
     .searchResults {
         width: 90%;
     }
 }
 
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 426px) {
     .SearchForm {
         width: 90%;
     }
