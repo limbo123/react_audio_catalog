@@ -19,6 +19,7 @@ export default class App extends React.Component {
     audiosArray: [],
   };
 
+
   componentDidMount() {
     this.setState({
       currentLanguage: localStorage.getItem("language"),
