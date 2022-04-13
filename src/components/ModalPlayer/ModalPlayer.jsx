@@ -7,7 +7,8 @@ import {
   BsFillSkipEndFill,
   BsFillSkipStartFill,
 } from "react-icons/bs";
-import { FiMinimize2 } from "react-icons/fi";
+import { FiMinimize2, FiMaximize2 } from "react-icons/fi";
+import { IoCloseSharp } from "react-icons/io5"
 import formatTime from "../../formatTime";
 
 import styles from "./ModalPlayer.module.css";
@@ -78,11 +79,14 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
   return createPortal(
     <div className={isModMax ? styles.Overlay : styles.Overlay_mini}>
       <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING</h6>
-      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={handleMini}>
-        <FiMinimize2 size="1.6rem" />
+      <div className={isModMax ? styles.miniModalBtn : styles.miniModalBtn_mini} onClick={handleMini}>
+        {isModMax ? <FiMinimize2 size="1.6rem" /> : <FiMaximize2 size="1.6rem" />}
+      </div>
+      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={handleModal}>
+        <IoCloseSharp size="5rem" />
       </div>
       <div className={isModMax ? styles.SongDetails : styles.SongDetails_mini}>
-        <img className={isModMax ? styles.SongImage : styles.SongImage_mini} src={audios[currentSongIndex].imageUrl} alt="" />
+  <img className={isModMax ? styles.SongImage : styles.SongImage_mini} src={audios[currentSongIndex].imageUrl} alt="" />
         <h6 className={isModMax ? styles.SongTitle : styles.SongTitle_mini}>{audios[currentSongIndex].title}</h6>
         <p className={isModMax ? styles.SongAuthor : styles.SongAuthor_mini}>{audios[currentSongIndex].author}</p>
       </div>
