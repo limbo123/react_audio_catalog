@@ -132,7 +132,7 @@ class SearchForm extends Component {
 
             <div className={styles.searchResults}>
               {this.state.audios.map(
-                ({ author, title, _id, imageUrl }, index, array) => {
+                ({ author, title, _id, imageUrl, streamsCount }, index, array) => {
                   if (title.length > 17) {
                     title = `${title.substring(0, 15)}...`;
                   }
@@ -150,6 +150,7 @@ class SearchForm extends Component {
                       handleModal={this.props.handleModal}
                       trackIndex={index}
                       audiosArray={array}
+                      streamsCount={streamsCount}
                     />
                   );
                 }
