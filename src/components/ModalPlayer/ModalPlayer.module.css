@@ -16,16 +16,15 @@
 }
 
 .Overlay_mini {
-  /* position: relative; */
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-bottom: 48px;
+  margin-right: 27px;
   border-radius: 10px;
   position: fixed;
-  top: 30%;
-  left: 76%;
+  bottom: 0;
+  right: 0;
   padding: 30px;
-  width: 20%;
-  height: 60%;
+  width: 276px;
+  height: 455px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -60,12 +59,10 @@
 
 .CloseModalBtn_mini {
   position: fixed;
-
-  left: 92%;
-  top: 34.5%;
+  margin-bottom: 355px;
+  margin-left: 190px;  
   cursor: pointer;
   transition: all 0.2s;
-  /* background-color: rgb(167, 22, 22); */
 }
 
 .CloseModalBtn>svg {
@@ -88,18 +85,24 @@
   flex-direction: column;
 }
 
+.SongDetails>div {
+  margin-top: 20px;
+}
+
 .SongImage {
   height: 392px;
   width: 392px;
+  margin: 0 auto;
   margin-bottom: 20px;
   border-radius: 15px;
   object-fit: cover;
 }
 
 .SongImage_mini {
-  height: 232px;
-  width: 232px;
-  margin-top: 60px;
+  height: 172px;
+  width: 172px;
+  margin: 0 auto;
+  margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 15px;
   object-fit: cover;
@@ -114,6 +117,18 @@
   color: #ffffff;
 }
 
+.PlayerSettings {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.PlayerSettings_mini {
+  width: 50%;
+  justify-content: center;
+}
+
 .PlayerTimeline {
   font-size: 12px;
   display: flex;
@@ -122,11 +137,9 @@
 }
 
 .PlayerTimeline_mini {
-  /* margin-top: 40px; */
   font-size: 12px;
   display: flex;
-  /* flex-direction: column; */
-  width: 50%;
+  justify-content: center;
   align-items: center;
 }
 
@@ -186,6 +199,8 @@
 .PlayerControls_mini {
   position: absolute;
   bottom: 25px;
+  right: 0;
+  left: 0;
 }
 
 .PlayerControls button {
@@ -348,6 +363,66 @@
   .SongImage {
     width: 100vw;
     height: 100vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .Overlay_mini {
+    width: 92%;
+    height: 95px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ModalTitle_mini {
+    display: none;
+  }
+
+  .SongDetails_mini {
+    flex-direction: row;
+  }
+
+  .SongDetails_mini>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+  }
+
+  .SongDetails_mini h6{
+    margin-top: 10px;
+  }
+
+  .SongAuthor_mini {
+    color: #7C8DB5;
+  }
+
+  .SongImage_mini {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 10px;
+  }
+
+  .PlayerSettings_mini {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .PlayerTimeline_mini {
+    width: 100%;
+  }
+
+  .PlayerControls_mini {
+    margin-top: 10px;
+    position: static;
+  }
+
+  .CloseModalBtn_mini {
+    margin: 0;
+    position: absolute;
+    right: 35px;
+    bottom: 18px;
   }
 }
 
