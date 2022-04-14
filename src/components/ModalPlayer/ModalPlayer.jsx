@@ -26,7 +26,7 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
     setTime(audioElement.current.currentTime);
   };
 
-  useEffect(() => {
+  useEffect((audios, currentSongIndex) => {
     setCurrentSongIndex(trackIndex);
     axios.patch(`/audios/${audios[currentSongIndex]._id}/listen`);
     console.log(audios[currentSongIndex]);
@@ -45,7 +45,6 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
         if (!audios[nextIndex]) {
           nextIndex = 0;
         }
-        console.log(nextIndex);
         return nextIndex;
       });
     } else {
@@ -55,7 +54,6 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
         if (!audios[nextIndex]) {
           nextIndex = audios.length - 1;
         }
-        console.log(nextIndex);
         return nextIndex;
       });
     }
