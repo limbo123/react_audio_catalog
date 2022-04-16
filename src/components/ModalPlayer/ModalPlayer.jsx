@@ -15,7 +15,7 @@ import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) => {
+const ModalPlayer = ({ handleMini, isModMax, audios, trackIndex }) => {
   const [currentSongIndex, setCurrentSongIndex] = useState(trackIndex);
   const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
@@ -26,7 +26,7 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
     setTime(audioElement.current.currentTime);
   };
 
-  useEffect((audios, currentSongIndex) => {
+  useEffect(() => {
     setCurrentSongIndex(trackIndex);
     axios.patch(`/audios/${audios[currentSongIndex]._id}/listen`);
     console.log(audios[currentSongIndex]);
