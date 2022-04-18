@@ -1,19 +1,91 @@
 import styles from "./NavbarMobile.module.css";
 import React, { Component } from "react";
-// import { gsap } from "gsap/all";
+import { gsap } from "gsap";
 
 export default class NavbarMobile extends Component {
   indicatorRef = React.createRef();
   tabbarRef = React.createRef();
+  animate = (left, entry, active) => {
+    gsap.to(active, {
+      "--icon-circle": "0px",
+      duration: 0.25,
+      onComplete() {
+        active.classList.remove(styles.active);
+      },
+    });
+
+    gsap.to(this.indicatorRef.current.querySelector("path"), {
+      keyframes: [
+        {
+          duration: 0.25,
+          delay: 0.125,
+          onStart() {
+            gsap.to(entry, {
+              keyframes: [
+                {
+                  "--icon-y": "4px",
+                  "--icon-s": 0.9,
+                  duration: 0.185,
+                  delay: 0.025,
+                },
+                {
+                  "--icon-circle": "28px",
+                  "--icon-y": "0px",
+                  "--icon-s": 1,
+                  duration: 0.2,
+                  clearProps: true,
+                  onComplete() {
+                    entry.classList.add(styles.active);
+                  },
+                },
+              ],
+            });
+            gsap.to(this.tabbarRef.current, {
+              keyframes: [
+                {
+                  "--indicator-circle-y": "-36px",
+                  duration: 0.25,
+                  delay: 0.05,
+                },
+                {
+                  "--indicator-circle-o": 0,
+                  duration: 0.1,
+                  clearProps: true,
+                  onComplete() {
+                    gsap.set(this.tabbarRef.current, {
+                      "--indicator-x": left,
+                    });
+                  },
+                },
+              ],
+            });
+          },
+        },
+      ],
+    });
+
+    gsap.to(this.tabbarRef.current, {
+      keyframes: [
+        {
+          "--indicator-x": left,
+          duration: 0.3,
+        },
+      ],
+    });
+  };
   onClick = (e) => {
-    const offsetLeft =
-      e.currentTarget.offsetLeft +
-      e.currentTarget.offsetWidth / 2 -
+    const entry = e.currentTarget.parentElement;
+    let active = this.tabbarRef.current.querySelector(`li.${styles.active}`);
+    if (!active) {
+      return;
+    }
+    let left =
+      entry.offsetLeft +
+      entry.offsetWidth / 2 -
       this.indicatorRef.current.getBBox().width / 2 +
       "px";
-    this.tabbarRef.current.style.setProperty("--indicator-x", offsetLeft);
+    this.animate(left, entry, active);
   };
-
   render() {
     return (
       <div className={styles.navBar}>
@@ -55,7 +127,7 @@ export default class NavbarMobile extends Component {
                   <use xlinkHref="#iconUser" />
                 </svg>
                 <svg>
-                  <use xlinkHref="#icoUserFilled" />
+                  <use xlinkHref="#iconUserFilled" />
                 </svg>
               </button>
             </li>
