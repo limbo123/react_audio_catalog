@@ -7,18 +7,27 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import AddSongPage from "./pages/AddSongPage/AddSongPage";
 import Navbar from "./components/Navbar/Navbar";
 import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
+<<<<<<< HEAD
 
 import routes from "./routes";
+=======
+import routes from "./routes";
+import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
+>>>>>>> origin/zavodskiyKV
 
 export default class App extends React.Component {    
   state = {
     currentLanguage: "",
     isModalOpened: false,
+<<<<<<< HEAD
     isModalMaximized: true,
     playerTrackIndex: 0,
     audiosArray: [],
   };
 
+=======
+  };
+>>>>>>> origin/zavodskiyKV
 
   componentDidMount() {
     this.setState({
@@ -98,18 +107,22 @@ export default class App extends React.Component {
             setLang={this.setLanguage}
           />
         )}
+        <NavbarMobile />
         <Switch>
           <Route
             path={routes.home}
             exact
             render={(props) => (
               <HomePage {...props} handleModal={this.handleModal} />
+<<<<<<< HEAD
             )}
           />
           <Route
             path={routes.search}
             component={(props) => (
               <SearchPage {...props} handleModal={this.handleModal} />
+=======
+>>>>>>> origin/zavodskiyKV
             )}
           />
           <Route path={routes.addSong} component={AddSongPage} />
