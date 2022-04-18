@@ -167,114 +167,64 @@
         align-items: center;
     }
     .CreateForm {
+        display: flex;
         justify-content: center;
         margin: 0 auto;
         width: 100%;
     }
     .CreateFormInput {
+        display: flex;
         justify-content: center;
         width: 100%;
     }
     .CreateFormButton {
+        display: flex;
+        order: 2;
         width: 100px;
-        position: absolute;
-        top: 450px;
-        left: 145px;
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
     }
     .CreateFormBtn2 {
-        position: absolute;
-        top: 350px;
-        left: 31px;
         width: 85.5%;
         height: 100px;
         justify-content: center;
         margin: 0 auto;
+        margin-top: 20px;
     }
-    .uploadAudio {}
 }
 
-
-/* @media screen and (max-width: 400px) {
-    .CreateFormBtn2 {
-        position: absolute;
-        top: 350px;
-        left: 33px;
-        width: 83.5%;
-        height: 100px;
-        justify-content: center;
-        margin: 0 auto;
-    }
-    .CreateFormButton {
-        width: 96px;
-        position: absolute;
-        top: 450px;
-        left: 142px;
-        margin: 0 auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-} */
-
 @media screen and (max-width: 376px) {
+    .CreateForm {
+        display: flex;
+    }
     .CreateFormBtn2 {
-        position: absolute;
-        top: 350px;
-        left: 31px;
         width: 83%;
         height: 100px;
         justify-content: center;
         margin: 0 auto;
+        margin-top: 20px;
     }
     .CreateFormButton {
+        order: 2;
         width: 96px;
-        position: absolute;
-        top: 450px;
-        left: 133px;
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
     }
 }
 
-
-/* @media screen and (max-width: 361px) {
-    .CreateFormBtn2 {
-        position: absolute;
-        top: 350px;
-        left: 33px;
-        width: 82%;
-        height: 100px;
-        justify-content: center;
-        margin: 0 auto;
-    }
-    .CreateFormButton {
-        width: 96px;
-        position: absolute;
-        top: 450px;
-        left: 142px;
-        margin: 0 auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-} */
-
 @media screen and (max-width: 321px) {
     .CreateFormBtn2 {
-        position: absolute;
-        top: 350px;
-        left: 31px;
         width: 81%;
         height: 100px;
         justify-content: center;
         margin: 0 auto;
+        margin-top: 20px;
     }
     .CreateFormButton {
-        width: 96px;
-        position: absolute;
-        top: 450px;
+        display: flex;
+        order: 2;
         left: 114px;
         margin: 0 auto;
         margin-top: 20px;

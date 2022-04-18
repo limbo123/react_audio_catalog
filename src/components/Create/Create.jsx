@@ -133,32 +133,31 @@ class CreateForm extends React.Component {
           encType="multipart/form-data"
         >
           <h2>{this.props.t('Enter Song Information')}:</h2>
-
-          <input
-            type="file"
-            accept="image/*"
-            className="form-input visually-hidden"
-            id="createImageInput"
-            name="image"
-            ref={this.imageInputRef}
-            onChange={this.handleUploadImg}
-            required
-          />
-          <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
-            <AiOutlineCloudUpload className={styles.CreateFormUploadImg} />
-
-            {this.props.t('Upload File')}
-
-            {this.state.uploadImg && (
-              <img
-                src={this.state.uploadImg}
-                alt=""
-                className={styles.uploadImage}
-              />
-            )}
-          </label>
-
           <div className={styles.CreateForm}>
+            <input
+              type="file"
+              accept="image/*"
+              className="form-input visually-hidden"
+              id="createImageInput"
+              name="image"
+              ref={this.imageInputRef}
+              onChange={this.handleUploadImg}
+              required
+            />
+            <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
+              <AiOutlineCloudUpload className={styles.CreateFormUploadImg} />
+
+              {this.props.t('Upload File')}
+
+              {this.state.uploadImg && (
+                <img
+                  src={this.state.uploadImg}
+                  alt=""
+                  className={styles.uploadImage}
+                />
+              )}
+            </label>
+
             <label>
               <input
                 className={styles.CreateFormInput}

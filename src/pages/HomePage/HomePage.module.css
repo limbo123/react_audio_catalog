@@ -16,6 +16,12 @@
     align-items: center;
 }
 
+.titleCont>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .homeTitle {
     font-weight: 700;
 }
@@ -36,23 +42,31 @@
 @media screen and (max-width: 426px) {
     .container {
         display: flex;
+        width: 90%;
         flex-direction: column;
         margin-bottom: 50px;
     }
     .titleCont {
-        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
         height: 50px;
-    }
-    .homeTitle {
-        font-size: 20px;
-        font-weight: normal;
     }
 }
 
-@media screen and (max-width: 401px) {
+@media screen and (max-width: 376px) {
     .container {
         flex-direction: column;
+        width: 90%;
         margin-bottom: 50px;
         display: flex;
+    }
+    .homeTitle {
+        font-size: 18px;
+        font-weight: normal;
+    }
+    .homeTitle>div {
+        font-size: 25px;
+        margin-bottom: 0;
     }
 }
