@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./NewReleasesListTrack.module.css"
-import { CgPlayButtonO } from "react-icons/cg";
+import { CgPlayButtonO, CgPlayPauseO } from "react-icons/cg";
 
-function NewReleasesListTrack({ handleModal, title, author, imageUrl, streamsCount, trackIndex, audiosArray }) {
+function NewReleasesListTrack({ handleModal, title, author, imageUrl, streamsCount, trackIndex, audiosArray, isModalMax }) {
   return (
     <div className={styles.audioCard}>
       <img src={imageUrl} alt={title} />
