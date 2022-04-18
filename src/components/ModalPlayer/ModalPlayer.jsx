@@ -7,8 +7,8 @@ import {
   BsFillSkipEndFill,
   BsFillSkipStartFill,
 } from "react-icons/bs";
-import { FiMinimize2 } from "react-icons/fi";
-import { HiOutlineArrowsExpand } from "react-icons/hi";
+import { FiMinimize2, FiMaximize2 } from "react-icons/fi";
+import { IoCloseSharp } from "react-icons/io5"
 import formatTime from "../../formatTime";
 
 import styles from "./ModalPlayer.module.css";
@@ -76,20 +76,34 @@ const ModalPlayer = ({ handleMini, isModMax, audios, trackIndex }) => {
 
   return createPortal(
     <div className={isModMax ? styles.Overlay : styles.Overlay_mini}>
-      <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING:</h6>
-      {isModMax ?
-        <div className={styles.CloseModalBtn} onClick={handleMini}>
-          <FiMinimize2 size="1.6rem" />
-        </div> :
-        <div className={styles.CloseModalBtn_mini} onClick={handleMini}>
-          <HiOutlineArrowsExpand size="1.6rem" />
-        </div>}
+      <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING</h6>
+      <div className={isModMax ? styles.miniModalBtn : styles.miniModalBtn_mini} onClick={handleMini}>
+        {isModMax ? <FiMinimize2 size="1.6rem" /> : <FiMaximize2 size="1.6rem" />}
+      </div>
+      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={handleModal}>
+        <IoCloseSharp size="5rem" />
+      </div>
       <div className={isModMax ? styles.SongDetails : styles.SongDetails_mini}>
-        <img className={isModMax ? styles.SongImage : styles.SongImage_mini} src={audios[currentSongIndex].imageUrl} alt="" />
-        <div>
-          <h6 className={isModMax ? styles.SongTitle : styles.SongTitle_mini}>{audios[currentSongIndex].title}</h6>
-          <p className={isModMax ? styles.SongAuthor : styles.SongAuthor_mini}>{audios[currentSongIndex].author}</p>
-        </div>
+  <img className={isModMax ? styles.SongImage : styles.SongImage_mini} src={audios[currentSongIndex].imageUrl} alt="" />
+        <h6 className={isModMax ? styles.SongTitle : styles.SongTitle_mini}>{audios[currentSongIndex].title}</h6>
+        <p className={isModMax ? styles.SongAuthor : styles.SongAuthor_mini}>{audios[currentSongIndex].author}</p>
+      </div>
+
+      <div className={isModMax ? styles.PlayerTimeline : styles.PlayerTimeline_mini}>
+        <span className={isModMax ? styles.playerTimeCurrent : styles.playerTimeCurrent_mini}>{formattedTime}</span>
+        <input
+          type="range"
+          className={isModMax ? styles.playerTimeControl : styles.playerTimeControl_mini}
+          value={time}
+          max={audioElement?.current?.duration || 0}
+          onChange={(e) =>
+            (audioElement.current.currentTime = e.currentTarget.value)
+          }
+          style={{
+            background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
+          }}
+        />
+        <span className={styles.playerTimeDuration}>{formattedDuration}</span>
       </div>
       <div className={isModMax ? styles.PlayerSettings : styles.PlayerSettings_mini}>
         <div className={isModMax ? styles.PlayerTimeline : styles.PlayerTimeline_mini}>

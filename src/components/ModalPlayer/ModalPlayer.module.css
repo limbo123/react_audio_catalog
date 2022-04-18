@@ -59,8 +59,8 @@
 
 .CloseModalBtn_mini {
   position: fixed;
-  margin-bottom: 355px;
-  margin-left: 190px;  
+  left: 93%;
+  top: 34.5%;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -74,6 +74,34 @@
   width: 30px;
   height: 30px;
 }
+
+.miniModalBtn {
+  position: fixed;
+  right: 22.5vw;
+  top: 5vh;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.miniModalBtn_mini {
+  position: fixed;
+  left: 90.5%;
+  top: 34.5%;
+  cursor: pointer;
+  transition: all 0.2s;
+  /* background-color: rgb(167, 22, 22); */
+}
+
+.miniModalBtn>svg {
+  width: 30px;
+  height: 30px;
+}
+
+.miniModalBtn_mini>svg {
+  width: 30px;
+  height: 30px;
+}
+
 
 .SongDetails {
   display: flex;
@@ -219,6 +247,13 @@
   background: #424242 !important;
   height: 45px;
   border-radius: 10px;
+}
+
+.buttonsDivider{
+  width: 60px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(180, 0, 0);
 }
 
 @media screen and (max-width: 1125px) {
