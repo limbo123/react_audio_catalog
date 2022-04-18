@@ -76,6 +76,7 @@ export default class App extends React.Component {
       }));
     } else {
       this.setState((prevState) => ({
+        isModalOpened: false,
         playerTrackIndex: currentIndex,
         audiosArray,
       }));
