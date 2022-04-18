@@ -15,7 +15,7 @@ import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = ({ handleMini, isModMax, audios, trackIndex }) => {
+const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) => {
   const [currentSongIndex, setCurrentSongIndex] = useState(trackIndex);
   const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
