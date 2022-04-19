@@ -10,7 +10,7 @@ import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
 
 import routes from "./routes";
 
-export default class App extends React.Component {    
+export default class App extends React.Component {
   state = {
     currentLanguage: "",
     isModalOpened: false,
@@ -19,21 +19,36 @@ export default class App extends React.Component {
     audiosArray: [],
   };
 
-
   componentDidMount() {
     this.setState({
       currentLanguage: localStorage.getItem("language"),
     });
+
+    if (JSON.parse(localStorage.getItem("current_index")) <= 0) {
+      this.handleModal(
+        JSON.parse(localStorage.getItem("current_index")),
+        JSON.parse(localStorage.getItem("audiosArray"))
+      );
+    }
+
+    if(JSON.parse(localStorage.getItem('isModalMaximized'))){
+
+      this.setState({
+        isModalMaximized: JSON.parse(localStorage.getItem('isModalMaximized')),
+      });
+      this.handleMini()
+    }
+
   }
 
   handleMini = () => {
     if (this.state.isModalMaximized) {
-      console.log(false);
+      localStorage.setItem("isModalMaximized", JSON.stringify(false));
       this.setState(() => ({
         isModalMaximized: false,
       }));
     } else {
-      console.log(true);
+      localStorage.setItem("isModalMaximized", JSON.stringify(true));
       this.setState(() => ({
         isModalMaximized: true,
       }));
@@ -57,8 +72,9 @@ export default class App extends React.Component {
   };
 
   handleModal = (currentIndex, audiosArray) => {
-
     if (this.state.isModalOpened === false) {
+      localStorage.setItem("current_index", JSON.stringify(currentIndex));
+      localStorage.setItem("audiosArray", JSON.stringify(audiosArray));
 
       this.setState((prevState) => ({
         isModalOpened: true,

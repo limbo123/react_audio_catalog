@@ -88,38 +88,21 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
         <h6 className={isModMax ? styles.SongTitle : styles.SongTitle_mini}>{audios[currentSongIndex].title}</h6>
         <p className={isModMax ? styles.SongAuthor : styles.SongAuthor_mini}>{audios[currentSongIndex].author}</p>
       </div>
-
-      <div className={isModMax ? styles.PlayerTimeline : styles.PlayerTimeline_mini}>
-        <span className={isModMax ? styles.playerTimeCurrent : styles.playerTimeCurrent_mini}>{formattedTime}</span>
-        <input
-          type="range"
-          className={isModMax ? styles.playerTimeControl : styles.playerTimeControl_mini}
-          value={time}
-          max={audioElement?.current?.duration || 0}
-          onChange={(e) =>
-            (audioElement.current.currentTime = e.currentTarget.value)
-          }
-          style={{
-            background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
-          }}
-        />
-        <span className={styles.playerTimeDuration}>{formattedDuration}</span>
-      </div>
       <div className={isModMax ? styles.PlayerSettings : styles.PlayerSettings_mini}>
         <div className={isModMax ? styles.PlayerTimeline : styles.PlayerTimeline_mini}>
           <span className={isModMax ? styles.playerTimeCurrent : styles.playerTimeCurrent_mini}>{formattedTime}</span>
-          <input
-            type="range"
-            className={isModMax ? styles.playerTimeControl : styles.playerTimeControl_mini}
-            value={time}
-            max={audioElement?.current?.duration || 0}
-            onChange={(e) =>
-              (audioElement.current.currentTime = e.currentTarget.value)
-            }
-            style={{
-              background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
-            }}
-          />
+            <input
+              type="range"
+              className={isModMax ? styles.playerTimeControl : styles.playerTimeControl_mini}
+              value={time}
+              max={audioElement?.current?.duration || 0}
+              onChange={(e) =>
+                (audioElement.current.currentTime = e.currentTarget.value)
+              }
+              style={{
+                background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
+              }}
+            />
           <span className={styles.playerTimeDuration}>{formattedDuration}</span>
         </div>
 
