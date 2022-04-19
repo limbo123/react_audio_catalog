@@ -7,8 +7,8 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import AddSongPage from "./pages/AddSongPage/AddSongPage";
 import Navbar from "./components/Navbar/Navbar";
 import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
-
 import routes from "./routes";
+import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
 
 export default class App extends React.Component {    
   state = {
@@ -28,12 +28,10 @@ export default class App extends React.Component {
 
   handleMini = () => {
     if (this.state.isModalMaximized) {
-      console.log(false);
       this.setState(() => ({
         isModalMaximized: false,
       }));
     } else {
-      console.log(true);
       this.setState(() => ({
         isModalMaximized: true,
       }));
@@ -99,6 +97,7 @@ export default class App extends React.Component {
             setLang={this.setLanguage}
           />
         )}
+        <NavbarMobile />
         <Switch>
           <Route
             path={routes.home}
