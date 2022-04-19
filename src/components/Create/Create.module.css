@@ -185,6 +185,18 @@
     }
 }
 
+@media screen and (max-width: 700px) {
+    .CreateFormBtn2 {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .CreateFormBtn2 {
+        width: 50%;
+    }
+}
+
 @media screen and (max-width: 426px) {
     .Container {
         width: 100%;

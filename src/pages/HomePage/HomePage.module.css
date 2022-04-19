@@ -46,6 +46,10 @@
         flex-direction: column;
         margin-bottom: 50px;
     }
+    .homeTitle {
+        font-size: 20px;
+        font-weight: normal;
+    }
     .titleCont {
         display: flex;
         flex-direction: column;
