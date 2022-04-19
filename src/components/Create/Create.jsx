@@ -230,6 +230,7 @@ class CreateForm extends React.Component {
                     listStyle: 'none',
                     width: '100%',
                     height: '48px',
+                    margin: '0 auto',
                     backgroundColor: '#fff',
                     // marginRight: '0',
                     marginBottom: '16px',

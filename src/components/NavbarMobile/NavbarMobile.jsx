@@ -1,18 +1,18 @@
-import styles from "./NavbarMobile.module.css";
-import React, { Component } from "react";
+import styles from './NavbarMobile.module.css'
+import React, { Component } from 'react'
 // import { gsap } from "gsap/all";
 
 export default class NavbarMobile extends Component {
-  indicatorRef = React.createRef();
-  tabbarRef = React.createRef();
+  indicatorRef = React.createRef()
+  tabbarRef = React.createRef()
   onClick = (e) => {
     const offsetLeft =
       e.currentTarget.offsetLeft +
       e.currentTarget.offsetWidth / 2 -
       this.indicatorRef.current.getBBox().width / 2 +
-      "px";
-    this.tabbarRef.current.style.setProperty("--indicator-x", offsetLeft);
-  };
+      'px'
+    this.tabbarRef.current.style.setProperty('--indicator-x', offsetLeft)
+  }
 
   render() {
     return (
@@ -96,7 +96,7 @@ export default class NavbarMobile extends Component {
 
         <svg
           style={{
-            display: "none",
+            display: 'none',
           }}
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
@@ -167,6 +167,6 @@ export default class NavbarMobile extends Component {
           </symbol>
         </svg>
       </div>
-    );
+    )
   }
 }

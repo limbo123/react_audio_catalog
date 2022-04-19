@@ -132,7 +132,8 @@
         margin: 30px auto;
     }
     .Container {
-        width: 690px;
+        /* width: 690px; */
+        width: 90%;
     }
 }
 

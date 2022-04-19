@@ -32,7 +32,7 @@
 .CreateFormInput {
     display: block;
     height: 48px;
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     align-items: center;
     border-radius: 10px;
@@ -132,7 +132,8 @@
     color: #818181;
     position: relative;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     border: 0.5px solid #818181;
     border-radius: 10px;
     background-color: #ffffff;
@@ -166,16 +167,21 @@
 }
 
 @media screen and (max-width: 850px) {
-    .Container {}
-    .CreateFormInput {
+    .Container {
         width: 100%;
+    }
+    .Container h2 {
+        width: 40%;
+    }
+    .CreateFormInput {
+        width: 80%;
     }
     .CreateFormBtn2 {
-        margin: 0;
-        margin-left: 50px;
+        margin: 0 auto;
+        margin-top: 20px;
     }
     .uploadAudio {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -216,6 +222,9 @@
         margin: 0 auto;
         margin-top: 20px;
     }
+    .uploadAudio {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 376px) {
@@ -243,9 +252,15 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .uploadAudio {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 321px) {
+    .Container h2 {
+        width: 100%;
+    }
     .CreateFormBtn2 {
         width: 68%;
         height: 130px;
