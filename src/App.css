@@ -169,8 +169,8 @@ ul {
 }
 
 #css_custom_multiselect>div {
-    width: 97%;
-    max-width: 97%;
+    width: 100%;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 850px) and (orientation: landscape) {

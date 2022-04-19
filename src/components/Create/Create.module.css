@@ -14,17 +14,27 @@
 }
 
 .Container h2 {
+    margin: 0 auto;
+    width: 50%;
     margin-bottom: 20px;
 }
 
 .CreateForm {
-    display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.CreateForm label {
+    display: block;
 }
 
 .CreateFormInput {
+    display: block;
     height: 48px;
-    width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
     border-radius: 10px;
     margin-bottom: 16px;
     background: #ffffff;
@@ -39,19 +49,16 @@
     justify-content: center;
     align-items: center;
     padding: 8px 14px;
-    width: 86px;
+    width: 120px;
     height: 32px;
-    left: 23px;
-    top: 245px;
     background: #f8991c;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     /* Inside auto layout */
-    flex: none;
-    order: 2;
     flex-grow: 0;
-    margin: 12px 0px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .CreateFormBtn2 {
@@ -59,22 +66,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 234px;
+    width: 30%;
     height: 220px;
-    left: 332px;
-    top: 0px;
-    left: 0;
-    float: right;
     color: #7c8db5;
     background-color: #dadada;
     border-radius: 20px;
     border: none;
     /* Inside auto layout */
     flex: none;
-    order: 1;
     align-self: stretch;
     flex-grow: 1;
-    margin: 0px 12px;
+    margin: 0 auto;
+    margin-top: 20px;
     cursor: pointer;
     position: relative;
 }
@@ -103,11 +106,24 @@
 }
 
 .uploadImage {
-    width: 234px;
-    height: 220px;
+    width: 100%;
+    height: 100%;
+    display: block;
     border-radius: 20px;
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     object-fit: cover;
+}
+
+.uploadImageContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .uploadAudio {
@@ -116,13 +132,18 @@
     color: #818181;
     position: relative;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     border: 0.5px solid #818181;
     border-radius: 10px;
     background-color: #ffffff;
     min-height: 48px;
     padding-left: 15px;
     cursor: pointer;
+}
+
+.uploadAudioInner {
+    display: flex;
+    align-items: center;
 }
 
 .uploadAudio label {
@@ -166,28 +187,31 @@
         flex-direction: column;
         align-items: center;
     }
+    .Container h2 {
+        width: 73%;
+    }
     .CreateForm {
-        display: flex;
+        display: block;
         justify-content: center;
         margin: 0 auto;
         width: 100%;
     }
     .CreateFormInput {
-        display: flex;
+        display: block;
         justify-content: center;
         width: 100%;
     }
     .CreateFormButton {
         display: flex;
-        order: 2;
-        width: 100px;
+        width: 130px;
+        height: 40px;
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
     }
     .CreateFormBtn2 {
-        width: 85.5%;
-        height: 100px;
+        width: 50%;
+        height: 140px;
         justify-content: center;
         margin: 0 auto;
         margin-top: 20px;
@@ -195,19 +219,26 @@
 }
 
 @media screen and (max-width: 376px) {
+    .Container h2 {
+        width: 83%;
+    }
     .CreateForm {
-        display: flex;
+        display: block;
+    }
+    .CreateFormInput {
+        display: block;
+        justify-content: center;
+        width: 100%;
     }
     .CreateFormBtn2 {
-        width: 83%;
-        height: 100px;
+        width: 55%;
+        height: 135px;
         justify-content: center;
         margin: 0 auto;
         margin-top: 20px;
     }
     .CreateFormButton {
-        order: 2;
-        width: 96px;
+        width: 100px;
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -216,16 +247,15 @@
 
 @media screen and (max-width: 321px) {
     .CreateFormBtn2 {
-        width: 81%;
-        height: 100px;
+        width: 68%;
+        height: 130px;
         justify-content: center;
         margin: 0 auto;
         margin-top: 20px;
     }
     .CreateFormButton {
         display: flex;
-        order: 2;
-        left: 114px;
+        width: 120px;
         margin: 0 auto;
         margin-top: 20px;
         margin-bottom: 20px;
