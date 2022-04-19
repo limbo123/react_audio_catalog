@@ -11,14 +11,14 @@ class NavbarMobile extends Component {
   tabbarRef = React.createRef();
   animate = (left, entry, active) => {
     gsap.to(active, {
-      "--icon-circle": "0px",
+      '--icon-circle': '0px',
       duration: 0.25,
       onComplete() {
-        active.classList.remove(styles.active);
+        active.classList.remove(styles.active)
       },
-    });
+    })
 
-    gsap.to(this.indicatorRef.current.querySelector("path"), {
+    gsap.to(this.indicatorRef.current.querySelector('path'), {
       keyframes: [
         {
           duration: 0.25,
@@ -27,70 +27,70 @@ class NavbarMobile extends Component {
             gsap.to(entry, {
               keyframes: [
                 {
-                  "--icon-y": "4px",
-                  "--icon-s": 0.9,
+                  '--icon-y': '4px',
+                  '--icon-s': 0.9,
                   duration: 0.185,
                   delay: 0.025,
                 },
                 {
-                  "--icon-circle": "28px",
-                  "--icon-y": "0px",
-                  "--icon-s": 1,
+                  '--icon-circle': '28px',
+                  '--icon-y': '0px',
+                  '--icon-s': 1,
                   duration: 0.2,
                   clearProps: true,
                   onComplete() {
-                    entry.classList.add(styles.active);
+                    entry.classList.add(styles.active)
                   },
                 },
               ],
-            });
+            })
             gsap.to(this.tabbarRef.current, {
               keyframes: [
                 {
-                  "--indicator-circle-y": "-36px",
+                  '--indicator-circle-y': '-36px',
                   duration: 0.25,
                   delay: 0.05,
                 },
                 {
-                  "--indicator-circle-o": 0,
+                  '--indicator-circle-o': 0,
                   duration: 0.1,
                   clearProps: true,
                   onComplete() {
                     gsap.set(this.tabbarRef.current, {
-                      "--indicator-x": left,
-                    });
+                      '--indicator-x': left,
+                    })
                   },
                 },
               ],
-            });
+            })
           },
         },
       ],
-    });
+    })
 
     gsap.to(this.tabbarRef.current, {
       keyframes: [
         {
-          "--indicator-x": left,
+          '--indicator-x': left,
           duration: 0.3,
         },
       ],
-    });
-  };
+    })
+  }
   onClick = (e) => {
     const entry = e.currentTarget.parentElement;
     this.props.history.push(`/${e.currentTarget.id}`)
     let active = this.tabbarRef.current.querySelector(`li.${styles.active}`);
     if (!active) {
-      return;
+      return
     }
     let left =
       entry.offsetLeft +
       entry.offsetWidth / 2 -
       this.indicatorRef.current.getBBox().width / 2 +
-      "px";
-    this.animate(left, entry, active);
-  };
+      'px'
+    this.animate(left, entry, active)
+  }
   render() {
     return (
       <div className={styles.navBar}>
@@ -163,7 +163,7 @@ class NavbarMobile extends Component {
 
         <svg
           style={{
-            display: "none",
+            display: 'none',
           }}
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
@@ -234,7 +234,7 @@ class NavbarMobile extends Component {
           </symbol>
         </svg>
       </div>
-    );
+    )
   }
 };
 

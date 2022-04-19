@@ -169,8 +169,8 @@ ul {
 }
 
 #css_custom_multiselect>div {
-    width: 97%;
-    max-width: 97%;
+    width: 80%;
+    max-width: 80%;
 }
 
 @media screen and (max-width: 850px) and (orientation: landscape) {
@@ -179,8 +179,8 @@ ul {
     }
     #css_custom_multiselect>div {
         /* margin-right: 0; */
-        width: 100%;
-        max-width: 100%;
+        width: 80%;
+        max-width: 80%;
     }
 }
 
@@ -190,18 +190,19 @@ ul {
     }
     #css_custom_multiselect>div {
         /* margin-right: 0;*/
-        width: 100%;
-        max-width: 100%;
+        width: 80%;
+        max-width: 80%;
     }
 }
 
 @media screen and (max-width: 426px) {
     .audios {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-columns: repeat(1, 1fr);
         margin: 0 auto;
     }
     #css_custom_multiselect>div {
-        width: 80%;
+        max-width: 100%;
+        width: 100%;
     }
 }
 

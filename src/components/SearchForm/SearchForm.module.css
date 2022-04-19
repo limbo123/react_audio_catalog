@@ -1,7 +1,9 @@
 .Container {
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
     height: auto;
-    margin: 0 30px;
+    /* margin: 0 30px; */
 }
 
 .SearchForm {
