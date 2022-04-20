@@ -21,7 +21,6 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
   const [time, setTime] = useState(0);
   const audioElement = useRef(null);
 
-
   const timeUpdate = () => {
     setTime(audioElement.current.currentTime);
   };
