@@ -24,30 +24,37 @@ export default class App extends React.Component {
       currentLanguage: localStorage.getItem("language"),
     });
 
-    if (JSON.parse(localStorage.getItem("current_index")) <= 0) {
+    console.log('did mount');
+    if (JSON.parse(localStorage.getItem("current_index")) >= 0) {
+      // console.log('I DO IT, LOAD HANDLE B*TCH');
       this.handleModal(
         JSON.parse(localStorage.getItem("current_index")),
         JSON.parse(localStorage.getItem("audiosArray"))
       );
     }
 
-    if(JSON.parse(localStorage.getItem('isModalMaximized'))){
-
+    if(JSON.parse(localStorage.getItem('isModalMaximized')) === false){
+      console.log('bro, i`m maximized');
+console.log('i have to close');
       this.setState({
         isModalMaximized: JSON.parse(localStorage.getItem('isModalMaximized')),
       });
-      this.handleMini()
+      console.log('i chanche the state');
+      this.handleMini();
+      console.log('i do a hadle mini');
     }
 
   }
 
   handleMini = () => {
     if (this.state.isModalMaximized) {
+      console.log('i do closong');
       localStorage.setItem("isModalMaximized", JSON.stringify(false));
       this.setState(() => ({
         isModalMaximized: false,
       }))
     } else {
+      console.log('i do openong');
       localStorage.setItem("isModalMaximized", JSON.stringify(true));
       this.setState(() => ({
         isModalMaximized: true,
@@ -56,7 +63,7 @@ export default class App extends React.Component {
 
     if (this.state.isModalOpened) {
     } else {
-      console.log(true)
+      // console.log(true)
       this.setState(() => ({
         isModalMaximized: true,
       }))
@@ -82,6 +89,8 @@ export default class App extends React.Component {
         audiosArray,
       }))
     } else {
+     console.log('closing');
+     localStorage.setItem("current_index", '-1');
       this.setState((prevState) => ({
         isModalOpened: false,
         playerTrackIndex: currentIndex,
