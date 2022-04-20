@@ -62,6 +62,7 @@ export default class App extends React.Component {
     }
 
     if (this.state.isModalOpened) {
+      
     } else {
       // console.log(true)
       this.setState(() => ({
