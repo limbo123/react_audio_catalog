@@ -1,10 +1,14 @@
-import styles from './NavbarMobile.module.css'
-import React, { Component } from 'react'
-import { gsap } from 'gsap'
+import styles from "./NavbarMobile.module.css";
+import React, { Component } from "react";
+import { gsap } from "gsap";
+import { Link } from "react-router-dom";
+import routes from "../../routes";
+import { withRouter } from "react-router-dom";
 
-export default class NavbarMobile extends Component {
-  indicatorRef = React.createRef()
-  tabbarRef = React.createRef()
+
+class NavbarMobile extends Component {
+  indicatorRef = React.createRef();
+  tabbarRef = React.createRef();
   animate = (left, entry, active) => {
     gsap.to(active, {
       '--icon-circle': '0px',
@@ -74,8 +78,9 @@ export default class NavbarMobile extends Component {
     })
   }
   onClick = (e) => {
-    const entry = e.currentTarget.parentElement
-    let active = this.tabbarRef.current.querySelector(`li.${styles.active}`)
+    const entry = e.currentTarget.parentElement;
+    this.props.history.push(`/${e.currentTarget.id}`)
+    let active = this.tabbarRef.current.querySelector(`li.${styles.active}`);
     if (!active) {
       return
     }
@@ -92,7 +97,7 @@ export default class NavbarMobile extends Component {
         <div id={styles.tabbar} ref={this.tabbarRef}>
           <ul>
             <li className={styles.active}>
-              <button onClick={this.onClick}>
+              <button id="home" onClick={this.onClick}>
                 <svg>
                   <use xlinkHref="#iconHome" />
                 </svg>
@@ -102,17 +107,7 @@ export default class NavbarMobile extends Component {
               </button>
             </li>
             <li>
-              <button onClick={this.onClick}>
-                <svg>
-                  <use xlinkHref="#iconChat" />
-                </svg>
-                <svg>
-                  <use xlinkHref="#iconChatFilled" />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button onClick={this.onClick}>
+              <button id="search" onClick={this.onClick}>
                 <svg>
                   <use xlinkHref="#iconFolder" />
                 </svg>
@@ -122,7 +117,7 @@ export default class NavbarMobile extends Component {
               </button>
             </li>
             <li>
-              <button onClick={this.onClick}>
+              <button id="add-song" onClick={this.onClick}>
                 <svg>
                   <use xlinkHref="#iconUser" />
                 </svg>
@@ -241,4 +236,6 @@ export default class NavbarMobile extends Component {
       </div>
     )
   }
-}
+};
+
+export default withRouter(NavbarMobile);

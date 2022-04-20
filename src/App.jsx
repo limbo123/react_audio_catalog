@@ -2,19 +2,23 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import './App.css'
 
-import HomePage from './pages/HomePage/HomePage'
-import SearchPage from './pages/SearchPage/SearchPage'
-import AddSongPage from './pages/AddSongPage/AddSongPage'
-import Navbar from './components/Navbar/Navbar'
-import ModalPlayer from './components/ModalPlayer/ModalPlayer'
-import routes from './routes'
-import NavbarMobile from './components/NavbarMobile/NavbarMobile'
+import HomePage from "./pages/HomePage/HomePage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import AddSongPage from "./pages/AddSongPage/AddSongPage";
+import Navbar from "./components/Navbar/Navbar";
+import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
+import routes from "./routes";
+import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
 
-export default class App extends React.Component {
+export default class App extends React.Component {    
   state = {
     currentLanguage: '',
     isModalOpened: false,
-  }
+    isModalMaximized: true,
+    playerTrackIndex: 0,
+    audiosArray: [],
+  };
+
 
   componentDidMount() {
     this.setState({
@@ -24,12 +28,10 @@ export default class App extends React.Component {
 
   handleMini = () => {
     if (this.state.isModalMaximized) {
-      console.log(false)
       this.setState(() => ({
         isModalMaximized: false,
       }))
     } else {
-      console.log(true)
       this.setState(() => ({
         isModalMaximized: true,
       }))
@@ -100,6 +102,12 @@ export default class App extends React.Component {
             exact
             render={(props) => (
               <HomePage {...props} handleModal={this.handleModal} />
+            )}
+          />
+          <Route
+            path={routes.search}
+            component={(props) => (
+              <SearchPage {...props} handleModal={this.handleModal} />
             )}
           />
           <Route path={routes.addSong} component={AddSongPage} />
