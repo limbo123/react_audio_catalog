@@ -9,23 +9,25 @@
 #tabbar {
   --c-color: #763fee;
   --c-background: #fff;
-  --indicator-x: 34px;
+  --indicator-x: 35px;
   --indicator-circle-o: 1;
   --indicator-circle-y: 0px;
   -webkit-tap-highlight-color: transparent;
   border-radius: 31px;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   background: var(--c-background);
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  height: fit-content;
 }
 #tabbar .indicator {
   position: absolute;
   z-index: 1;
-  left: 0;
+  left: 20px;
   bottom: 0;
   display: block;
-  width: 68px;
-  height: 72px;
+  width: 28px;
+  height: 42px;
   fill: var(--c-color);
   transform: translateX(var(--indicator-x));
 }
@@ -40,13 +42,13 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  width: 375px;
-  height: 100px;
+  width: 100vw;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 110;
 }
 #tabbar ul li {
   --icon-y: 0px;
@@ -78,7 +80,6 @@
 }
 #tabbar ul li button:before {
   content: "";
-  position: absolute;
   z-index: 1;
   left: 0;
   top: 0;
@@ -101,6 +102,74 @@
   top: 0;
   left: 0;
   clip-path: circle(var(--icon-circle) at 50% 100%);
+}
+
+.SettingsBtn div:nth-child(0) {
+  margin-top: 20px;
+  background-color: rgb(117, 28, 28);
+}
+
+.SettingsBtn button,
+.SettingsBtn button:hover {
+  background-color: #fff;
+  color: #80b3ff;
+  border-color: #dadada;
+  text-align: center;
+  background-color: #fff;
+  color: #80b3ff;
+  border-color: #dadada;
+  text-align: center;
+}
+
+.SettingsBtn button:hover svg {
+  transform: rotate(180deg);
+  transition: 500ms;
+}
+
+.SettingsBtn button::after {
+  display: none;
+}
+
+.LangChanger,
+.ThemeChanger {
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.LangChanger button {
+  border: none;
+  border-radius: 10px;
+  margin: 0 10px;
+  color: rgb(154, 154, 154);
+}
+
+.LangChanger .ActiveLanguageBtn,
+.LangChanger .ActiveLanguageBtn:hover {
+  background: #80b3ff;
+  color: #80b3ff;
+}
+
+.styled_toggle {
+  /* background-color: rgb(177, 0, 0); */
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #b615a8; */
+}
+
+.toggle_icon {
+  color: #fff;
+  padding-bottom: 5px;
+}
+
+.decide_item {
+  display: flex;
+  justify-content: center;
 }
 /* .active {
   

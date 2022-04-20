@@ -1,6 +1,6 @@
-import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import './App.css'
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import "./App.css";
 
 import HomePage from "./pages/HomePage/HomePage";
 import SearchPage from "./pages/SearchPage/SearchPage";
@@ -12,7 +12,7 @@ import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
 
 export default class App extends React.Component {
   state = {
-    currentLanguage: '',
+    currentLanguage: "",
     isModalOpened: false,
     isModalMaximized: true,
     playerTrackIndex: 0,
@@ -24,7 +24,7 @@ export default class App extends React.Component {
       currentLanguage: localStorage.getItem("language"),
     });
 
-    console.log('did mount');
+   // console.log('did mount');
     if (JSON.parse(localStorage.getItem("current_index")) >= 0) {
       // console.log('I DO IT, LOAD HANDLE B*TCH');
       this.handleModal(
@@ -34,31 +34,31 @@ export default class App extends React.Component {
     }
 
     if(JSON.parse(localStorage.getItem('isModalMaximized')) === false){
-      console.log('bro, i`m maximized');
-console.log('i have to close');
+  //    console.log('bro, i`m maximized');
+//console.log('i have to close');
       this.setState({
         isModalMaximized: JSON.parse(localStorage.getItem('isModalMaximized')),
       });
-      console.log('i chanche the state');
+  //    console.log('i chanche the state');
       this.handleMini();
-      console.log('i do a hadle mini');
+      // console.log('i do a hadle mini');
     }
 
   }
 
   handleMini = () => {
     if (this.state.isModalMaximized) {
-      console.log('i do closong');
+    //  console.log('i do closong');
       localStorage.setItem("isModalMaximized", JSON.stringify(false));
       this.setState(() => ({
         isModalMaximized: false,
-      }))
+      }));
     } else {
-      console.log('i do openong');
+    //  console.log('i do openong');
       localStorage.setItem("isModalMaximized", JSON.stringify(true));
       this.setState(() => ({
         isModalMaximized: true,
-      }))
+      }));
     }
 
     if (this.state.isModalOpened) {
@@ -66,17 +66,17 @@ console.log('i have to close');
       // console.log(true)
       this.setState(() => ({
         isModalMaximized: true,
-      }))
+      }));
     }
 
     setTimeout(() => {
       if (this.state.isModalMaximized) {
-        document.body.style.overflow = 'hidden'
+        document.body.style.overflow = "hidden";
       } else {
-        document.body.style.overflow = 'visible'
+        document.body.style.overflow = "visible";
       }
-    }, 50)
-  }
+    }, 50);
+  };
 
   handleModal = (currentIndex, audiosArray) => {
     if (this.state.isModalOpened === false) {
@@ -87,7 +87,7 @@ console.log('i have to close');
         isModalOpened: true,
         playerTrackIndex: currentIndex,
         audiosArray,
-      }))
+      }));
     } else {
      console.log('closing');
      localStorage.setItem("current_index", '-1');
@@ -95,15 +95,15 @@ console.log('i have to close');
         isModalOpened: false,
         playerTrackIndex: currentIndex,
         audiosArray,
-      }))
+      }));
     }
-  }
+  };
 
   setLanguage = (lang) => {
     this.setState({
       currentLanguage: lang,
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -118,13 +118,16 @@ console.log('i have to close');
           />
         )}
 
-        {this.state.currentLanguage !== '' && (
+        {this.state.currentLanguage !== "" && (
           <Navbar
             language={this.state.currentLanguage}
             setLang={this.setLanguage}
           />
         )}
-        <NavbarMobile />
+        <NavbarMobile
+          language={this.state.currentLanguage}
+          setLang={this.setLanguage}
+        />
         <Switch>
           <Route
             path={routes.home}
@@ -143,6 +146,6 @@ console.log('i have to close');
           <Redirect to={routes.home} />
         </Switch>
       </>
-    )
+    );
   }
 }

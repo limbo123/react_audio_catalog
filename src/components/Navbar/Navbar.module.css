@@ -119,7 +119,7 @@
 
 @media screen and (max-width: 480px) {
     .Navigation {
-        width: 50%;
+        display: none;
     }
     .Container {
         width: 85%;
@@ -139,9 +139,7 @@
 
 @media screen and (max-width: 426px) {
     .Navigation {
-        width: 400px;
-        height: 15px;
-        margin: 0 auto;
+        display: none;
     }
     .Container {
         width: 400px;
@@ -152,7 +150,7 @@
 
 @media screen and (max-width: 375px) {
     .Navigation {
-        width: 320px;
+        display: none;
     }
     .Container {
         width: 320px;
