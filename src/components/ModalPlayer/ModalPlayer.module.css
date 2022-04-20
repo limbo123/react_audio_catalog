@@ -51,16 +51,19 @@
 
 .CloseModalBtn {
   position: fixed;
-  right: 20vw;
-  top: 5vh;
+  right: 25%;
+  top: 0;
+  margin-top: 40px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .CloseModalBtn_mini {
   position: fixed;
-  left: 93%;
-  top: 34.5%;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 440px;
+  margin-right: 50px;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -77,19 +80,21 @@
 
 .miniModalBtn {
   position: fixed;
-  right: 22.5vw;
-  top: 5vh;
+  left: 25%;
+  top: 0;
+  margin-top: 40px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .miniModalBtn_mini {
   position: fixed;
-  left: 90.5%;
-  top: 34.5%;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 440px;
+  margin-right: 250px;
   cursor: pointer;
   transition: all 0.2s;
-  /* background-color: rgb(167, 22, 22); */
 }
 
 .miniModalBtn>svg {
@@ -101,7 +106,6 @@
   width: 30px;
   height: 30px;
 }
-
 
 .SongDetails {
   display: flex;
@@ -146,10 +150,10 @@
 }
 
 .PlayerSettings {
-  width: 75%;
+  width: 75%; 
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
 }
 
 .PlayerSettings_mini {
@@ -266,10 +270,6 @@
     width: 300px;
     height: 300px;
   }
-
-  .CloseModalBtn {
-    right: 20vw;
-  }
 }
 
 @media screen and (max-width: 850px) and (orientation: landscape) {
@@ -281,10 +281,6 @@
   .SongImage {
     width: 300px;
     height: 300px;
-  }
-
-  .CloseModalBtn {
-    right: 7vw;
   }
 }
 
@@ -333,12 +329,12 @@
     margin-top: 10px;
   }
 
-  .CloseModalBtn {
-    right: 2vw;
-    top: 7.5vw;
+  .CloseModalBtn svg {
+    width: 100px;
+    height: 50px;
   }
 
-  .CloseModalBtn svg {
+  .miniModalBtn svg {
     width: 100px;
     height: 50px;
   }
@@ -364,15 +360,20 @@
   }
 }
 
-@media screen and (max-width: 609px) {
+@media screen and (max-width: 615px) {
   .SongImage {
     width: 40vw;
     height: 40vw;
   }
 
   .CloseModalBtn {
-    top: 12vw;
-    right: 4vw;
+    margin-top: 70px;
+    right: 15%;
+  }
+
+  .miniModalBtn {
+    margin-top: 70px;
+    left: 15%;
   }
 }
 
@@ -380,10 +381,6 @@
   .SongImage {
     width: 50vw;
     height: 50vw;
-  }
-
-  .CloseModalBtn {
-    top: 13vw;
   }
 }
 
@@ -421,7 +418,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 20px;
+    margin-left: 10px;
+    align-items: center;
   }
 
   .SongDetails_mini h6{
@@ -459,6 +457,13 @@
     right: 35px;
     bottom: 18px;
   }
+
+  .miniModalBtn_mini {
+    margin: 0;
+    position: absolute;
+    left: 60px;
+    bottom: 18px;
+  }
 }
 
 @media screen and (max-width: 370px) {
@@ -470,10 +475,6 @@
   .PlayerControls {
     bottom: 100px;
   }
-
-  .CloseModalBtn {
-    top: 19vw;
-  }
 }
 
 @media screen and (max-width: 335px) {
@@ -484,15 +485,5 @@
 
   .PlayerControls {
     bottom: 120px;
-  }
-
-  .CloseModalBtn {
-    top: 21vw;
-  }
-}
-
-@media screen and (max-width: 325px) {
-  .CloseModalBtn {
-    top: 22vw;
   }
 }

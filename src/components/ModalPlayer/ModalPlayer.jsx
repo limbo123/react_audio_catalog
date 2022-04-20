@@ -76,7 +76,7 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
 
   return createPortal(
     <div className={isModMax ? styles.Overlay : styles.Overlay_mini}>
-      <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING</h6>
+      <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING:</h6>
       <div className={isModMax ? styles.miniModalBtn : styles.miniModalBtn_mini} onClick={handleMini}>
         {isModMax ? <FiMinimize2 size="1.6rem" /> : <FiMaximize2 size="1.6rem" />}
       </div>
@@ -84,9 +84,13 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
         <IoCloseSharp size="5rem" />
       </div>
       <div className={isModMax ? styles.SongDetails : styles.SongDetails_mini}>
-  <img className={isModMax ? styles.SongImage : styles.SongImage_mini} src={audios[currentSongIndex].imageUrl} alt="" />
-        <h6 className={isModMax ? styles.SongTitle : styles.SongTitle_mini}>{audios[currentSongIndex].title}</h6>
-        <p className={isModMax ? styles.SongAuthor : styles.SongAuthor_mini}>{audios[currentSongIndex].author}</p>
+        <img className={isModMax ? styles.SongImage : styles.SongImage_mini} src={audios[currentSongIndex].imageUrl} alt="" />
+        <div>
+          <h6 className={isModMax ? styles.SongTitle : styles.SongTitle_mini}>{audios[currentSongIndex].title.length > 37 ?
+            audios[currentSongIndex].title = `${audios[currentSongIndex].title.substring(0, 35)}...` : audios[currentSongIndex].title
+          }</h6>
+          <p className={isModMax ? styles.SongAuthor : styles.SongAuthor_mini}>{audios[currentSongIndex].author}</p>
+        </div>
       </div>
       <div className={isModMax ? styles.PlayerSettings : styles.PlayerSettings_mini}>
         <div className={isModMax ? styles.PlayerTimeline : styles.PlayerTimeline_mini}>

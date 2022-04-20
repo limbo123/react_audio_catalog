@@ -134,30 +134,6 @@ class CreateForm extends React.Component {
         >
           <h2>{this.props.t('Enter Song Information')}:</h2>
 
-          <input
-            type="file"
-            accept="image/*"
-            className="form-input visually-hidden"
-            id="createImageInput"
-            name="image"
-            ref={this.imageInputRef}
-            onChange={this.handleUploadImg}
-            required
-          />
-          <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
-            <AiOutlineCloudUpload className={styles.CreateFormUploadImg} />
-
-            {this.props.t('Upload File')}
-
-            {this.state.uploadImg && (
-              <img
-                src={this.state.uploadImg}
-                alt=""
-                className={styles.uploadImage}
-              />
-            )}
-          </label>
-
           <div className={styles.CreateForm}>
             <label>
               <input
@@ -240,7 +216,7 @@ class CreateForm extends React.Component {
                   chips: {
                     background: 'rgb(248, 153, 28)',
                     height: '20px',
-                    margin: 'auto 5px',
+                    margin: ' 0 auto',
                   },
 
                   searchBox: {
@@ -252,8 +228,9 @@ class CreateForm extends React.Component {
                     paddingLeft: '10px',
                     cursor: 'pointer',
                     listStyle: 'none',
-                    width: '520px',
+                    width: '100%',
                     height: '48px',
+                    margin: '0 auto',
                     backgroundColor: '#fff',
                     // marginRight: '0',
                     marginBottom: '16px',
@@ -267,7 +244,7 @@ class CreateForm extends React.Component {
                   option: {
                     backgroundColor: 'rgb(248, 153, 28)',
                     margin: '3px 0',
-                    width: '97%',
+                    width: '100%',
                     borderRadius: '5px',
                   },
                 }}
@@ -277,7 +254,7 @@ class CreateForm extends React.Component {
             </label>
 
             <div className={styles.uploadAudio}>
-              <div>
+              <div className={styles.uploadAudioInner}>
                 <label htmlFor="file-input">
                   <AiOutlineCloudUpload size="1.5rem" />
                 </label>
@@ -303,7 +280,29 @@ class CreateForm extends React.Component {
                 required
               />
             </div>
-
+            <input
+              type="file"
+              accept="image/*"
+              className="form-input visually-hidden"
+              id="createImageInput"
+              name="image"
+              ref={this.imageInputRef}
+              onChange={this.handleUploadImg}
+              required
+            />
+            <label className={styles.CreateFormBtn2} htmlFor="createImageInput">
+              {this.state.uploadImg && (
+                <img
+                  src={this.state.uploadImg}
+                  alt=""
+                  className={styles.uploadImage}
+                />
+              )}
+              <div className={styles.uploadImageContent}>
+                <AiOutlineCloudUpload className={styles.CreateFormUploadImg} />
+                {this.props.t('Upload File')}
+              </div>
+            </label>
             <button type="submit" className={styles.CreateFormButton}>
               {this.props.t('Submit')}
             </button>
