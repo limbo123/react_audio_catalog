@@ -2,7 +2,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 65%;
-    height: auto;
+    height: 400px;
     /* margin: 0 30px; */
 }
 
@@ -12,6 +12,7 @@
     align-items: center;
     width: 100%;
     height: 40px;
+    margin: 0 auto;
     border: 1px solid #818181;
     border-radius: 10px;
     overflow: hidden;
@@ -88,9 +89,20 @@
 }
 
 @media screen and (max-width: 426px) {
+    .Container {}
+    .promtList {
+        position: absolute;
+        top: 200px;
+    }
     .SearchForm {
+        display: flex;
         width: 90%;
-        margin: 0 auto;
+        position: absolute;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
     }
 }
 
