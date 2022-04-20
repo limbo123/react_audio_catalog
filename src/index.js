@@ -4,7 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import "./i18n";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
-import App from "./App"; 
+import App from "./App";
+// import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+// gsap.registerPlugin(MorphSVGPlugin);
 
 axios.defaults.baseURL = "https://app-audio.herokuapp.com/api";
 
