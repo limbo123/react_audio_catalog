@@ -447,10 +447,29 @@
   }
 
   .Overlay_mini {
-    width: 92%;
-    height: 95px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 100px;
+    padding-left: 5px;
+    height: 60px;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+  }
+
+  .Overlay_mini span {
+    /* font-size: 10px !important; */
+    display: none;
+  }
+
+  .Overlay_mini button {
+    width: fit-content;
+  }
+
+  .Overlay_mini svg {
+    width: 20px;
+    height: 20px;
+
   }
 
   .ModalTitle_mini {
@@ -473,44 +492,77 @@
     margin-top: 10px;
   }
 
+  .SongTitle_mini {
+    font-size: 12px !important;
+  }
+
   .SongAuthor_mini {
+    font-size: 10px !important;
     color: #7c8db5;
   }
 
   .SongImage_mini {
-    width: 68px;
-    height: 68px;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
     margin-bottom: 10px;
+    margin-right: 20px;
   }
 
   .PlayerSettings_mini {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between;   */
   }
 
+  
+
   .PlayerTimeline_mini {
-    width: 100%;
+    /* position: absolute;
+    right: 3px;
+    top: 20px; */
+    display: none;
+  }
+
+  /* .PlayerTimeline_mini input {
+    width: 130px;
+  } */
+
+  .PlayBtn_mini {
+    background: inherit !important;
   }
 
   .PlayerControls_mini {
-    margin-top: 10px;
+    width: fit-content;
     position: static;
+    display: flex;
+    /* margin-top: 7px; */
+    margin-left: 20px;
+  }
+
+  .PlayerControls_mini button {
+    margin: -15px;
   }
 
   .CloseModalBtn_mini {
     margin: 0;
     position: absolute;
-    right: 35px;
-    bottom: 18px;
-  }
+    right: 3px;
+    top: 0;
+    /* display: none; */
+  }  
 
   .miniModalBtn_mini {
+    width: fit-content;
     margin: 0;
     position: absolute;
-    left: 60px;
-    bottom: 18px;
+    right: 35px;
+    top: 0;
+    /* display: none; */
   }
+  .miniModalBtn_mini svg{
+    width: 15px !important;
+  }
+
 }
 
 @media screen and (max-width: 370px) {
