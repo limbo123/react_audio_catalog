@@ -23,45 +23,76 @@ export default class App extends React.Component {
     this.setState({
       currentLanguage: localStorage.getItem("language"),
     });
+
+    const currentIndex = JSON.parse(localStorage.getItem("current_index"));
+    const isModalMaximized = JSON.parse(localStorage.getItem('isModalMaximized'));
+
+    if (currentIndex !== null && currentIndex >= 0) {
+      this.handleModal(
+        JSON.parse(localStorage.getItem("current_index")),
+        JSON.parse(localStorage.getItem("audiosArray"))
+      );
+    }
+
+    if (isModalMaximized !== null && isModalMaximized === false) {
+      this.setState({
+        isModalMaximized: JSON.parse(localStorage.getItem('isModalMaximized')),
+      });
+
+      this.handleMini();
+    }
   }
 
   handleMini = () => {
     if (this.state.isModalMaximized) {
+      console.log("hello");
+      localStorage.setItem("isModalMaximized", JSON.stringify(false));
       this.setState(() => ({
         isModalMaximized: false,
-      }));
+      }), () => {
+        if (this.state.isModalMaximized) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "visible";
+        }
+      });
     } else {
+      localStorage.setItem("isModalMaximized", JSON.stringify(true));
       this.setState(() => ({
         isModalMaximized: true,
-      }));
+      }), () => {
+        if (this.state.isModalMaximized) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "visible";
+        }
+      });
     }
 
-    if (this.state.isModalOpened) {
-    } else {
-      console.log(true);
-      this.setState(() => ({
-        isModalMaximized: true,
-      }));
-    }
-
-    setTimeout(() => {
+    this.setState(() => ({
+      isModalMaximized: true,
+    }), () => {
       if (this.state.isModalMaximized) {
         document.body.style.overflow = "hidden";
       } else {
         document.body.style.overflow = "visible";
       }
-    }, 50);
+    });
   };
 
   handleModal = (currentIndex, audiosArray) => {
     if (this.state.isModalOpened === false) {
-      this.setState((prevState) => ({
+      localStorage.setItem("current_index", JSON.stringify(currentIndex));
+      localStorage.setItem("audiosArray", JSON.stringify(audiosArray));
+
+      this.setState(() => ({
         isModalOpened: true,
         playerTrackIndex: currentIndex,
         audiosArray,
       }));
     } else {
-      this.setState((prevState) => ({
+      localStorage.setItem("current_index", '-1');
+      this.setState(() => ({
         isModalOpened: false,
         playerTrackIndex: currentIndex,
         audiosArray,

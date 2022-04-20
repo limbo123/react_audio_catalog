@@ -6,10 +6,11 @@
   transform: translateX(-50%);
   z-index: 101;
 }
+
 #tabbar {
   --c-color: #763fee;
   --c-background: #fff;
-  --indicator-x: 35px;
+  --indicator-x: 25px;
   --indicator-circle-o: 1;
   --indicator-circle-y: 0px;
   -webkit-tap-highlight-color: transparent;
@@ -20,10 +21,11 @@
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   height: fit-content;
 }
+
 #tabbar .indicator {
   position: absolute;
   z-index: 1;
-  left: 10px;
+  left: 20px;
   bottom: 0;
   display: block;
   width: 28px;
@@ -31,18 +33,21 @@
   fill: var(--c-color);
   transform: translateX(var(--indicator-x));
 }
+
 #tabbar .indicator path {
-  transform: translateY(2px);
+    transform: translateY(2px);
 }
+
 #tabbar .indicator circle {
-  opacity: var(--indicator-circle-o);
-  transform: translateY(var(--indicator-circle-y)) translateZ(0);
+    opacity: var(--indicator-circle-o);
+    transform: translateY(var(--indicator-circle-y)) translateZ(0);
 }
+
 #tabbar ul {
   padding: 0;
   margin: 0;
   list-style: none;
-  width: 360px;
+  width: 100vw;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -50,34 +55,40 @@
   position: relative;
   z-index: 110;
 }
+
 #tabbar ul li {
-  --icon-y: 0px;
-  --icon-s: 1;
-  --icon-circle: 0px;
+    --icon-y: 0px;
+    --icon-s: 1;
+    --icon-circle: 0px;
 }
+
 #tabbar ul li:not(:first-child) {
-  margin-left: 26px;
+    margin-left: 26px;
 }
+
 #tabbar ul li:not(:last-child) {
-  margin-right: 26px;
+    margin-right: 26px;
 }
+
 #tabbar ul li.active {
-  --icon-circle: 28px;
+    --icon-circle: 28px;
 }
+
 #tabbar ul li button {
-  display: block;
-  width: 28px;
-  height: 28px;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  outline: none;
-  background: none;
-  border: none;
-  position: relative;
-  -webkit-appearance: none;
-  transform: translateY(var(--icon-y)) scale(var(--icon-s)) translateZ(0);
+    display: block;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    border: none;
+    position: relative;
+    -webkit-appearance: none;
+    transform: translateY(var(--icon-y)) scale(var(--icon-s)) translateZ(0);
 }
+
 #tabbar ul li button:before {
   content: "";
   z-index: 1;
@@ -89,19 +100,21 @@
   background: var(--c-background);
   clip-path: circle(var(--icon-circle) at 50% 100%);
 }
+
 #tabbar ul li button svg {
-  color: var(--c-color);
-  display: block;
-  overflow: visible;
-  width: 28px;
-  height: 28px;
+    color: var(--c-color);
+    display: block;
+    overflow: visible;
+    width: 28px;
+    height: 28px;
 }
+
 #tabbar ul li button svg:last-child {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  clip-path: circle(var(--icon-circle) at 50% 100%);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    clip-path: circle(var(--icon-circle) at 50% 100%);
 }
 
 .SettingsBtn div:nth-child(0) {
@@ -174,8 +187,10 @@
 /* .active {
   
 } */
-@media screen and (max-width: 480px) {
-  .navBar {
-    display: block;
-  }
+
+@media screen and (max-width: 426px) {
+    .navBar {
+        width: 100%;
+        display: block;
+    }
 }
