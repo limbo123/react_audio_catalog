@@ -13,6 +13,7 @@
         "bootstrap": "^5.1.3",
         "i18next": "^21.6.14",
         "multiselect-react-dropdown": "^2.0.21",
+        "nanoid": "^3.3.3",
         "normalize.css": "^8.0.1",
         "react": "^17.0.2",
         "react-bootstrap": "^2.2.0",
