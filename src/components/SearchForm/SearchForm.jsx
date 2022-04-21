@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { IoSearchOutline } from "react-icons/io5";
 import { withTranslation } from "react-i18next";
 import axios from "axios";
+import { nanoid } from "nanoid";
 import { PacmanLoader } from "react-spinners";
 
 import styles from "./SearchForm.module.css";
@@ -32,9 +33,9 @@ class SearchForm extends Component {
   };
 
   handlePrompt = (event) => {
-    const { history, location } = this.props;
-
     event.preventDefault();
+
+    const { history, location } = this.props;
 
     if (!this.state.searchQuery) {
       this.setState({ audios: [] });
@@ -56,38 +57,55 @@ class SearchForm extends Component {
         })
         .catch((error) => console.error(error));
     }
-
-    console.log(this.state.prompts);
   };
 
-  proptChange = (event,s_item) => {
+  proptChange = (event, s_item) => {
     this.setState({ searchQuery: s_item, loading: false });
     this.setState({ prompts: [], loading: false });
-    this.handleSubmit(event)
+    this.handleSubmit(event);
   };
 
-  handleSubmit = (event) => {
+  loadAudios = async (page) => {
     const { history, location } = this.props;
-
-    event.preventDefault();
 
     if (!this.state.searchQuery) {
       this.setState({ audios: [] });
     } else {
-      history.push(`${location.pathname}?query=${this.state.searchQuery}`);
+      await history.push(`${location.pathname}?query=${this.state.searchQuery}`);
 
-      this.setState({ loading: true });
+      this.setState({ loading: true, page: page, });
 
-      axios
+      const response = await axios
         .get(
-          `audios?query=${this.state.searchQuery}&page=${this.state.page}&perPage=12`
+          `audios?query=${this.state.searchQuery}&page=${page}&perPage=12`
         )
-        .then((response) => {
-          console.log(response.data);
-          this.setState({ audios: response.data, loading: false });
-        })
-        .catch((error) => console.error(error));
+        .catch((error) => console.error(error))
+        .finally(() => {
+          this.setState({ loading: false });
+        });
+
+      return response.data;
     }
+  }
+
+  loadMore = async (event) => {
+    event.preventDefault();
+
+    const audios = await this.loadAudios(this.state.page + 1);
+
+    this.setState(prevState => ({
+      audios: [...prevState.audios, ...audios],
+    }));
+
+  }
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+
+    this.setState({ audios: [], });
+
+    const audios = await this.loadAudios(1);
+    this.setState({ audios: audios });
   };
 
   render() {
@@ -109,21 +127,10 @@ class SearchForm extends Component {
               onChange={this.handleChange}
             />
           </form>
-          <ul className={styles.promtList} >{this.state.prompts.map((title) => {return(<li className={styles.promptItem} onClick={(event)=>{this.proptChange(event, title)}} key={this.state.prompts.indexOf(title)}>{title}</li>)})}</ul>
+          <ul className={styles.promtList} >{this.state.prompts.map((title) => { return (<li className={styles.promptItem} onClick={(event) => { this.proptChange(event, title) }} key={nanoid()}>{title}</li>) })}</ul>
         </div>
 
-        {this.state.loading && (
-          <div className="loader">
-            <PacmanLoader
-              color="#F8991C"
-              loading={true}
-              size={30}
-              speedMultiplier="1.5"
-            />
-          </div>
-        )}
-
-        {this.state.audios.length > 0 && this.state.searchQuery && (
+        {this.state.searchQuery && this.state.audios.length > 0 && (
           <>
             <h2 className={styles.searchTitle}>
               {this.props.t("Search Results")} "<i>{this.state.searchQuery}</i>
@@ -156,7 +163,24 @@ class SearchForm extends Component {
                 }
               )}
             </div>
+
+            <div className={styles.ButtonWrapper}>
+              <button className={styles.Button} type="button" onClick={this.loadMore}>
+                Load more
+              </button>
+            </div>
           </>
+        )}
+
+        {this.state.loading && (
+          <div className="loader">
+            <PacmanLoader
+              color="#F8991C"
+              loading={true}
+              size={30}
+              speedMultiplier="1.5"
+            />
+          </div>
         )}
       </>
     );

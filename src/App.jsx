@@ -21,78 +21,88 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.setState({
-      currentLanguage: localStorage.getItem("language"),
-    });
+      currentLanguage: localStorage.getItem('language'),
+    })
 
-   // console.log('did mount');
-    if (JSON.parse(localStorage.getItem("current_index")) >= 0) {
-      // console.log('I DO IT, LOAD HANDLE B*TCH');
+    const currentIndex = JSON.parse(localStorage.getItem('current_index'))
+    const isModalMaximized = JSON.parse(
+      localStorage.getItem('isModalMaximized'),
+    )
+
+    if (currentIndex !== null && currentIndex >= 0) {
       this.handleModal(
-        JSON.parse(localStorage.getItem("current_index")),
-        JSON.parse(localStorage.getItem("audiosArray"))
-      );
+        JSON.parse(localStorage.getItem('current_index')),
+        JSON.parse(localStorage.getItem('audiosArray')),
+      )
     }
 
-    if(JSON.parse(localStorage.getItem('isModalMaximized')) === false){
-  //    console.log('bro, i`m maximized');
-//console.log('i have to close');
+    if (isModalMaximized !== null && isModalMaximized === false) {
       this.setState({
         isModalMaximized: JSON.parse(localStorage.getItem('isModalMaximized')),
-      });
-  //    console.log('i chanche the state');
-      this.handleMini();
-      // console.log('i do a hadle mini');
-    }
+      })
 
+      this.handleMini()
+    }
   }
 
   handleMini = () => {
     if (this.state.isModalMaximized) {
-    //  console.log('i do closong');
-      localStorage.setItem("isModalMaximized", JSON.stringify(false));
-      this.setState(() => ({
-        isModalMaximized: false,
-      }))
+      localStorage.setItem('isModalMaximized', JSON.stringify(false))
+      this.setState(
+        () => ({
+          isModalMaximized: false,
+        }),
+        () => {
+          if (this.state.isModalMaximized) {
+            document.body.style.overflow = 'hidden'
+          } else {
+            document.body.style.overflow = 'visible'
+          }
+        },
+      )
     } else {
-    //  console.log('i do openong');
-      localStorage.setItem("isModalMaximized", JSON.stringify(true));
-      this.setState(() => ({
-        isModalMaximized: true,
-      }))
+      localStorage.setItem('isModalMaximized', JSON.stringify(true))
+      this.setState(
+        () => ({
+          isModalMaximized: true,
+        }),
+        () => {
+          if (this.state.isModalMaximized) {
+            document.body.style.overflow = 'hidden'
+          } else {
+            document.body.style.overflow = 'visible'
+          }
+        },
+      )
     }
 
-    if (this.state.isModalOpened) {
-      
-    } else {
-      // console.log(true)
-      this.setState(() => ({
+    this.setState(
+      () => ({
         isModalMaximized: true,
-      }))
-    }
-
-    setTimeout(() => {
-      if (this.state.isModalMaximized) {
-        document.body.style.overflow = 'hidden'
-      } else {
-        document.body.style.overflow = 'visible'
-      }
-    }, 50)
+      }),
+      () => {
+        if (this.state.isModalMaximized) {
+          document.body.style.overflow = 'hidden'
+        } else {
+          document.body.style.overflow = 'visible'
+        }
+      },
+    )
   }
 
   handleModal = (currentIndex, audiosArray) => {
     if (this.state.isModalOpened === false) {
-      localStorage.setItem("current_index", JSON.stringify(currentIndex));
-      localStorage.setItem("audiosArray", JSON.stringify(audiosArray));
+      localStorage.setItem('current_index', JSON.stringify(currentIndex))
+      localStorage.setItem('audiosArray', JSON.stringify(audiosArray))
 
-      this.setState((prevState) => ({
+      this.setState(() => ({
         isModalOpened: true,
         playerTrackIndex: currentIndex,
         audiosArray,
       }))
     } else {
-     console.log('closing');
-     localStorage.setItem("current_index", '-1');
-      this.setState((prevState) => ({
+      localStorage.setItem('current_index', '-1')
+      this.setState(() => ({
         isModalOpened: false,
         playerTrackIndex: currentIndex,
         audiosArray,
