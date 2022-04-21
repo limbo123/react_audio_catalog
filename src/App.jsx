@@ -21,10 +21,6 @@ export default class App extends React.Component {
 
   componentDidMount() {
     this.setState({
-<<<<<<< HEAD
-      currentLanguage: localStorage.getItem('language'),
-    })
-=======
       currentLanguage: localStorage.getItem("language"),
     });
 
@@ -48,7 +44,6 @@ export default class App extends React.Component {
       // console.log('i do a hadle mini');
     }
 
->>>>>>> origin/bocharov
   }
 
   handleMini = () => {
@@ -69,11 +64,7 @@ export default class App extends React.Component {
     if (this.state.isModalOpened) {
       
     } else {
-<<<<<<< HEAD
-      console.log(true)
-=======
       // console.log(true)
->>>>>>> origin/bocharov
       this.setState(() => ({
         isModalMaximized: true,
       }))
