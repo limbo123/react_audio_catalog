@@ -147,7 +147,7 @@ class SearchForm extends Component {
                   if (author.length > 23) {
                     author = `${author.substring(0, 20)}...`;
                   }
-
+                  
                   return (
                     <NewReleasesListTrack
                       author={author}
