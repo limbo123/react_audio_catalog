@@ -4,7 +4,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 99;
+    z-index: 101;
 }
 
 #tabbar {
@@ -25,7 +25,7 @@
 #tabbar .indicator {
     position: absolute;
     z-index: 1;
-    left: 20px;
+    left: 10px;
     bottom: 0;
     display: block;
     width: 28px;
@@ -47,7 +47,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    width: 100vw;
+    width: 360px;
     height: 70px;
     display: flex;
     justify-content: center;
