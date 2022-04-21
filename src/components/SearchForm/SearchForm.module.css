@@ -98,8 +98,7 @@
         display: flex;
         width: 90%;
         position: absolute;
-        position: absolute;
-        top: 25%;
+        top: 15%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%);

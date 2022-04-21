@@ -68,12 +68,12 @@
   transition: all 0.2s;
 }
 
-.CloseModalBtn>svg {
+.CloseModalBtn > svg {
   width: 30px;
   height: 30px;
 }
 
-.CloseModalBtn_mini>svg {
+.CloseModalBtn_mini > svg {
   width: 30px;
   height: 30px;
 }
@@ -97,12 +97,12 @@
   transition: all 0.2s;
 }
 
-.miniModalBtn>svg {
+.miniModalBtn > svg {
   width: 30px;
   height: 30px;
 }
 
-.miniModalBtn_mini>svg {
+.miniModalBtn_mini > svg {
   width: 30px;
   height: 30px;
 }
@@ -117,7 +117,7 @@
   flex-direction: column;
 }
 
-.SongDetails>div {
+.SongDetails > div {
   margin-top: 20px;
 }
 
@@ -150,10 +150,11 @@
 }
 
 .PlayerSettings {
-  width: 75%; 
+  width: 75%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 0;
 }
 
 .PlayerSettings_mini {
@@ -253,7 +254,7 @@
   border-radius: 10px;
 }
 
-.buttonsDivider{
+.buttonsDivider {
   width: 60px;
   display: flex;
   justify-content: space-between;
@@ -296,7 +297,8 @@
     align-items: center;
   }
 
-  .PlayerControls button, .PlayerControls svg {
+  .PlayerControls button,
+  .PlayerControls svg {
     width: 150px;
     height: 50px;
     display: flex;
@@ -398,12 +400,76 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
+  .SongImage {
+    width: 50vw;
+    height: 30vh;
+  }
+
+  .playerTimeControl {
+    height: 6px !important;
+  }
+
+  .PlayerTimeline {
+    margin: auto;
+    position: absolute;
+    width: 60%;
+  }
+
+  .playerTimeControl::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+  }
+
+  .PlayerControls button {
+    margin: -30px;
+    padding: 0;
+  }
+
+  span {
+    font-size: 15px !important;
+  }
+
+  h6 {
+    font-size: 15px !important;
+  }
+
+  .SongAuthor {
+    font-size: 14px;
+  }
+
+  svg {
+    width: 36px !important;
+    /* height: 10px; */
+  }
+  .ModalTitle {
+    font-size: 15px !important;
+  }
+
   .Overlay_mini {
-    width: 92%;
-    height: 95px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 100px;
+    padding-left: 5px;
+    height: 60px;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+  }
+
+  .Overlay_mini span {
+    /* font-size: 10px !important; */
+    display: none;
+  }
+
+  .Overlay_mini button {
+    width: fit-content;
+  }
+
+  .Overlay_mini svg {
+    width: 20px;
+    height: 20px;
+
   }
 
   .ModalTitle_mini {
@@ -414,7 +480,7 @@
     flex-direction: row;
   }
 
-  .SongDetails_mini>div {
+  .SongDetails_mini > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -422,54 +488,87 @@
     align-items: center;
   }
 
-  .SongDetails_mini h6{
+  .SongDetails_mini h6 {
     margin-top: 10px;
+  }
+
+  .SongTitle_mini {
+    font-size: 12px !important;
   }
 
   .SongAuthor_mini {
-    color: #7C8DB5;
+    font-size: 10px !important;
+    color: #7c8db5;
   }
 
   .SongImage_mini {
-    width: 68px;
-    height: 68px;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
     margin-bottom: 10px;
+    margin-right: 20px;
   }
 
   .PlayerSettings_mini {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between;   */
   }
 
+  
+
   .PlayerTimeline_mini {
-    width: 100%;
+    /* position: absolute;
+    right: 3px;
+    top: 20px; */
+    display: none;
+  }
+
+  /* .PlayerTimeline_mini input {
+    width: 130px;
+  } */
+
+  .PlayBtn_mini {
+    background: inherit !important;
   }
 
   .PlayerControls_mini {
-    margin-top: 10px;
+    width: fit-content;
     position: static;
+    display: flex;
+    /* margin-top: 7px; */
+    margin-left: 20px;
+  }
+
+  .PlayerControls_mini button {
+    margin: -15px;
   }
 
   .CloseModalBtn_mini {
     margin: 0;
     position: absolute;
-    right: 35px;
-    bottom: 18px;
-  }
+    right: 3px;
+    top: 0;
+    /* display: none; */
+  }  
 
   .miniModalBtn_mini {
+    width: fit-content;
     margin: 0;
     position: absolute;
-    left: 60px;
-    bottom: 18px;
+    right: 35px;
+    top: 0;
+    /* display: none; */
   }
+  .miniModalBtn_mini svg{
+    width: 15px !important;
+  }
+
 }
 
 @media screen and (max-width: 370px) {
   .SongImage {
-    width: 120vw;
-    height: 120vw;
+    width: 50vw;
+    height: 50vw;
   }
 
   .PlayerControls {
@@ -479,8 +578,8 @@
 
 @media screen and (max-width: 335px) {
   .SongImage {
-    width: 140vw;
-    height: 140vw;
+    width: 50vw;
+    height: 50vw;
   }
 
   .PlayerControls {

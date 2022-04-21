@@ -2,23 +2,22 @@ import React from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import './App.css'
 
-import HomePage from "./pages/HomePage/HomePage";
-import SearchPage from "./pages/SearchPage/SearchPage";
-import AddSongPage from "./pages/AddSongPage/AddSongPage";
-import Navbar from "./components/Navbar/Navbar";
-import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
-import routes from "./routes";
-import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
+import HomePage from './pages/HomePage/HomePage'
+import SearchPage from './pages/SearchPage/SearchPage'
+import AddSongPage from './pages/AddSongPage/AddSongPage'
+import Navbar from './components/Navbar/Navbar'
+import ModalPlayer from './components/ModalPlayer/ModalPlayer'
+import routes from './routes'
+import NavbarMobile from './components/NavbarMobile/NavbarMobile'
 
-export default class App extends React.Component {    
+export default class App extends React.Component {
   state = {
     currentLanguage: '',
     isModalOpened: false,
     isModalMaximized: true,
     playerTrackIndex: 0,
     audiosArray: [],
-  };
-
+  }
 
   componentDidMount() {
     this.setState({
@@ -95,7 +94,10 @@ export default class App extends React.Component {
             setLang={this.setLanguage}
           />
         )}
-        <NavbarMobile />
+        <NavbarMobile
+          language={this.state.currentLanguage}
+          setLang={this.setLanguage}
+        />
         <Switch>
           <Route
             path={routes.home}

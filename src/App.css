@@ -200,18 +200,17 @@ ul {
         grid-template-columns: repeat(1, 1fr);
         margin: 0 auto;
     }
+    #genres {
+        height: 30px;
+    }
     #css_custom_multiselect>div {
         max-width: 100%;
         width: 100%;
     }
 }
 
-
-/* @media screen and (max-width: 401px) {
-    .audios {
-        grid-template-columns: repeat(2, 2fr);
+@media screen and (max-width: 401px) {
+    #genres {
+        height: 25px;
     }
-    #css_custom_multiselect>div {
-
-    }
-} */
+}
