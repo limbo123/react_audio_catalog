@@ -10,7 +10,6 @@ import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import Toggle from "react-toggle";
 import { withTranslation } from "react-i18next";
 
-
 const body = document.querySelector("body");
 
 
