@@ -2,7 +2,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 65%;
-    height: 400px;
+    height: fit-content;
     /* margin: 0 30px; */
 }
 
@@ -118,10 +118,20 @@
     }
 }
 
+@media screen and (max-width: 740px) {
+    .searchResults {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media screen and (max-width: 480px) {
 
     .Container {
         padding-top: 20px;
+    }
+
+    .searchResults {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     /* .Container {}
