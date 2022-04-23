@@ -28,7 +28,6 @@ const ModalPlayer = ({ onClose, toggleMini, isModMax, audios, trackIndex }) => {
   useEffect(() => {
     setCurrentSongIndex(trackIndex);
     axios.patch(`/audios/${audios[currentSongIndex]._id}/listen`);
-    console.log(audios[currentSongIndex]);
     setIsPlaying(true);
   }, [trackIndex])
 

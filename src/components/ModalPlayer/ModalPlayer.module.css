@@ -458,7 +458,6 @@
   }
 
   .Overlay_mini span {
-    /* font-size: 10px !important; */
     display: none;
   }
 
@@ -509,23 +508,9 @@
     margin-right: 20px;
   }
 
-  .PlayerSettings_mini {
-    /* display: flex; */
-    /* justify-content: space-between;   */
-  }
-
-  
-
   .PlayerTimeline_mini {
-    /* position: absolute;
-    right: 3px;
-    top: 20px; */
     display: none;
   }
-
-  /* .PlayerTimeline_mini input {
-    width: 130px;
-  } */
 
   .PlayBtn_mini {
     background: inherit !important;
@@ -535,7 +520,6 @@
     width: fit-content;
     position: static;
     display: flex;
-    /* margin-top: 7px; */
     margin-left: 20px;
   }
 
@@ -548,7 +532,6 @@
     position: absolute;
     right: 3px;
     top: 0;
-    /* display: none; */
   }  
 
   .miniModalBtn_mini {
@@ -557,12 +540,16 @@
     position: absolute;
     right: 35px;
     top: 0;
-    /* display: none; */
   }
   .miniModalBtn_mini svg{
     width: 15px !important;
   }
+}
 
+@media screen and (max-width: 425px) {
+  .PlayerControls {
+    bottom: 100px;
+  }
 }
 
 @media screen and (max-width: 370px) {
@@ -580,9 +567,5 @@
   .SongImage {
     width: 50vw;
     height: 50vw;
-  }
-
-  .PlayerControls {
-    bottom: 120px;
   }
 }

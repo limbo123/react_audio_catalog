@@ -139,8 +139,14 @@
     transition: 500ms;
 }
 
-.SettingsBtn button::after {
-    display: none;
+.SettingsBtn>button::after {
+    display: none !important;
+}
+
+.SettingsBtn>button:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .LangChanger,
@@ -185,14 +191,14 @@
     justify-content: center;
 }
 
-
-/* .active {
-  
-} */
-
 @media screen and (max-width: 426px) {
     .navBar {
         width: 100%;
-        display: block;
+        display: inline-flex;
+        justify-content: center;
+    }
+
+    .toggle_icon {
+        width: 15px !important;
     }
 }

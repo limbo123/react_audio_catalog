@@ -6,6 +6,7 @@
   box-sizing: border-box;
   border-radius: 10px;
   padding: 15px;
+  margin-bottom: 20px;
 }
 
 .audioCard > img {
@@ -49,6 +50,7 @@
 }
 
 .play {
+  width: auto !important;
   transition: all 0.2s;
   background-color: #fff;
   border-radius: 50%;
@@ -108,6 +110,6 @@
 @media screen and (max-width: 426px) {
   .streamsCount {
     position: absolute;
-    left: 7%;
+    left: 10%;
   }
 }
