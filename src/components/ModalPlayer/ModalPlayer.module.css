@@ -570,9 +570,9 @@
 }
 
 @media screen and (max-width: 425px) {
-  .PlayerControls {
+  /* .PlayerControls {
     bottom: 100px;
-  }
+  } */
 }
 
 @media screen and (max-width: 370px) {
@@ -581,9 +581,9 @@
     height: 50vw;
   }
 
-  .PlayerControls {
+  /* .PlayerControls {
     bottom: 100px;
-  }
+  } */
 }
 
 @media screen and (max-width: 335px) {
