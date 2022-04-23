@@ -36,6 +36,11 @@
   align-items: center;
 }
 
+.Overlay_mini::before {
+  content: "desktop";
+  display: none;
+}
+
 .ModalTitle {
   position: absolute;
   top: 40px;
@@ -430,6 +435,10 @@
     font-size: 15px !important;
   }
 
+  button {
+    width: fit-content;
+  }
+
   h6 {
     font-size: 15px !important;
   }
@@ -439,7 +448,8 @@
   }
 
   svg {
-    width: 36px !important;
+    width: 30px !important;
+    height: fit-content;
     /* height: 10px; */
   }
   .ModalTitle {
@@ -455,6 +465,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    z-index: 20;
+  }
+
+  .Overlay_mini::before {
+    content: "mobile";
   }
 
   .Overlay_mini span {
@@ -510,22 +525,14 @@
   }
 
   .PlayerSettings_mini {
-    /* display: flex; */
-    /* justify-content: space-between;   */
+    width: fit-content;
   }
 
   
 
   .PlayerTimeline_mini {
-    /* position: absolute;
-    right: 3px;
-    top: 20px; */
     display: none;
   }
-
-  /* .PlayerTimeline_mini input {
-    width: 130px;
-  } */
 
   .PlayBtn_mini {
     background: inherit !important;
@@ -539,25 +546,26 @@
     margin-left: 20px;
   }
 
+  .PlayBtn_mini svg{
+    width: 25px !important;
+    height: 25px !important;
+  }
+
   .PlayerControls_mini button {
-    margin: -15px;
+    margin: -10px;
   }
 
   .CloseModalBtn_mini {
     margin: 0;
     position: absolute;
     right: 3px;
+    height: fit-content;
     top: 0;
     /* display: none; */
   }  
 
   .miniModalBtn_mini {
-    width: fit-content;
-    margin: 0;
-    position: absolute;
-    right: 35px;
-    top: 0;
-    /* display: none; */
+    display: none;
   }
   .miniModalBtn_mini svg{
     width: 15px !important;
