@@ -74,7 +74,7 @@ const ModalPlayer = ({ onClose, toggleMini, isModMax, audios, trackIndex }) => {
   const maximizeModal = (e) => {
     console.log(e.target.tagName, e.currentTarget);
       if(!["svg", "BUTTON", "path", "polyline"].includes(e.target.tagName)) {
-      const modalType = window.getComputedStyle(document.querySelector("#modal-overlay"), ":before").getPropertyValue("content").replace(/\"/g, '');
+      const modalType = window.getComputedStyle(document.querySelector("#modal-overlay"), ":before").getPropertyValue("content").replace(/"/g, '');
       if(modalType === "mobile") {
         toggleMini()
       }
