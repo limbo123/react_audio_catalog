@@ -49,7 +49,7 @@ class HomePage extends Component {
               {' '}
               <HiLightningBolt color="#F8991C" className={styles.lightning} size="2rem" />
               <h2 className={styles.homeTitle}>
-                <div>{this.props.t('New releases header')}:</div>
+                <div>{this.props.t('New releases header')}</div>
               </h2>
             </div>
           </div>
@@ -84,7 +84,7 @@ class HomePage extends Component {
               <option value="classical">{this.props.t('Classical')}</option>
             </select>
 
-            <h2 className={styles.homeTitle}> :</h2>
+            <h2 className={styles.homeTitle}></h2>
           </div>
 
           {this.state.loading && (
