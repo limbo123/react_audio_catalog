@@ -198,13 +198,7 @@
         display: inline-flex;
         justify-content: center;
     }
-
     .toggle_icon {
-        width: 15px !important;
-    }
-    .toggle_icon {
-        width: 17px;
-        height: 17px;
-        margin-left: -5px;
+        width: 12px !important;
     }
 }
