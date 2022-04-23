@@ -2,8 +2,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 65%;
-    height: auto;
-    overflow: auto;
+    height: fit-content;
     /* margin: 0 30px; */
 }
 
@@ -57,12 +56,9 @@
 .searchResults {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     margin-top: 30px;
-    width: 70%;
-    gap: 30px;
-    justify-items: center;
+    width: 900px;
 }
 
 .clue_location {
@@ -86,9 +82,9 @@
 .ButtonWrapper {
     display: flex;
     justify-content: center;
-}
-
-.Button {
+  }
+  
+  .Button {
     padding: 8px 16px;
     border-radius: 2px;
     background-color: #ffc107;
@@ -105,30 +101,40 @@
     font-style: normal;
     font-weight: 500;
     min-width: 180px;
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
     margin-bottom: 10px;
     margin-top: 30px;
-}
-
-.Button:hover,
-.Button:focus {
+  }
+  
+  .Button:hover,
+  .Button:focus {
     background-color: #dda600;
-}
+  }
 
 @media screen and (max-width: 850px) {
+    .searchResults {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 740px) {
     .searchResults {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 480px) {
+
+    .Container {
+        padding-top: 20px;
+    }
+
     .searchResults {
         grid-template-columns: repeat(2, 1fr);
-        width: 100%;
     }
-}
 
-@media screen and (max-width: 426px) {
+    /* .Container {}
     .promtList {
         position: absolute;
         top: 200px;
@@ -137,15 +143,15 @@
         display: flex;
         width: 90%;
         position: absolute;
-        top: 15%;
+        position: absolute;
+        top: 25%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
     }
 }
-
 @media screen and (max-width: 401px) {
-    .searchResults {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .SearchForm {
+        width: 90%;
+    } */
 }
