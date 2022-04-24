@@ -25,10 +25,12 @@ export default class App extends React.Component {
     });
 
     const currentIndex = JSON.parse(localStorage.getItem("current_index"));
-    const isModalMaximized = JSON.parse(localStorage.getItem('isModalMaximized'));
+    const isModalMaximized = JSON.parse(
+      localStorage.getItem("isModalMaximized")
+    );
 
     if (currentIndex !== null && currentIndex >= 0) {
-      this.handleModal(
+      this.openModal(
         JSON.parse(localStorage.getItem("current_index")),
         JSON.parse(localStorage.getItem("audiosArray"))
       );
@@ -36,69 +38,65 @@ export default class App extends React.Component {
 
     if (isModalMaximized !== null && isModalMaximized === false) {
       this.setState({
-        isModalMaximized: JSON.parse(localStorage.getItem('isModalMaximized')),
+        isModalMaximized,
       });
-
-      this.handleMini();
     }
   }
 
-  handleMini = () => {
-    if (this.state.isModalMaximized) {
-      console.log("hello");
-      localStorage.setItem("isModalMaximized", JSON.stringify(false));
-      this.setState(() => ({
-        isModalMaximized: false,
-      }), () => {
-        if (this.state.isModalMaximized) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "visible";
-        }
-      });
-    } else {
-      localStorage.setItem("isModalMaximized", JSON.stringify(true));
-      this.setState(() => ({
-        isModalMaximized: true,
-      }), () => {
-        if (this.state.isModalMaximized) {
-          document.body.style.overflow = "hidden";
-        } else {
-          document.body.style.overflow = "visible";
-        }
-      });
+  componentDidUpdate(prevProps, prevState) {
+    // Save modal maximized state
+    if (prevState.isModalMaximized !== this.state.isModalMaximized) {
+      localStorage.setItem(
+        "isModalMaximized",
+        JSON.stringify(this.state.isModalMaximized)
+      );
     }
 
-    this.setState(() => ({
-      isModalMaximized: true,
-    }), () => {
-      if (this.state.isModalMaximized) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "visible";
-      }
+    // Save audio data for modal
+    if (prevState.isModalOpened !== this.state.isModalOpened) {
+      localStorage.setItem(
+        "current_index",
+        JSON.stringify(this.state.playerTrackIndex)
+      );
+      localStorage.setItem(
+        "audiosArray",
+        JSON.stringify(this.state.audiosArray)
+      );
+    }
+
+    // Update overflow
+    if (
+      prevState.isModalMaximized !== this.state.isModalMaximized ||
+      prevState.isModalOpened !== this.state.isModalOpened
+    ) {
+      const overflowHidden =
+        this.state.isModalMaximized && this.state.isModalOpened;
+      document.body.style.overflow = overflowHidden ? "hidden" : "auto";
+    }
+  }
+
+  toggleMiniModal = () => {
+    this.setState((prevState) => ({
+      isModalMaximized: !prevState.isModalMaximized,
+    }));
+  };
+
+  openModal = (currentIndex, audiosArray) => {
+    this.setState({
+      isModalOpened: true,
+      playerTrackIndex: currentIndex,
+      audiosArray,
     });
   };
 
-  handleModal = (currentIndex, audiosArray) => {
-    if (this.state.isModalOpened === false) {
-      localStorage.setItem("current_index", JSON.stringify(currentIndex));
-      localStorage.setItem("audiosArray", JSON.stringify(audiosArray));
-
-      this.setState(() => ({
-        isModalOpened: true,
-        playerTrackIndex: currentIndex,
-        audiosArray,
-      }));
-    } else {
-      localStorage.setItem("current_index", '-1');
-      this.setState(() => ({
-        isModalOpened: false,
-        playerTrackIndex: currentIndex,
-        audiosArray,
-      }));
-    }
+  closeModal = () => {
+    this.setState({
+      isModalOpened: false,
+      playerTrackIndex: -1,
+      audiosArray: [],
+    });
   };
+
 
   setLanguage = (lang) => {
     this.setState({
@@ -113,9 +111,9 @@ export default class App extends React.Component {
           <ModalPlayer
             trackIndex={this.state.playerTrackIndex}
             audios={this.state.audiosArray}
-            handleMini={this.handleMini}
+            toggleMini={this.toggleMiniModal}
             isModMax={this.state.isModalMaximized}
-            handleModal={this.handleModal}
+            onClose={this.closeModal}
           />
         )}
 
@@ -134,13 +132,13 @@ export default class App extends React.Component {
             path={routes.home}
             exact
             render={(props) => (
-              <HomePage {...props} handleModal={this.handleModal} />
+              <HomePage {...props} handleModal={this.openModal} />
             )}
           />
           <Route
             path={routes.search}
             component={(props) => (
-              <SearchPage {...props} handleModal={this.handleModal} />
+              <SearchPage {...props} handleModal={this.openModal} />
             )}
           />
           <Route path={routes.addSong} component={AddSongPage} />

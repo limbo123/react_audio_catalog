@@ -15,7 +15,7 @@ import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) => {
+const ModalPlayer = ({ onClose, toggleMini, isModMax, audios, trackIndex }) => {
   const [currentSongIndex, setCurrentSongIndex] = useState(trackIndex);
   const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
@@ -71,14 +71,23 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
   const timePercent = (time / audioElement?.current?.duration) * 100;
   const formattedDuration = formatTime(audioElement?.current?.duration);
   const formattedTime = formatTime(time);
+  const maximizeModal = (e) => {
+    console.log(e.target.tagName, e.currentTarget);
+      if(!["svg", "BUTTON", "path", "polyline"].includes(e.target.tagName)) {
+      const modalType = window.getComputedStyle(document.querySelector("#modal-overlay"), ":before").getPropertyValue("content").replace(/"/g, '');
+      if(modalType === "mobile") {
+        toggleMini()
+      }
+    }
+  }
 
   return createPortal(
-    <div className={isModMax ? styles.Overlay : styles.Overlay_mini}>
+    <div id="modal-overlay" className={isModMax ? styles.Overlay : styles.Overlay_mini} onClick={maximizeModal}>
       <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING:</h6>
-      <div className={isModMax ? styles.miniModalBtn : styles.miniModalBtn_mini} onClick={handleMini}>
+      <div className={isModMax ? styles.miniModalBtn : styles.miniModalBtn_mini} onClick={toggleMini}>
         {isModMax ? <FiMinimize2 size="1.6rem" /> : <FiMaximize2 size="1.6rem" />}
       </div>
-      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={handleModal}>
+      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={onClose}>
         <IoCloseSharp size="5rem" />
       </div>
       <div className={isModMax ? styles.SongDetails : styles.SongDetails_mini}>

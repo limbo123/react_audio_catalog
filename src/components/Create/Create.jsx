@@ -218,7 +218,6 @@ class CreateForm extends React.Component {
                     height: '20px',
                     margin: ' 0 auto',
                   },
-
                   searchBox: {
                     border: '0.5px solid #818181',
                     borderBottom: '0.5px solid #818181',
@@ -232,7 +231,6 @@ class CreateForm extends React.Component {
                     height: '48px',
                     margin: '0 auto',
                     backgroundColor: '#fff',
-                    // marginRight: '0',
                     marginBottom: '16px',
                   },
                   optionContainer: {

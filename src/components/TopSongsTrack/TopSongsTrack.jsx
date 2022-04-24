@@ -18,12 +18,19 @@ export default class TopSongsTrack extends Component {
         }
     }
 
+    strCut = (strTrackName) => {
+        if (strTrackName.length > 15) {
+          const newName = strTrackName.slice(0, 15);
+          return `${newName}...`;
+        }else{return strTrackName}
+      };
+
     render() {
         return (
             <div className={styles.topCard}>
                 <img src={this.props.imageUrl} alt={this.props.title} />
                 <div className={styles.topDescription}>
-                    <h3>{this.props.title}</h3>
+                    <h3>{this.strCut(this.props.title)}</h3>
                     <h4>{this.props.author}</h4>
                 </div>
 
