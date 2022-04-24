@@ -458,14 +458,13 @@
 
   .Overlay_mini {
     width: 90%;
-    margin: auto;
-    margin-bottom: 100px;
     padding-left: 5px;
-    height: 60px;
+    height: 70px;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     z-index: 20;
+    margin: auto 5% 90px 5%;
   }
 
   .Overlay_mini::before {
@@ -527,8 +526,6 @@
     width: fit-content;
   }
 
-  
-
   .PlayerTimeline_mini {
     display: none;
   }
@@ -538,9 +535,11 @@
   }
 
   .PlayerControls_mini {
-    width: fit-content;
+    width: 25vw;
     position: static;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-left: 20px;
   }
 

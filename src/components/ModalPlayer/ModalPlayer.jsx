@@ -72,7 +72,6 @@ const ModalPlayer = ({ onClose, toggleMini, isModMax, audios, trackIndex }) => {
   const formattedDuration = formatTime(audioElement?.current?.duration);
   const formattedTime = formatTime(time);
   const maximizeModal = (e) => {
-    console.log(e.target.tagName, e.currentTarget);
       if(!["svg", "BUTTON", "path", "polyline"].includes(e.target.tagName)) {
       const modalType = window.getComputedStyle(document.querySelector("#modal-overlay"), ":before").getPropertyValue("content").replace(/"/g, '');
       if(modalType === "mobile") {
