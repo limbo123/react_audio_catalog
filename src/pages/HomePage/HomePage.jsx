@@ -49,7 +49,7 @@ class HomePage extends Component {
               {' '}
               <HiLightningBolt color="#F8991C" className={styles.lightning} />
               <h2 className={styles.homeTitle}>
-                <div>{this.props.t('New releases header')}:</div>
+                <div>{this.props.t('New releases header')}</div>
               </h2>
             </div>
           </div>

@@ -9,27 +9,41 @@ class AudioList extends Component {
   state = {
     audios: [],
     loading: true,
-  }
+  };
 
   componentDidMount() {
     axios
-      .get('audios/new')
-      .then(response => this.setState({ audios: response.data, loading: false, }))
-      .catch(error => console.error(error));
+      .get("audios/new")
+      .then((response) =>
+        this.setState({ audios: response.data, loading: false })
+      )
+      .catch((error) => console.error(error));
   }
+
+  strCut = (strTrackName) => {
+    if (strTrackName.length > 14) {
+      const newName = strTrackName.slice(0, 14);
+      return `${newName}...`;
+    }else{return strTrackName}
+  };
 
   render() {
     return (
       <>
-        {
-          this.state.loading && <div className="loader">
-            <PacmanLoader color="#F8991C" loading={true} size={30} speedMultiplier="1.5" />
+        {this.state.loading && (
+          <div className="loader">
+            <PacmanLoader
+              color="#F8991C"
+              loading={true}
+              size={30}
+              speedMultiplier="1.5"
+            />
           </div>
-        }
+        )}
 
-        < div className={this.props.name} >
-          {
-            this.state.audios.map(({ title, _id, author, imageUrl, streamsCount }, index, array) => {
+        <div className={this.props.name}>
+          {this.state.audios.map(
+            ({ title, _id, author, imageUrl, streamsCount }, index, array) => {
               if (title.length > 17) {
                 title = `${title.substring(0, 15)}...`;
               }
@@ -48,11 +62,12 @@ class AudioList extends Component {
                   trackIndex={index}
                   audiosArray={array}
                   streamsCount={streamsCount}
+                  strCut={this.strCut}
                 />
               );
-            })
-          }
-        </div >
+            }
+          )}
+        </div>
       </>
     );
   }
