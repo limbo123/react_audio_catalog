@@ -225,7 +225,7 @@
         height: 40px;
         margin: 0 auto;
         margin-top: 20px;
-        margin-bottom: 50px;
+        margin-bottom: 140px;
     }
     .CreateFormBtn2 {
         width: 50%;
@@ -262,7 +262,7 @@
         width: 100px;
         margin: 0 auto;
         margin-top: 20px;
-        margin-bottom: 50px;
+        margin-bottom: 140px;
     }
     .uploadAudio {
         width: 100%;
@@ -285,6 +285,6 @@
         width: 120px;
         margin: 0 auto;
         margin-top: 20px;
-        margin-bottom: 50px;
+        margin-bottom: 140px;
     }
 }

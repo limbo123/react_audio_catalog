@@ -108,6 +108,13 @@ class SearchForm extends Component {
     this.setState({ audios: audios });
   };
 
+  strCut = (strTrackName) => {
+    if (strTrackName.length > 14) {
+      const newName = strTrackName.slice(0, 14);
+      return `${newName}...`;
+    }else{return strTrackName}
+  };
+
   render() {
     return (
       <>
@@ -158,6 +165,7 @@ class SearchForm extends Component {
                       trackIndex={index}
                       audiosArray={array}
                       streamsCount={streamsCount}
+                      strCut={this.strCut}
                     />
                   );
                 }

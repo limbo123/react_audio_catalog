@@ -153,7 +153,7 @@
 .ThemeChanger {
     z-index: 101;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -171,14 +171,12 @@
 }
 
 .styled_toggle {
-    /* background-color: rgb(177, 0, 0); */
     display: block;
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #b615a8; */
 }
 
 .toggle_icon {
