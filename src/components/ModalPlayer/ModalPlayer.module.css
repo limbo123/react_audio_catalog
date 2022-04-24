@@ -570,7 +570,7 @@
 
 @media screen and (max-width: 425px) {
   .PlayerControls {
-    bottom: 100px;
+    bottom: 60px;
   }
 }
 
@@ -581,7 +581,7 @@
   }
 
   .PlayerControls {
-    bottom: 100px;
+    bottom: 60px;
   }
 }
 
