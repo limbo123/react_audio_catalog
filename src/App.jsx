@@ -1,45 +1,45 @@
-import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import './App.css'
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import "./App.css";
 
-import HomePage from './pages/HomePage/HomePage'
-import SearchPage from './pages/SearchPage/SearchPage'
-import AddSongPage from './pages/AddSongPage/AddSongPage'
-import Navbar from './components/Navbar/Navbar'
-import ModalPlayer from './components/ModalPlayer/ModalPlayer'
-import routes from './routes'
-import NavbarMobile from './components/NavbarMobile/NavbarMobile'
+import HomePage from "./pages/HomePage/HomePage";
+import SearchPage from "./pages/SearchPage/SearchPage";
+import AddSongPage from "./pages/AddSongPage/AddSongPage";
+import Navbar from "./components/Navbar/Navbar";
+import ModalPlayer from "./components/ModalPlayer/ModalPlayer";
+import routes from "./routes";
+import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
 
 export default class App extends React.Component {
   state = {
-    currentLanguage: '',
+    currentLanguage: "",
     isModalOpened: false,
     isModalMaximized: true,
     playerTrackIndex: 0,
     audiosArray: [],
-  }
+  };
 
   componentDidMount() {
     this.setState({
-      currentLanguage: localStorage.getItem('language'),
-    })
+      currentLanguage: localStorage.getItem("language"),
+    });
 
-    const currentIndex = JSON.parse(localStorage.getItem('current_index'))
+    const currentIndex = JSON.parse(localStorage.getItem("current_index"));
     const isModalMaximized = JSON.parse(
-      localStorage.getItem('isModalMaximized')
-    )
+      localStorage.getItem("isModalMaximized")
+    );
 
     if (currentIndex !== null && currentIndex >= 0) {
       this.openModal(
-        JSON.parse(localStorage.getItem('current_index')),
-        JSON.parse(localStorage.getItem('audiosArray'))
-      )
+        JSON.parse(localStorage.getItem("current_index")),
+        JSON.parse(localStorage.getItem("audiosArray"))
+      );
     }
 
     if (isModalMaximized !== null && isModalMaximized === false) {
       this.setState({
         isModalMaximized,
-      })
+      });
     }
   }
 
@@ -47,21 +47,21 @@ export default class App extends React.Component {
     // Save modal maximized state
     if (prevState.isModalMaximized !== this.state.isModalMaximized) {
       localStorage.setItem(
-        'isModalMaximized',
+        "isModalMaximized",
         JSON.stringify(this.state.isModalMaximized)
-      )
+      );
     }
 
     // Save audio data for modal
     if (prevState.isModalOpened !== this.state.isModalOpened) {
       localStorage.setItem(
-        'current_index',
+        "current_index",
         JSON.stringify(this.state.playerTrackIndex)
-      )
+      );
       localStorage.setItem(
-        'audiosArray',
+        "audiosArray",
         JSON.stringify(this.state.audiosArray)
-      )
+      );
     }
 
     // Update overflow
@@ -70,38 +70,39 @@ export default class App extends React.Component {
       prevState.isModalOpened !== this.state.isModalOpened
     ) {
       const overflowHidden =
-        this.state.isModalMaximized && this.state.isModalOpened
-      document.body.style.overflow = overflowHidden ? 'hidden' : 'auto'
+        this.state.isModalMaximized && this.state.isModalOpened;
+      document.body.style.overflow = overflowHidden ? "hidden" : "auto";
     }
   }
 
   toggleMiniModal = () => {
     this.setState((prevState) => ({
       isModalMaximized: !prevState.isModalMaximized,
-    }))
-  }
+    }));
+  };
 
   openModal = (currentIndex, audiosArray) => {
     this.setState({
       isModalOpened: true,
       playerTrackIndex: currentIndex,
       audiosArray,
-    })
-  }
+    });
+  };
 
   closeModal = () => {
     this.setState({
       isModalOpened: false,
       playerTrackIndex: -1,
       audiosArray: [],
-    })
-  }
+    });
+  };
+
 
   setLanguage = (lang) => {
     this.setState({
       currentLanguage: lang,
-    })
-  }
+    });
+  };
 
   render() {
     return (
@@ -116,7 +117,7 @@ export default class App extends React.Component {
           />
         )}
 
-        {this.state.currentLanguage !== '' && (
+        {this.state.currentLanguage !== "" && (
           <Navbar
             language={this.state.currentLanguage}
             setLang={this.setLanguage}
@@ -144,6 +145,6 @@ export default class App extends React.Component {
           <Redirect to={routes.home} />
         </Switch>
       </>
-    )
+    );
   }
 }
