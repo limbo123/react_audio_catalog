@@ -4,7 +4,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 101;
+    z-index: 99;
 }
 
 #tabbar {
@@ -25,7 +25,7 @@
 #tabbar .indicator {
     position: absolute;
     z-index: 1;
-    left: 10px;
+    left: 20px;
     bottom: 0;
     display: block;
     width: 28px;
@@ -47,7 +47,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    width: 360px;
+    width: 100vw;
     height: 70px;
     display: flex;
     justify-content: center;
@@ -145,7 +145,7 @@
 
 .LangChanger,
 .ThemeChanger {
-    z-index: 100;
+    z-index: 101;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,6 +181,7 @@
 }
 
 .decide_item {
+    z-index: 101;
     display: flex;
     justify-content: center;
 }
@@ -194,5 +195,10 @@
     .navBar {
         width: 100%;
         display: block;
+    }
+    .toggle_icon {
+        width: 17px;
+        height: 17px;
+        margin-left: -5px;
     }
 }

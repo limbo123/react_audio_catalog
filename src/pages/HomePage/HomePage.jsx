@@ -84,7 +84,7 @@ class HomePage extends Component {
               <option value="classical">{this.props.t('Classical')}</option>
             </select>
 
-            <h2 className={styles.homeTitle}> :</h2>
+            <h2 className={styles.homeTitle}></h2>
           </div>
 
           {this.state.loading && (
