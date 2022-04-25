@@ -174,7 +174,7 @@ class SearchForm extends Component {
 
             <div className={styles.ButtonWrapper}>
               <button className={styles.Button} type="button" onClick={this.loadMore}>
-                Load more
+                {this.props.t("Load more")}
               </button>
             </div>
           </>

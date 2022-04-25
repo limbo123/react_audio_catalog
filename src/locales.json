@@ -28,7 +28,9 @@
       "Folk": "folk",
       "Indi": "indi",
       "Country": "country",
-      "Classical": "classical"
+      "Classical": "classical",
+      "Now playing": "NOW PLAYING:",
+      "Load more": "Load more"
     }
   },
   "ua": {
@@ -60,7 +62,9 @@
       "Folk": "фолк",
       "Indi": "інді",
       "Country": "кантрі",
-      "Classical": "класичний"
+      "Classical": "класичний",
+      "Now playing": "ЗАРАЗ ГРАЄ:",
+      "Load more": "Завантажити ще"
     }
   }
 }
