@@ -12,7 +12,7 @@ import NavbarMobile from "./components/NavbarMobile/NavbarMobile";
 
 export default class App extends React.Component {
   state = {
-    currentLanguage: "",
+    currentLanguage: "null",
     isModalOpened: false,
     isModalMaximized: true,
     playerTrackIndex: 0,
@@ -20,9 +20,17 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({
-      currentLanguage: localStorage.getItem("language"),
-    });
+    const language = localStorage.getItem("language");
+
+    if (language !== "null") {
+      this.setState({
+        currentLanguage: language,
+      });
+    } else {
+      this.setState({
+        currentLanguage: "en",
+      });
+    }
 
     const currentIndex = JSON.parse(localStorage.getItem("current_index"));
     const isModalMaximized = JSON.parse(
@@ -97,7 +105,6 @@ export default class App extends React.Component {
     });
   };
 
-
   setLanguage = (lang) => {
     this.setState({
       currentLanguage: lang,
@@ -117,12 +124,15 @@ export default class App extends React.Component {
           />
         )}
 
-        {this.state.currentLanguage !== "" && (
+        {this.state.currentLanguage !== "null" ? (
           <Navbar
             language={this.state.currentLanguage}
             setLang={this.setLanguage}
           />
-        )}
+        ) : <Navbar
+          language="en"
+          setLang={this.setLanguage}
+        />}
         <NavbarMobile
           language={this.state.currentLanguage}
           setLang={this.setLanguage}
