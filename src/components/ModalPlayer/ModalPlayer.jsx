@@ -10,12 +10,15 @@ import {
 import { FiMinimize2, FiMaximize2 } from "react-icons/fi";
 import { IoCloseSharp } from "react-icons/io5"
 import formatTime from "../../formatTime";
+import { useTranslation } from "react-i18next";
 
 import styles from "./ModalPlayer.module.css";
 
 const modalRoot = document.querySelector("#modal-player");
 
-const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) => {
+const ModalPlayer = ({ onClose, toggleMini, isModMax, audios, trackIndex }) => {
+  const { t } = useTranslation();
+
   const [currentSongIndex, setCurrentSongIndex] = useState(trackIndex);
   const [isPlaying, setIsPlaying] = useState(true);
   const [time, setTime] = useState(0);
@@ -28,7 +31,6 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
   useEffect(() => {
     setCurrentSongIndex(trackIndex);
     axios.patch(`/audios/${audios[currentSongIndex]._id}/listen`);
-    console.log(audios[currentSongIndex]);
     setIsPlaying(true);
   }, [trackIndex])
 
@@ -72,14 +74,22 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
   const timePercent = (time / audioElement?.current?.duration) * 100;
   const formattedDuration = formatTime(audioElement?.current?.duration);
   const formattedTime = formatTime(time);
+  const maximizeModal = (e) => {
+    if (!["svg", "BUTTON", "path", "polyline"].includes(e.target.tagName)) {
+      const modalType = window.getComputedStyle(document.querySelector("#modal-overlay"), ":before").getPropertyValue("content").replace(/"/g, '');
+      if (modalType === "mobile") {
+        toggleMini()
+      }
+    }
+  }
 
   return createPortal(
-    <div className={isModMax ? styles.Overlay : styles.Overlay_mini}>
-      <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>NOW PLAYING:</h6>
-      <div className={isModMax ? styles.miniModalBtn : styles.miniModalBtn_mini} onClick={handleMini}>
+    <div id="modal-overlay" className={isModMax ? styles.Overlay : styles.Overlay_mini} onClick={maximizeModal}>
+      <h6 className={isModMax ? styles.ModalTitle : styles.ModalTitle_mini}>{t("Now playing")}</h6>
+      <div className={isModMax ? styles.miniModalBtn : styles.miniModalBtn_mini} onClick={toggleMini}>
         {isModMax ? <FiMinimize2 size="1.6rem" /> : <FiMaximize2 size="1.6rem" />}
       </div>
-      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={handleModal}>
+      <div className={isModMax ? styles.CloseModalBtn : styles.CloseModalBtn_mini} onClick={onClose}>
         <IoCloseSharp size="5rem" />
       </div>
       <div className={isModMax ? styles.SongDetails : styles.SongDetails_mini}>
@@ -94,18 +104,18 @@ const ModalPlayer = ({ handleModal, handleMini, isModMax, audios, trackIndex }) 
       <div className={isModMax ? styles.PlayerSettings : styles.PlayerSettings_mini}>
         <div className={isModMax ? styles.PlayerTimeline : styles.PlayerTimeline_mini}>
           <span className={isModMax ? styles.playerTimeCurrent : styles.playerTimeCurrent_mini}>{formattedTime}</span>
-            <input
-              type="range"
-              className={isModMax ? styles.playerTimeControl : styles.playerTimeControl_mini}
-              value={time}
-              max={audioElement?.current?.duration || 0}
-              onChange={(e) =>
-                (audioElement.current.currentTime = e.currentTarget.value)
-              }
-              style={{
-                background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
-              }}
-            />
+          <input
+            type="range"
+            className={isModMax ? styles.playerTimeControl : styles.playerTimeControl_mini}
+            value={time}
+            max={audioElement?.current?.duration || 0}
+            onChange={(e) =>
+              (audioElement.current.currentTime = e.currentTarget.value)
+            }
+            style={{
+              background: `linear-gradient(to right, #fff ${timePercent}%, rgba(255, 255, 255, 0.3) ${timePercent}%)`,
+            }}
+          />
           <span className={styles.playerTimeDuration}>{formattedDuration}</span>
         </div>
 

@@ -4,7 +4,7 @@
       "Menu top": "Home",
       "Search": "Search",
       "Create button": "Create",
-      "New releases header": "New releases",
+      "New releases header": "New releases:",
       "Top songs header": "Top 12 songs from",
       "Enter Song Information": "Enter Song Information",
       "Upload File": "Upload a file",
@@ -28,7 +28,9 @@
       "Folk": "folk",
       "Indi": "indi",
       "Country": "country",
-      "Classical": "classical"
+      "Classical": "classical",
+      "Now playing": "NOW PLAYING:",
+      "Load more": "Load more"
     }
   },
   "ua": {
@@ -36,7 +38,7 @@
       "Menu top": "Головна",
       "Search": "Пошук",
       "Create button": "Створити",
-      "New releases header": "Нові релізи",
+      "New releases header": "Нові релізи:",
       "Top songs header": "Найкращі 12 пісень жанру",
       "Enter Song Information": "Введіть дані про пісню",
       "Upload File": "Завантажити файл",
@@ -60,7 +62,9 @@
       "Folk": "фолк",
       "Indi": "інді",
       "Country": "кантрі",
-      "Classical": "класичний"
+      "Classical": "класичний",
+      "Now playing": "ЗАРАЗ ГРАЄ:",
+      "Load more": "Завантажити ще"
     }
   }
 }

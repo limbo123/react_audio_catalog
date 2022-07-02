@@ -4,7 +4,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 101;
+    z-index: 99;
 }
 
 #tabbar {
@@ -25,7 +25,7 @@
 #tabbar .indicator {
     position: absolute;
     z-index: 1;
-    left: 10px;
+    left: 20px;
     bottom: 0;
     display: block;
     width: 28px;
@@ -47,7 +47,7 @@
     padding: 0;
     margin: 0;
     list-style: none;
-    width: 360px;
+    width: 100vw;
     height: 70px;
     display: flex;
     justify-content: center;
@@ -139,15 +139,21 @@
     transition: 500ms;
 }
 
-.SettingsBtn button::after {
-    display: none;
+.SettingsBtn>button::after {
+    display: none !important;
+}
+
+.SettingsBtn>button:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .LangChanger,
 .ThemeChanger {
-    z-index: 100;
+    z-index: 101;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -165,14 +171,12 @@
 }
 
 .styled_toggle {
-    /* background-color: rgb(177, 0, 0); */
     display: block;
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #b615a8; */
 }
 
 .toggle_icon {
@@ -181,18 +185,18 @@
 }
 
 .decide_item {
+    z-index: 101;
     display: flex;
     justify-content: center;
 }
 
-
-/* .active {
-  
-} */
-
 @media screen and (max-width: 426px) {
     .navBar {
         width: 100%;
-        display: block;
+        display: inline-flex;
+        justify-content: center;
+    }
+    .toggle_icon {
+        width: 12px !important;
     }
 }

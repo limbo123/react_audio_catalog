@@ -216,9 +216,8 @@ class CreateForm extends React.Component {
                   chips: {
                     background: 'rgb(248, 153, 28)',
                     height: '20px',
-                    margin: ' 0 auto',
+                    margin: '0 3px',
                   },
-
                   searchBox: {
                     border: '0.5px solid #818181',
                     borderBottom: '0.5px solid #818181',
@@ -232,7 +231,6 @@ class CreateForm extends React.Component {
                     height: '48px',
                     margin: '0 auto',
                     backgroundColor: '#fff',
-                    // marginRight: '0',
                     marginBottom: '16px',
                   },
                   optionContainer: {
@@ -247,6 +245,9 @@ class CreateForm extends React.Component {
                     width: '100%',
                     borderRadius: '5px',
                   },
+                  chip: {
+                      marginRight: "5px",
+                  }
                 }}
                 selectionLimit={3}
                 required
