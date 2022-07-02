@@ -133,9 +133,16 @@
         position: absolute;
         top: 200px;
     }
+    .searchResults {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        row-gap: 15px;
+        margin-top: 100px;
+    }
     .SearchForm {
         display: flex;
-        width: 90%;
+        width: 100%;
+        margin-bottom: 30px;
         position: absolute;
         top: 15%;
         left: 50%;
@@ -144,7 +151,7 @@
     }
 }
 
-@media screen and (max-width: 401px) {
+@media screen and (max-width: 376px) {
     .searchResults {
         grid-template-columns: repeat(2, 1fr);
     }
